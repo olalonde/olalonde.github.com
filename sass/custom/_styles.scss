@@ -1,2 +1,22 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+.external_site {
+  width: 16px;
+  height: 16px;
+  text-indent: -9999px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+  background: url(/images/sprite.png) no-repeat;
+}
+
+.external_site.twitter {
+  background-position: 0 -799px;
+}
+.external_site.facebook {
+  background-position: 0 -204px;
+}
+.external_site.linked_in {
+  background-position: 0 -408px;
+}
