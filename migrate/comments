@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <rss version="2.0"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/"
+      xmlns:dsq="http://www.disqus.com/"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:wp="http://wordpress.org/export/1.0/">
+      <channel><item>
+     <title>17 crazy and not so crazy startup and project ideas</title>
+     <link>http://syskall.com/some-crazy-and-not-so-crazy-startup-and-proje</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2012-10-17 23:36:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>11524000</wp:comment_id>
+     <wp:comment_author>Antoine</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-10-19 03:38:04</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Nice ideas !<br />For the last one I think there is LoungeUp which is doing exactly this kind of thing!<br /><a href="http://en.loungeup.com/category/product/" rel="nofollow">http://en.loungeup.com/category/product/</a>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11525680</wp:comment_id>
+     <wp:comment_author>Shay Acrich</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-10-19 09:41:31</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Cool ideas. As for #14, there's an Israeli Shopify for restaurants called rest.co.il. In fact, it's so successful that there aren't any ebay/amazon for restaurants competing on that market. I never would've believed that there isn't a U.S version of it.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>Trouble installing ImageMagick on OS X 10.7.2</title>
+     <link>http://syskall.com/trouble-installing-imagemagick-on-os-x-1072</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2012-10-08 05:20:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     
+   </item><item>
+     <title>YC W12 startups' hosting decisions</title>
+     <link>http://syskall.com/yc-w12-startups-hosting-decisions</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2012-08-23 22:08:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>11328199</wp:comment_id>
+     <wp:comment_author>mehdiaitoufkir</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-08-24 00:33:34</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[when you say amazon, how many are actually a layer up from amazon? (heroku or dotcloud)]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11328429</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-08-24 02:48:25</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[You are right about Heroku, it is included within Amazon. I wonder how I could separate Heroku/Dotcloud from strictly Amazon. Right now the script finds the server with this command (OrgName): whois -h whois.arin.net 'n 50.19.85.154' (if I understand the code correctly).]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11328749</wp:comment_id>
+     <wp:comment_author>Carl</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-08-24 05:15:42</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Interesting choices, thanks. Surprised to see godaddys continuation.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>First "Startup Tuesday" in Shenzhen a success!</title>
+     <link>http://syskall.com/first-startup-tuesdays-in-shenzhen-a-success</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2011-08-10 04:39:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>10712411</wp:comment_id>
+     <wp:comment_author>Mary Brown</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-03-12 00:02:59</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[<img src="http://i1069.photobucket.com/albums/u476/marry38382/xray.jpg" /><br />Ha,Awesome I think it's great]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10790948</wp:comment_id>
+     <wp:comment_author>Mary Brown</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-03-25 21:00:59</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[<img src="http://canadablackberry.com/imgs/images/9.gif" />This will be a successful start]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11114183</wp:comment_id>
+     <wp:comment_author>Suzanne Pumphrey</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-06-10 11:13:00</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Accounts operations methods diversifying your commitment with unique sec to the extent in order to maximize returning when reducing the danger. As well as this is feasible sole by simply making some transparent funding approach. As well as effective ways would be to receive expenditure help and advice of a lot of analysts in order to <a href="http://www.rossasset.com/" rel="nofollow">find financial adviser</a>. All of these authorities are actually qualified free budgetary advisors and also the stockbrokers who seem to will let you come to a decision concerning your funding purpose together with diverse systems that you simply could observe in order to achieve the ones goals.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>Adding Google's +1 (plus one) button to your Posterous</title>
+     <link>http://syskall.com/adding-googles-1-plus-one-button-to-your-post</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2011-06-01 19:58:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>8924651</wp:comment_id>
+     <wp:comment_author>Jia-Jun Chen</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-02 20:49:56</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thank you!!!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8931524</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-03 11:06:20</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[You're welcome!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8933176</wp:comment_id>
+     <wp:comment_author>Rask Ulv</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-03 19:46:03</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thank you! I translated your post into Russian and added two more snippets for small and medium buttons.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8933965</wp:comment_id>
+     <wp:comment_author>Jason Blum</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-04 03:34:56</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[But then aren't people then just +1'ing <a href="http://dev.syskall.com/plusone/index.php" rel="nofollow">http://dev.syskall.com/plusone/index.php</a>?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8934255</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-04 05:50:40</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[No, that's what the ?url parameter is for. I use it on my own Posterous and all articles have their own +1 count, you can verify it by yourself. If you want to, you can also host the script on your own server if you have one: <a href="https://github.com/olalonde/google-plusone-posterous/blob/master/index.php" rel="nofollow">https://github.com/olalonde/google-plusone-posterous/blob/master/index.php</a>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8935165</wp:comment_id>
+     <wp:comment_author>Jason Blum</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-04 11:57:41</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Ah nice.  Yeah so it is...  Thank for sharing this.  I'll put it on one of my servers and share the url back here.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8937783</wp:comment_id>
+     <wp:comment_author>Lutz S.</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-05 09:16:02</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thank you. Just works perfectly. I am no developer and not into html - but I did it ;-.)]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9017304</wp:comment_id>
+     <wp:comment_author>Greg Lane</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-12 16:41:15</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Olivier, very nice work!  By the way, you might get slightly improved performance if you use https in your index.php file.  There is an explanation of why here -> <a href="http://www.aaronpeters.nl/blog/google-plus1-button-performance-review" rel="nofollow">http://www.aaronpeters.nl/blog/google-plus1-button-performance-review</a>  On my server I also minified the file by removing all the spaces, carriage returns and comments.  It's still really slow - but I suspect that's Google's problem.  It would be great if they developed another official method for including the +1 with iframes for sites like Posterous.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9231674</wp:comment_id>
+     <wp:comment_author>Justin Hollis</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-06-30 08:01:53</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Where should I put the code if I want it to show up in all my posts like the retweet and like button are?<br />Thanks.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9252757</wp:comment_id>
+     <wp:comment_author>Zalan Portik</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-03 06:54:31</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thanks, very useful...]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9282560</wp:comment_id>
+     <wp:comment_author>Dean Barrow</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-06 01:20:37</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thanks, this save me time, I was going to create exactly the same today!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9286168</wp:comment_id>
+     <wp:comment_author>Jordan Patterson</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-06 10:48:00</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I use the same theme but my google +1 button is very close to the date and post. Additionally I would like to add the twitter button right above the plus one button just like you have done. Can you show your HTML theme?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9316950</wp:comment_id>
+     <wp:comment_author>kreason</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-10 11:52:41</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[in g+ under my +1 page, it shows my page (after i clicked +1) with a strange url, linking to the pluss one button rather then the homepage. yours doesnt. counl you help?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9339787</wp:comment_id>
+     <wp:comment_author>Richard Mackney</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-11 04:46:14</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Nice work. Thanks for giving the source code to the project too. I'll use dev.syskall.com for now though If that's OK. Added.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9356833</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-12 03:11:49</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[@kreason: are you using Posterous?<p>@Richard Mackney: Feel free to use my server for now but I don't guarantee it will be supported forever!</p><p>Thanks for commenting all... I hadn't been able to access my Posterous in a while since I'm in China currently.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9356877</wp:comment_id>
+     <wp:comment_author>kreason</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-12 03:22:13</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[<div>No I hosted on my own. But in g+ its posting a funny URL<br /></div><div><br /></div>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9356903</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-12 03:29:04</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[@kreason: Replace {Permalink} by the URL you want to +1 in "http://dev.syskall.com/plusone/?url={Permalink}". Make sure the URL is "URL encoded" (in PHP: <a href="http://php.net/manual/en/function.urlencode.php)" rel="nofollow">http://php.net/manual/en/function.urlencode.php)</a>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9379403</wp:comment_id>
+     <wp:comment_author>alisha15</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-14 21:53:10</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Google plus one credited with a button to be an excellent choice for users of search engines to give the approval of the site publicly. Those who see the button are included in the user's social network by Google. It 'a great way for users to recommend a website or a product of their partners.<p><a href="http://googleplus1supply.com" rel="nofollow">Buy Google Plus 1</a></p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9397225</wp:comment_id>
+     <wp:comment_author>Sam  Hughes</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-18 06:58:49</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thanks for the code man, works a treat! Does anyone know how I would make the button +1 for another URL? I want a +1 button on my blog but for my site, and JS isn't allowed in posterous :(]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9421467</wp:comment_id>
+     <wp:comment_author>@Danny _Fr</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-20 21:25:20</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thanks a lot for that!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9427509</wp:comment_id>
+     <wp:comment_author>Karl-Heinz Karch</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-21 14:40:08</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Great ... just what I neede.<p>Thanks a lot.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9429923</wp:comment_id>
+     <wp:comment_author>@Danny _Fr</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-21 23:03:32</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Just sharing: I made a GreaseMonkey script to add the +1 button to mostly any site you want (that is, from your browser). <br />You can get it here: <p><a href="http://dannyfr.posterous.com/add-google-1-button-to-any-site-with-this-gre" rel="nofollow">http://dannyfr.posterous.com/add-google-1-button-to-any-site-with-this-gre</a></p><p>Thanks for inspiring me ;)</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9484758</wp:comment_id>
+     <wp:comment_author>kreason</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-02 13:49:27</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[hi please could you remove my previous comments, i  didnt realise that i had mosted my email signiture here and it poses id theft risks. please oblige me in this respect]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9503272</wp:comment_id>
+     <wp:comment_author>EconoDomains</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-07 13:33:15</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[There are a lot of services offering plus ones to your website now. I have tried several and the best one I have found is <a href="http://www.purchaseplusone.com" rel="nofollow">Buy Google Plus Ones</a>  - They guarantee the plus ones and use real aged Google accounts from unique ip addresses. Highly recommended!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9520206</wp:comment_id>
+     <wp:comment_author>Gooogle</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-11 09:45:50</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[It 'a great way for users to recommend a website or a product of their partners.<br />thanks<br />sme<br /><a href="http://www.smebs.blog.com" rel="nofollow">SMEBS-B2B Social Media</a>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9528152</wp:comment_id>
+     <wp:comment_author>Yellow Duck Marketing</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-13 10:41:23</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[This unfortunately doesn't work with the LightMatter theme. I put it beneath the tweet button and it doesn't show up. Bummer.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9554854</wp:comment_id>
+     <wp:comment_author>david24</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-19 20:38:36</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Google plus one credited with a button to be an excellent choice for users of search engines to give the approval of the site publicly. Those who see the button are included in the user's social network by Google. It 'a great way for users to recommend a website or a product of their partners.<p><a href="http://www.buyfansplusones.com" rel="nofollow">Buy Google Plus 1</a></p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9557538</wp:comment_id>
+     <wp:comment_author>david24</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-20 19:24:14</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Ah nice. Yeah so it is... Thank for sharing this. I'll put it on one of my servers and share the url back here.<br /><a href="http://seamlessgutterstoday.com" rel="nofollow">Seamless Gutters</a>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9583915</wp:comment_id>
+     <wp:comment_author>Emmanuel Françoise</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-26 01:50:01</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Je viens de rédiger une version française de ton tutoriel, merci ! <p><a href="http://www.blogemmanuel.com/google-1-posterous-et-moi" rel="nofollow">http://www.blogemmanuel.com/google-1-posterous-et-moi</a></p><p>French version of that Google +1 on Posterous tutorial ;)</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9623356</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-09-05 03:06:31</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Ca fait plaisir, Emmanuel!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9633122</wp:comment_id>
+     <wp:comment_author>René</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-09-07 04:12:09</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[The button doesn't show up in Safari. Anyone else having this problem? Is there a fix?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9677106</wp:comment_id>
+     <wp:comment_author>Emmanuel Françoise</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-09-15 13:12:18</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Hi Olivier,<p>it seems to be off since last posterous spaces update :(</p><p>cela ne semble plus fonctionner depuis la mise à jour spaces de posterous<br />j'ai également essayé en hostant moi même le script</p><p>E.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9736458</wp:comment_id>
+     <wp:comment_author>Daryl Yeo</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-09-26 08:36:56</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[This is great, Olivier, but it seems like the part where you "Share on Google+" is missing or covered up. You can see the little arrow but the rest of the plugin (to type in the message that will show up on your Google+ feed) is blocked up. Maybe you'd like to fix that? :)]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9808548</wp:comment_id>
+     <wp:comment_author>Tony Burkhart</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-10-06 03:47:57</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thank you @o_lalonde - Exactly what I was looking for. w00t!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9849788</wp:comment_id>
+     <wp:comment_author>Stephen Dowell</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-10-12 19:39:02</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I noticed today that the plusone functionality seems to be broken in all browsers. What's changed?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9850869</wp:comment_id>
+     <wp:comment_author>Tony Michael</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-10-13 00:27:53</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I noticed the same thing as Stephan.<br />It's broken on my Posterous page too. <br />(So I just removed it)<p>Anyone else experiencing that?<br />Or find a solution yet?</p><p>Thanks</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9851755</wp:comment_id>
+     <wp:comment_author>Tony Burkhart</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-10-13 04:09:22</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Bah! My G+ button doesn't even render anymore... something is amiss. I'm guessing  Google changed the way it worked?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9929178</wp:comment_id>
+     <wp:comment_author>Alan Knowles</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-10-26 22:03:15</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[You might want to remove references to your server, some big news sites are using it 'as is'...  (we where scraping with wkhtmltopdf, and discovered the link to your server was broken)<p>Try changing your dns to dev.syskall.com to 127.0.0.1</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9974654</wp:comment_id>
+     <wp:comment_author>secretja1</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-11-03 20:06:27</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[<a href="http://buyseojuice.com" rel="nofollow">Buy Google plus one, Facebook likes, YouTube views, backlinks</a><p><a href="http://exchangesocial.net" rel="nofollow"><br />Google Plus One Exchange, Facebook Like Exchange, Tweet Exchange, YouTube Views Exchange<br /></a></p><p><a href="http://facebooklikexchange.com" rel="nofollow"><br />Facebook Like Exchange<br /></a></p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10000887</wp:comment_id>
+     <wp:comment_author>Adam Harrison</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-11-08 11:49:43</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Got to advanced tab but cant see how you would paste it ? No fields to insert it in?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10044613</wp:comment_id>
+     <wp:comment_author>Kevin Megri</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-11-15 00:46:52</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Now you can do Plus One for images also......Recently google allowing Plue one for images as well<p><a href="http://www.buyplusoneservice.com" rel="nofollow">Buy Google Plus One</a></p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10069192</wp:comment_id>
+     <wp:comment_author>Sam  Hughes</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-11-17 10:49:52</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I'm currently out of the office until the Tuesday the 23rd of November, all requests please forward to <a href="mailto:liam@mycleveragency.com" rel="nofollow">liam@mycleveragency.com</a>. <br /> <br />Thanks, <br /> <br />Sam]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10069276</wp:comment_id>
+     <wp:comment_author>Sam  Hughes</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-11-17 10:59:39</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I'm currently out of the office until the Tuesday the 23rd of November, please forward any requests to <a href="mailto:liam@mycleveragency.com" rel="nofollow">liam@mycleveragency.com</a>. <br /> <br />Thanks, <br /> <br />Sam]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10355201</wp:comment_id>
+     <wp:comment_author>John Roshka</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-01-12 10:42:13</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[When I stream my blog post with images on Google Plus it doesn't show the images. Can someone help?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10682718</wp:comment_id>
+     <wp:comment_author>minny67</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-03-06 19:34:42</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thank you!!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10735190</wp:comment_id>
+     <wp:comment_author>Ignacio Travelideas</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-03-15 07:48:57</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thanks Oliver!!!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11065193</wp:comment_id>
+     <wp:comment_author>Stb Hernández</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-05-27 09:54:52</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Can you post the smaller version?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11074850</wp:comment_id>
+     <wp:comment_author>Matt Cutts</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-05-29 23:48:33</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[One can understand how this shift wouldn’t be welcomed by Google, these social networks now have the power to bypass Google as the number one the go to search engine for relevant results. <a href="http://www.livemocks.com" rel="nofollow">Buy Google Plus Ones</a>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>How to write your own native Node.js extension</title>
+     <link>http://syskall.com/how-to-write-your-own-native-nodejs-extension</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2011-05-12 10:54:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>8836601</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-05-25 13:29:14</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Someone pointed out on Github that you might need to install the libnotifymm header file in order to compile. On Ubuntu:<p>sudo apt-get install libnotifymm-dev</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8880613</wp:comment_id>
+     <wp:comment_author>tech</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-05-31 21:33:13</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Question: When I am trying to build using node-waf, it is missing some libraries. I got the source for missing libraries, built and installed them under /usr/local/, but node-waf is not seeing them! How do I pass the include (-I) dir and link (-L) dir paths to node-waf?<p>Thanks</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11101069</wp:comment_id>
+     <wp:comment_author>Mark Essel</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-06-06 10:23:13</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[This is to tech:<br />here's an excerpt from a wscript file that links and includes <p>def build(bld):<br />  obj = bld.new_task_gen("cxx", "shlib", "node_addon")<br />  obj.target = "videoUtil"<br />  obj.source =  bld.glob('src/*.cc')<br />  obj.cxxflags = ["-D_FILE_OFFSET_BITS=64", "-D_LARGEFILE_SOURCE"]<br />  obj.uselib = ['CAIRO', 'GIF', 'JPEG']<br />  bld.env.append_value('LINKFLAGS', '-lavcodec -lavformat -lavutil'.split())   <br />  if exists('node_modules/'):<br />    obj.includes = abspath('./node_modules/Nile-Delta/src/')<br />  else:<br />    obj.includes = '../../Nile-Delta/src/'</p><p>I have yet to jump to bindings.gyp but plan to do so over the next couple of months as free time happens.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11224193</wp:comment_id>
+     <wp:comment_author>jas</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-07-13 07:02:27</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thanks for this]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11298130</wp:comment_id>
+     <wp:comment_author>John Cant</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-08-12 17:25:32</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Hi,<p>Thankyou for writing this awesomely useful post! One thing that I had to do differently in my module though, was change</p><p>static void init(Handle&lt;object> target);<br />to<br />void init(Handle&lt;object> target);</p><p>Static in that context meant that the 'init' symbol wasn't in the shared library exports, so I got<br />Error &lt;file>: undefined symbol: init when I tried to require it</p><p>Cheers,</p><p>John</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>Minimalist shell in C (for educational purposes only!)</title>
+     <link>http://syskall.com/minimalist-shell-in-c-for-educational-purpose</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2011-03-10 23:03:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     
+   </item><item>
+     <title>Resizing a VDI in VirtualBox 3 with one command</title>
+     <link>http://syskall.com/resizing-a-vdi-in-virtualbox-3-in-one-command</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2011-03-10 16:24:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     
+   </item><item>
+     <title>How to roll out your own Javascript API with V8</title>
+     <link>http://syskall.com/how-to-roll-out-your-own-javascript-api-with</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2011-02-26 14:43:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>7432412</wp:comment_id>
+     <wp:comment_author>shaun</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-02-28 20:38:00</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[nice - thanks!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8402948</wp:comment_id>
+     <wp:comment_author>Dominique De Vito</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-04-29 05:04:19</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I wrote in June 2009 "Why not using JavaScript for writing Unix scripts ? " <a href="http://www.jroller.com/dmdevito/entry/why_not_using_javascript_for" rel="nofollow">http://www.jroller.com/dmdevito/entry/why_not_using_javascript_for</a><br />IMHO, I see things (JS for scripting outside web dev) are moving forward, little by little.<br />Interesting.<p>PS: about JS API and JS-driven interesting software, PhantomJS - <a href="http://www.phantomjs.org/" rel="nofollow">http://www.phantomjs.org/</a> - sounds interesting too.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8463157</wp:comment_id>
+     <wp:comment_author>joaomoreno</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-05-01 05:02:49</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[great post! I'm trying this on OS X 10.6. v8 compiles fine but the sample fails to compile around this point<p>$ g++ src/jsnotify.cpp -Ideps/v8/include -Ldeps/v8 -lv8 -lpthread<br />Undefined symbols for architecture x86_64:<br />  "typeinfo for v8::internal::Thread", referenced from:<br />      typeinfo for SourceGroup::IsolateThreadin cc7ollhd.o<br />ld: symbol(s) not found for architecture x86_64<br />collect2: ld returned 1 exit status</p><p>would you have any idea? thanks in advance</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>8649263</wp:comment_id>
+     <wp:comment_author>Shu Cao</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-05-12 22:44:13</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[for those who got the error "undefined reference to `typeinfo for v8::internal::Thread'<br />collect2: ld returned 1 exit status", use the following command,<p>shucao@ubuntu:~/repos/jsnotify$ g++ src/jsnotify.cpp -fno-rtti -Ideps/v8/include -Ldeps/v8 -lv8 -lpthread</p><p>btw, I found the option from the output of running `scons sample=shell' in v8 directory.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9453611</wp:comment_id>
+     <wp:comment_author>Reg</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-26 01:00:35</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Hey, you have a technical problem with your blog post. It looks like all the code inside less-greater characters (&lt;>) is stripped because  not properly escaped in HTML. Like for example near v8::Handle.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9507709</wp:comment_id>
+     <wp:comment_author>pompie2</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-08 11:50:29</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[A website for classifieds and reviews,our main focus is in <a href="http://www.tierads.com/" rel="nofollow">mover reviews</a>,<a href="http://www.tierads.com/" rel="nofollow">auto transport reviews</a>,<a href="http://www.tierads.com/" rel="nofollow">auto relocation reviews</a>,<a href="http://www.tierads.com/" rel="nofollow">transport reviews</a>,<a href="http://www.tierads.com/" rel="nofollow">auto transport</a>,<a href="http://www.tierads.com/" rel="nofollow">car transport reviews</a>and<a href="http://www.tierads.com/" rel="nofollow">car hauling</a>and<a href="http://www.tierads.com/" rel="nofollow">vehicle shipping</a>.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11145424</wp:comment_id>
+     <wp:comment_author>ivan</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-06-19 06:00:21</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Is it possible to combine libv8 with pure C?]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>11385498</wp:comment_id>
+     <wp:comment_author>hercules moving systems</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2012-09-11 05:24:15</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[This is a great article . Enjoyed reading this, very good stuff, thanks . I harmonize with your conclusions and will thirstily look forward to see your approaching updates .Lots of great information and inspiration, both of which we all need . Thanks for such a continuous great postings .]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>The benefit of hindsight</title>
+     <link>http://syskall.com/twttr-and-the-benefit-of-hindsight</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2011-02-14 20:53:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     
+   </item><item>
+     <title>MultiVac, the line tracking robot</title>
+     <link>http://syskall.com/multivac-the-line-tracking-robot</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2010-11-09 22:56:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     
+   </item><item>
+     <title>HN Crunch: Greasemonkey script for Hacker News</title>
+     <link>http://syskall.com/hn-crunch-greasemonkey-script-for-hacker-news</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2010-09-25 13:13:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     
+   </item><item>
+     <title>Why we should eradicate "agnosticism" from the dictionary!</title>
+     <link>http://syskall.com/why-we-should-eradicate-agnosticism-from-the</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2010-02-24 13:39:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>2194652</wp:comment_id>
+     <wp:comment_author>Hello_World</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-02-24 14:09:24</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[My point exactly. So I obviously agree with you :)]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>2210247</wp:comment_id>
+     <wp:comment_author>Michel L.</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-02-27 13:00:25</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Je suis tout à fait d'accord avec ton raisonnement. L'agnosticisme est une position en apparence raisonnable, mais qui ne va pas au fond des choses.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>2217388</wp:comment_id>
+     <wp:comment_author>Jason Cohen</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-03-01 17:16:09</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I would respond to this, but it would really be a shadow-me responding to a shadow-post, so there's really no point is there?  :-)<p>I assume the universe is an atom floating in a massive pile of ice cream.  One day we'll discover a flaw in the fabric of space-time that will allow the heretofore unknowable ice cream cache to be imported into this universe, violating the laws of thermodynamics and fair competition in the food industry.</p><p>I hope you can't prove me wrong, because it sounds delicious.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>2217636</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-03-01 19:17:26</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Nice one Jason... I can't refute your argument! I'm surprised to see you took some time to read a non-startup related post :D I assume you followed the link from the comment I left at your blog (cool WP extension btw). See you @ answers.onstartups.com !]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>2256392</wp:comment_id>
+     <wp:comment_author>Jeff Oresik</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-03-12 10:11:20</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Agnosticism is like Pad Thai recipes, there's one for every chef.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>2274228</wp:comment_id>
+     <wp:comment_author>Corey Ward</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-03-16 19:31:27</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I think you mistake the position of agnostics. It's not even a position on whether or not one believes there is a god. Agnosticism dismisses equally the bogus claims of atheists and theists alike – none of them can possibly know, so they're all just completely fabricated guesses (usually in the name of power and politics). In a sense, agnosticism is more humble than any theistic religion that claims to know shit that someone made up and wrote in a book.<p>So in response to your reference about how a person "can't know the unknowable" and how everyone surely agrees: that's the problem – there are millions of people running around saying they *know* shit that they read in the Bible/Kuran/etc. or that they *know* there is no god.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>4780129</wp:comment_id>
+     <wp:comment_author>Thomas Whittaker</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-08-14 21:24:48</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA["Any metaphysical statement that can't be evidenced, even subtly, through physical experiments is simply meaningless. On a side note, it is important to note that the fundamental laws of our universe, which could also be classified as metaphysical statements since they describe the physical - the precise definition of metaphysical, can be determined through experiments and that's what makes them meaningful."<p>Normally it's the position that the religious texts are too human and error filled, but that cosmologywise, it could go either way- i.e. that there are tests, but that they give evidence for both sides or confusing evidence. There's also the position that if a god does exist, then it would be impossible to understand/ talk to him- that god himself is unknowable on a personal level, even if evidence hints he exists.</p><p>"You either believe there is a God because you think there is evidence for it - be it through the Bible, the Torah, prophets, miracles, martyrs or this inner connection with God that some call faith -  or you don't if you believe there is no evidence for God. Following that line of thought, agnosticism, as in believing that God is unknowable, equates to atheism, as in believing there is no evidence for God."</p><p>Wrong. Atheists often have negative tests. They may believe cosmology rules out a god, or that moral tests rule out a god. They may believe proving x religion wrong rules out a god. An agnostic probably doesn't believe that God is ruled out by such tests. </p><p>An atheist, also, is far less likely to seek out religions who can convince them with other sources of evidence- they know god doesn't exist, and don't need to explore their options. A lot of agnostics I know prefer being agnostics because it gives them more options.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>5221626</wp:comment_id>
+     <wp:comment_author>LP Bellier</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-08-27 09:40:39</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[TL:DR ur text & the reply but i wanted to speak to you about a project ressembling QB. Can you email me?<p>Thanks in advance?</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9564394</wp:comment_id>
+     <wp:comment_author>Ben McCann</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-08-22 12:12:39</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Knowledge is a cognitive function, as is belief. They are not the same thing, and they do not have to manifest as facts present in a mind. You don't have to think that something is true to believe it. You can also achieve belief by *feeling,* not *thinking,* that something is true. Thought is governed by a rationality translated into comprehensible terms by the invention of logic. Emotion, however, is governed by a rationality translated into comprehensible terms by the invention of psychology. This rationality, that of emotion, is not dependent upon the demonstrability of truth or fallacy. Most Christians (in my experience, anyhow) do not believe in Christianity because they think there's evidence for it; that's just their way of justifying their belief. The real reason they believe in Christianity is because they *feel* there's evidence for it. Evidence that is considered with thought can have logic applied to it; evidence that is considered with emotion, however, is logically invalid and can only be analyzed by psychology, just as evidence that is considered with thought is psychologically invalid and can only be analyzed by logic.<p>The way I see it is as follows. Theists believe in religion with their emotions, and because they trust their emotions over their thoughts, they allow their emotions to override any thoughts that they may have to the contrary. Atheists disbelieve in religion with their thoughts, and because they trust their thoughts over their emotions, they allow their thoughts to override any emotions to the contrary. Agnostics may believe or disbelieve in religion with their emotions, but they have no pertinent thread of thought to govern whether they believe or disbelieve in religion with their thoughts, and because they trust their thoughts over their emotions, they decide upon a stance indicating that it is impossible to know (with one's thoughts, anyhow) that God exists or does not exist. They do not pay attention to what their emotions have to say on the matter because they are in the habit of figuring things out with thought, not emotion.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9686030</wp:comment_id>
+     <wp:comment_author>Thomas Whittaker</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-09-17 05:33:17</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Ben McCann said... "Most Christians (in my experience, anyhow) do not believe in Christianity because they think there's evidence for it; that's just their way of justifying their belief. The real reason they believe in Christianity is because they *feel* there's evidence for it."<p>From the way you phrased it, they justify it as they believe there is evidence in it, you just believe that they don't actually believe it. You are imposing your beliefs on people. You are making up people's emotional states with little evidence, likely because of an emotional distaste for emotional thinking. It is bad, therefore atheists who are good can't do it and religious people who are bad must do it.</p><p>Being emotional is the default state of mankind, as it springs from a much older and more powerfully connected region of the brain. There are atheists and theists who believe or don't believe in god because of it. Catholic atheists, for example, tend to be much more emotional. They may disbelieve because god wouldn't talk to them, or because god wouldn't save x family member, or because they feel the catholic church is immoral.</p><p>It's also very possible for a thinking person to believe in god. As with most issues, intelligent people on both sides disagree. </p><p>"Agnostics may believe or disbelieve in religion with their emotions, but they have no pertinent thread of thought to govern whether they believe or disbelieve in religion with their thoughts, and because they trust their thoughts over their emotions, they decide upon a stance indicating that it is impossible to know (with one's thoughts, anyhow) that God exists or does not exist. They do not pay attention to what their emotions have to say on the matter because they are in the habit of figuring things out with thought, not emotion."</p><p>Agnostics often have a thread of thought that governs their belief that true knowledge is unknowable. And they do not have lobotomised brains that ignore emotion. A person who cannot think emotionally is a person who is utterly dysfunctional.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9739626</wp:comment_id>
+     <wp:comment_author>Ben McCann</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-09-26 17:52:13</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA["From the way you phrased it, they justify it as they believe there is evidence in it, you just believe that they don't actually believe it."<br />No, I believe that they believe it, but I don't believe that they believe it by means of thought.<p>"You are imposing your beliefs on people."<br />No, I'm not. I've made it clear that this is the way that I see things, not necessarily the way they are. I'm putting my opinion forth in order to increase the reliability of the general opinion represented by increasing the number of contributors.</p><p>"You are making up people's emotional states with little evidence, likely because of an emotional distaste for emotional thinking."<br />I do indeed have an emotional distaste for emotional thinking. I'm making up people's emotional states with a great deal of evidence, actually. It's entirely possible, however, that this evidence is localized into my experience and doesn't apply to yours or to anyone else's. That doesn't invalidate my opinion, because my opinion is a statement regarding the world that *I* perceive. If I were to make a statement about the world anyone else perceives, *then* I'd be imposing my beliefs on people.</p><p>"It is bad, therefore atheists who are good can't do it and religious people who are bad must do it."<br />This stance that you've chosen to take seems to conflict sharply with the rest of your response. In any case, I'm going to follow suit with the trend here and disagree with it anyway. Just 'cause disagreeing with you is fun. That was intended as a compliment, by the way. Take it however you like.<br />Decisions made emotionally are every bit as valid as decisions made on the basis of thought. Furthermore, atheists who are good think emotionally all the time, as we all do, just not usually about God as far as I've seen. Atheists who are bad seem to think emotionally as well. Religious people who are bad also think emotionally, as do religious people who are good. The quality of a person's humanity is unrelated to that person's capacity for emotional thought.</p><p>"Being emotional is the default state of mankind, as it springs from a much older and more powerfully connected region of the brain."<br />Emotional thought can be suppressed in the interest of objective decision. Admittedly, it is emotional thought in the first place that initiates this suppression, but that's another issue entirely.</p><p>"There are atheists and theists who believe or don't believe in god because of it."<br />There certainly are.</p><p>"Catholic atheists, for example, tend to be much more emotional. They may disbelieve because god wouldn't talk to them, or because god wouldn't save x family member, or because they feel the catholic church is immoral."<br />I have not experienced the world in this manner. I respect our differences in perception and acknowledge both viewpoints as equally valid.</p><p>"It's also very possible for a thinking person to believe in god."<br />Well, yes, obviously it's possible. I've simply never seen it happen. As I said originally, I attempted to make it clear that my opinion originated in the context of my own perception, not in that of anyone else's. I'm simply setting forth what I've perceived.</p><p>"As with most issues, intelligent people on both sides disagree."<br />Oh, I'm sure they do. And I've seen some very emotionally compelling arguments for the existence of God. But I've never seen one that posed any intellectual appeal. Again, I'm simply setting forth what I've perceived.</p><p>"Agnostics often have a thread of thought that governs their belief that true knowledge is unknowable. And they do not have lobotomised brains that ignore emotion. A person who cannot think emotionally is a person who is utterly dysfunctional."<br />I never said that they can't think emotionally. I did, however, express the idea that they are generally in the habit of figuring things out with thought rather than emotion. That general concept was misguided. I also didn't say that their brains ignore emotion. I said that *they* ignore emotion. That doesn't mean that their brains ignore it. Of course they have feelings. They just try not to incorporate them into their decisions regarding beliefs about God. And I stand by my perception that they have no pertinent thread of thought to govern whether they believe or disbelieve in religion. A thread of thought that governs the belief that true knowledge is unknowable is not pertinent to whether they believe or disbelieve in religion. It does, however, prevent any other thread of thought from being regarded as pertinent to that purpose.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>Project Idea: TL;DR browser add-on</title>
+     <link>http://syskall.com/project-idea-tldr-browser-add-on</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2010-02-13 13:08:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>2145320</wp:comment_id>
+     <wp:comment_author>Nat</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-02-13 23:07:09</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I really like this idea. I personally would promote more of a wiki style overlay than a vote up and down type system, because it would promote people to work together instead of competition. It also might be a good idea to harvest the page initially, if it doesn't have a tl;dr, and try to get links to other pages that might have a summary.<p>Whatever you do, I hope you open source the code so we can all help this idea grow.</p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>2264597</wp:comment_id>
+     <wp:comment_author>Mark Nutter</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-03-14 20:43:27</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I made this last year: <a href="http://synopit.com" rel="nofollow">http://synopit.com</a> - we should collaborate!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>2264600</wp:comment_id>
+     <wp:comment_author>Mark Nutter</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-03-14 20:44:00</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[@marknutter on Twitter, btw.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>6580202</wp:comment_id>
+     <wp:comment_author>one idea...</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-12-31 09:24:27</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[tl;dr]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9379406</wp:comment_id>
+     <wp:comment_author>alisha15</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-07-14 21:56:01</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Google plus one news 1 is especially nice for businesses and Web sites that use AdWords strategies. This is an opportunity presents itself next to the advertisement, which shows whether other users have recommended your site or not. The bonus You should not pay for it, and you can also see that your ads receive more than one s on Google.<p><a href="http://googleplus1supply.com" rel="nofollow">Buy Google Plus One</a></p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>9919850</wp:comment_id>
+     <wp:comment_author>buygoogleplusonenow</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-10-25 09:33:48</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I often find myself reading long blog posts and articles only to find out that I already knew most of what was discussed. Other times, I find out that the topic wasn't really relevant to my interest. Indeed, headlines are often misleading.<a href="http://www.buyplusonenow.com" rel="nofollow">Buy Google +1</a>,<a href="http://www.buyplusonenow.com" rel="nofollow">buy google plus 1</a>,]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10044408</wp:comment_id>
+     <wp:comment_author>Kevin Megri</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-11-15 00:11:41</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Now google allowing Plus one for Images also, so everywhere is plus one and applying on all topics<p><a href="http://www.buyplusoneservice.com" rel="nofollow">Buy Plus One</a></p>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>10116118</wp:comment_id>
+     <wp:comment_author>Jhonmash Jhon</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2011-11-26 04:41:20</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Google plus one news 1 is especially nice for businesses and Web sites that use AdWords strategies. This is an opportunity presents itself next to the advertisement, which shows whether other users have recommended your site or not. The bonus You should not pay for it, and you can also see that your ads receive more than one s on Google. <a href="http://www.googleplus1king.com/" rel="nofollow">buy google plus ones</a>]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>Project Idea: AJAX without writing a single line of Javascript</title>
+     <link>http://syskall.com/project-idea-ajax-without-writing-a-single-li</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2010-02-07 11:30:29</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>5931891</wp:comment_id>
+     <wp:comment_author>Ryan</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-10-30 18:54:50</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[I think you might get more mileage with a solution like KnockoutJS. Why modify the DOM directly when you could simply modify the underlying observable model? Cheers!]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item><item>
+     <title>Who am I and what you can expect to find here</title>
+     <link>http://syskall.com/who-am-i-and-what-you-can-expect-to-find-here</link>
+     <dsq:thread_identifier></dsq:thread_identifier>
+     <wp:post_date_gmt>2010-02-07 09:52:00</wp:post_date_gmt>
+     <wp:comment_status>open</wp:comment_status>
+     <wp:comment>
+     <wp:comment_id>2126648</wp:comment_id>
+     <wp:comment_author>~tony</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-02-09 07:17:34</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[hey, this is nice. At least we took Wozad lesson and learned something. That's the way it goes, sometimes it fails ( most of the time ) sometimes it makes it. But in the process, you (we) everybody,always learn something. So keep on tryin`, you are one of the best minds i ever knew. I know you will make it.]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment> <wp:comment>
+     <wp:comment_id>2126818</wp:comment_id>
+     <wp:comment_author>Olivier Lalonde</wp:comment_author>
+     <wp:comment_author_email></wp:comment_author_email>
+     <wp:comment_author_url></wp:comment_author_url>
+     <wp:comment_author_IP></wp:comment_author_IP>
+     <wp:comment_date_gmt>2010-02-09 08:09:18</wp:comment_date_gmt>
+     <wp:comment_content><![CDATA[Thanks Tony! We definitely learned something and that's the most important. Our next startup together will be a success for sure :)]]></wp:comment_content>
+     <wp:comment_approved>1</wp:comment_approved>
+     <wp:comment_parent>0</wp:comment_parent>
+   </wp:comment>
+   </item></channel>
+    </rss>
