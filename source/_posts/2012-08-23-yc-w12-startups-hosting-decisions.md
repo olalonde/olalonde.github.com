@@ -3,6 +3,7 @@ permalink: /yc-w12-startups-hosting-decisions/index.html
 layout: post
 title: YC W12 startups' hosting decisions
 published: true
+comments: true
 categories:
 - hacker-news
 ---

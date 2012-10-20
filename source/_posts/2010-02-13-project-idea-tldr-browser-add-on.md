@@ -3,6 +3,7 @@ permalink: /project-idea-tldr-browser-add-on/index.html
 layout: post
 title: ! 'Project Idea: TL;DR browser add-on'
 published: true
+comments: true
 categories:
 - idea
 - javascript

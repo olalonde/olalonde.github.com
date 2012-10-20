@@ -3,6 +3,7 @@ permalink: /how-to-write-your-own-native-nodejs-extension/index.html
 layout: post
 title: How to write your own native Node.js extension
 published: true
+comments: true
 categories:
 - c/c++
 - javascript

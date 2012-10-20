@@ -3,6 +3,7 @@ permalink: /multivac-the-line-tracking-robot/index.html
 layout: post
 title: MultiVac, the line tracking robot
 published: true
+comments: true
 categories:
 - c/c++
 ---

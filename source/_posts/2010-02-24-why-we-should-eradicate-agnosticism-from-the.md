@@ -3,6 +3,7 @@ permalink: /why-we-should-eradicate-agnosticism-from-the/index.html
 layout: post
 title: Why we should eradicate "agnosticism" from the dictionary!
 published: true
+comments: true
 categories:
 - rant
 ---

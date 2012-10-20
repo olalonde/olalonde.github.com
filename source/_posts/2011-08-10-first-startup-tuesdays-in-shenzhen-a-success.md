@@ -3,6 +3,7 @@ permalink: /first-startup-tuesdays-in-shenzhen-a-success/index.html
 layout: post
 title: First "Startup Tuesday" in Shenzhen a success!
 published: true
+comments: true
 categories: []
 ---
 <p>Only a few weeks ago, there seemed to be absolutely no interest for tech startups in Shenzhen, China (or at least, among the English speaking community). As a startup guy, I was pretty upset by the seemingly&nbsp;nonexistent&nbsp;community. Of course, there was Hong Kong nearby with a <a href="http://www.hksua.com.hk/">vibrant</a> <a href="http://boot.hk">community</a> but I wanted something in Shenzhen.&nbsp;I decided I'd prove myself wrong by creating a "<a href="http://www.shenzhenstuff.com/group/startups">Startups and technology SZ</a>" group on a popular expat social network called <a href="http://ShenzhenStuff.com">ShenzhenStuff.com</a>.&nbsp;</p>

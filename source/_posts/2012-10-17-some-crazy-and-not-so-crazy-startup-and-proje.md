@@ -3,6 +3,7 @@ permalink: /some-crazy-and-not-so-crazy-startup-and-proje/index.html
 layout: post
 title: 17 crazy and not so crazy startup and project ideas
 published: true
+comments: true
 categories:
 - hacker-news
 - idea

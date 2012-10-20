@@ -3,6 +3,7 @@ permalink: /who-am-i-and-what-you-can-expect-to-find-here/index.html
 layout: post
 title: Who am I and what you can expect to find here
 published: true
+comments: true
 categories:
 - meta
 ---

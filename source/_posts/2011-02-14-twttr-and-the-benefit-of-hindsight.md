@@ -3,6 +3,7 @@ permalink: /twttr-and-the-benefit-of-hindsight/index.html
 layout: post
 title: The benefit of hindsight
 published: true
+comments: true
 categories:
 - rant
 ---

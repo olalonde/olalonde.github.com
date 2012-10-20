@@ -4,6 +4,7 @@ layout: post
 title: Adding Google's +1 (plus one) button to your Posterous
 published: true
 categories: []
+comments: true
 ---
 <p>As well all know, Javascript isn&rsquo;t allowed in Posterous themes. Luckily, iframes are and that&rsquo;s what we&rsquo;ll use to go around the no Javascript limitation.</p>
 

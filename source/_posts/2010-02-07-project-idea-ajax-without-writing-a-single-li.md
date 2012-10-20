@@ -3,6 +3,7 @@ permalink: /project-idea-ajax-without-writing-a-single-li/index.html
 layout: post
 title: ! 'Project Idea: AJAX without writing a single line of Javascript'
 published: true
+comments: true
 categories:
 - idea
 - javascript

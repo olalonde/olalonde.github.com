@@ -3,6 +3,7 @@ permalink: /hn-crunch-greasemonkey-script-for-hacker-news/index.html
 layout: post
 title: ! 'HN Crunch: Greasemonkey script for Hacker News'
 published: true
+comments: true
 categories:
 - hacker-news
 - javascript

@@ -3,6 +3,7 @@ permalink: /resizing-a-vdi-in-virtualbox-3-in-one-command/index.html
 layout: post
 title: Resizing a VDI in VirtualBox 3 with one command
 published: true
+comments: true
 categories:
 - ubuntu
 ---
