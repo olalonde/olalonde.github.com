@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://olalonde.github.com
-title: Syskall
+title: Oli's blog
 subtitle: Thoughts on entrepreneurship and technology.
-author: Oli Lalonde
+author: Olivier Lalonde
 simple_search: http://google.com/search
 description: Hey. I'm a friendly hacker, HN addict and startup guy from Montreal. I tweet as @o_lalonde.
 
@@ -89,8 +89,8 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
+disqus_short_name: syskall
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id: UA-4054156-1
