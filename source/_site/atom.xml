@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[]]></title>
+  <link href="/atom.xml" rel="self"/>
+  <link href="/"/>
+  <updated>2012-10-21T00:30:23+08:00</updated>
+  <id>/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[17 crazy and not so crazy startup and project ideas]]></title>
+    <link href="/some-crazy-and-not-so-crazy-startup-and-proje/index.html"/>
+    <updated>2012-10-17T00:00:00+08:00</updated>
+    <id>/some-crazy-and-not-so-crazy-startup-and-proje/some-crazy-and-not-so-crazy-startup-and-proje</id>
+    <content type="html"><![CDATA[<p>So today I am cleaning up my phone&rsquo;s Memo app so this post will be
+dedicated to dumping all those late night ideas I had when I was very
+tired or had a few too many beers. Note that I had most of those ideas
+independently but some of them were (partially) implemented later on
+or I simply hadn&rsquo;t heard of them.</p><h2>1. Beetcoin</h2><p>Mobile app that acts as a nice UI on top of various Bitcoin exchanges.
+It should be possible to view pending trades, get current bid/ask
+prices and place new trades.</p><p><strong>The twist:</strong> Sell it as a paid app and give away &ldquo;free&rdquo; Bitcoins. The
+app should be expensive enough that when you give away Bitcoins you
+still make a profit.</p><p><strong>Why it will work:</strong> This would enable regular people to buy Bitcoins
+with their credit card by buying the app on the Android market.</p><p><strong>Why it won&rsquo;t work:</strong> It is possibly against most markets / credit card
+processors TOS.</p><h2>2. Code reading web app</h2><p>Reading other people&rsquo;s code is one of the surest way to improve your
+programming skills. For each programming language, this app would list
+open source projects by difficulty level (from beginner to expert) and
+make it easy to browse and comment the code from within the website.
+The MVP could simply list links to Github repos. Inspiration comes
+from <a href='http://todomvc.com'>http://todomvc.com</a>.</p><p>Use case: I just started to learn Javascript and I want to see some
+real world Javascript code. I go to the site, select the Javascript
+language and I can see a list of projects rated from Beginner level to
+Expert level. Each projects that are at the same difficulty level are
+grouped together. The beginner level should list simple &ldquo;Hello world&rdquo;
+apps while the expert level should be reserved for complex projects.</p><h2>3. Prediction market, Hacker News style</h2><p>Not sure what I meant when writing this. I think the idea is that it
+would be a news aggregator like Hacker News but when you vote up it
+costs you real money (you are investing in a vote). If the vote count
+goes up, you are rewarded for predicting correctly that the article
+was interesting to the community. The reward should be proportional to
+how many people up voted after you. I guess someone still needs to
+work out the &ldquo;details&rdquo;. The whole idea is to mix karma with money to
+self-moderate a community (most people care more about money than
+karma).</p><h2>4. OAuth for payments</h2><p>I&rsquo;m not sure why I haven&rsquo;t seen this yet in the wild. Probably due to
+legal compliance and security issues. But well, I think it would be
+cool if I could just buy stuff by clicking &ldquo;Pay 10$&rdquo; and whenever I
+click that button, I get the standard OAuth dialog asking me to
+authorize the payment. There should be a maximum amount by transaction
+which should be fairly low if security is an issue (50$?).</p><h2>5. URL#hash renderer API</h2><p>I first had this idea when developing a website with Backbone.js. All
+my URLs looked like <a href='http://domain/#a/b/c'>http://domain/#a/b/c</a> and I thought it would be
+nice if my server could proxy all requests to <a href='http://domain/a/b/c'>http://domain/a/b/c</a>
+through an API that returns the rendered HTML of <a href='http://domain/#a/b/c'>http://domain/#a/b/c</a>.</p><p>Some websites are not crawlable or unusable if users don&rsquo;t have
+Javascript enabled. This service takes an url of the form
+<a href='http://domain/#hash'>http://domain/#hash</a> and returns the rendered HTML that a user would
+see if they had Javascript enabled. Web developers could use this
+service to easily offer a crawlable website that is friendly to
+visitors that have Javascript disabled.</p><h2>6. Startups for front-end developers</h2><p>Build a service that makes it possible to develop a full website
+completely on the client side (probably using Backbone.js or similar),
+interfacing with a list of predefined APIs. This startups' job would
+be to take care of providing a list of easily accessible APIs and make
+it easy for designers to publish UIs that interact with the APIs. The
+startup should also take care of common issues like cross-origin
+request sharing, caching, etc. Eventually, there would be a market
+where developers can publish APIs. This idea is rooted in the idea of
+division of labor. Backend developers should focus on what they do
+best and so should frontend developers. Wouldn&rsquo;t it be nice if all
+startups out there were simply a REST API with dozens of UIs you can
+chose from. What if Paypal was simply an API and anyone could build a
+nice UI on top of that API.</p><h2>7. Hacker News directory</h2><p>List all Hacker News related services, websites, Chrome extensions,
+publications, apps, etc. There is currently no such official website.</p><h2>8. &ldquo;Hello dear [social network] user. I would really appreciate if you [tweeted/liked/up voted] this.&rdquo;</h2><p>This idea was inspired by seeing a few &ldquo;I see you are coming from HN.
+Please up vote and comment.&rdquo; when clicking submissions on HN.</p><p>This should be a small embeddable script or iframe which should
+display a small message asking to share the current page on a given
+social network. The social network is chosen using the visitor&rsquo;s HTTP
+referer header or their browser&rsquo;s history. The script should first
+check if their referrer matches a social network and if not, use the
+browser history hack to see if the user has recently visited a known
+social network. This would be a good alternative for people who want
+to have multiple sharing buttons but don&rsquo;t want to clutter the screen
+real estate with too many choices.</p><h2>9. Offline Hacker News mobile app</h2><p>Whenever I have to go on a long subway ride with no 3G or Wifi, I
+really wish I could just click a button that would load all HN&rsquo;s front
+page submissions + comments and load them in my browser&rsquo;s tab before I
+leave. Hence, the offline HN app idea.</p><h2>10. Github orphan</h2><p><strong>Update:</strong> this appears to have been somewhat solved since I had this
+idea. See <a href='http://stillmaintained.com'>http://stillmaintained.com</a></p><p>There should be an easy way to orphan and adopt new projects in Github.</p><h3>Use case: You want to orphan a project</h3><p>Connect with Github. Select project to orphan.</p><p>This automatically writes this at the top of your README file:</p><div class='CodeRay'>
+  <div class='code'><pre># ADOPT ME! #
+I am no longer able to maintain this project. Click here to adopt it!</pre></div>
+</div><h3>Use case: You want to adopt a project</h3><ol>
+<li>Visit a Github project. See that it is open for adoption.</li>
+<li>Click the adopt link in the README file.</li>
+<li>Authenticate with Github</li>
+<li>Wait for adoption authorization by current maintainer</li>
+</ol><h3>Use case: Approve adopter</h3><ol>
+<li>You see that someone applied to become a new maintainer for your project.</li>
+<li>Click Approve.</li>
+<li><p>Erase everything in your repository except a single README file:</p>
+
+<p>   # THIS PROJECT IS NOW MAITAINED BY &lsquo;new maintainer&rsquo; AT
+   github.com/new-maintainer/blabla #</p></li>
+</ol><h2>11. Public transportation visualization and simulation</h2><p>Update: There is something in that vein available for London:
+<a href='http://busmapper.co.uk/'>http://busmapper.co.uk/</a>. Hey guys, if you are reading this, I&rsquo;m
+available for hire :)</p><p>Wouldn&rsquo;t it be cool if you could see buses and subways on a map
+traveling &ldquo;real time&rdquo; and seeing where they are going at a glance.
+Let&rsquo;s say your on some street and want to go in some direction (let&rsquo;s
+say downtown), you could just open that mobile app, see which buses
+are coming your way and where they are going to. The simulation could
+be computed by using bus schedule and averaging the speed between two
+stops. I prototyped this a few years ago at
+<a href='http://dev.syskall.com/map'>http://dev.syskall.com/map</a>.</p><h2>12. Quadcopter delivery</h2><p><strong>Update:</strong> <a href='http://tacocopter.com/'>Taco Copter</a></p><p>In areas of high density and high rise buildings, wouldn&rsquo;t it be nice
+if you could order something from 7/11 and have a quadcopter (semi-)
+autonomously deliver your stuff through the window/balcony?</p><h2>13. Pixel copter advertising</h2><p><strong>Update:</strong> <a href='http://senseable.mit.edu/flyfire/'>MIT flyfire</a></p><p>Wouldn&rsquo;t it be nice to have a fleet of programmable mini pixel copters
+(small helicopters that carry a colored light) draw images / video in
+the sky. This could be used for promotion and advertising.</p><h2>14. Online food delivery</h2><p>This problem has been tackled many times and there are a few companies
+doing it right now but it still hasn&rsquo;t gain lots of momentum. Anyways,
+the idea is that you could just open up a mobile app / web app and
+through geolocation, get a list of restaurants that can deliver to
+your location. You can filter out the restaurants by cost, food type,
+etc. You can then navigate to the menu and place your order.</p><p><strong>The twist:</strong> There are a lot of &ldquo;Amazon&rdquo; and &ldquo;Ebays&rdquo; in that space but I
+haven&rsquo;t seen any &ldquo;Shopifys&rdquo; so far. Meaning that most of the startups
+in that space, have a central website where they list restaurants.
+Probably some restaurants would be interested in a white label
+solution where they could host on their own domain and customize
+everything to their needs.</p><h2>15. Instant UML diagram for a given Github repository</h2><p>I&rsquo;ve always wanted something like this. Select a given Github
+repository and instantly get an UML class diagram, whatever the
+language is. UML is not really a good fit for more dynamical languages
+but nowadays there are statical analysis tools even for Javascript and
+company.</p><h2>16. Ad-hoc sport teams</h2><p>You want to play a game of soccer? Open up this web app, change you
+status to &ldquo;I want to play soccer in the next X hours&rdquo;. When there is
+enough people who want to play at the same time as you within a given
+geographical zone, we all notify you, you chose a location/time and
+the game begins!</p><h2>17. Hotel Wifi web app</h2><p>You connect to your hotel&rsquo;s wifi and on first browser request, you get
+redirected to this web app. The web app, displays events in the area,
+there is a chatroom for other lonely and bored travelers, you can
+order stuff from the hotel directly from the web app, there hotel
+guest specific promotions from local businesses, etc. Maybe you will
+find someone with similar tastes in the chatroom and you can hang out
+together in this unknown city?</p><h2>Conclusion</h2><p>I think that&rsquo;s about it for now. I will update the post if I bump into
+more crazy ideas while cleaning up my phone. Let me know what you
+think in the comments and I&rsquo;d love to know if you&rsquo;re solving one of
+these problems or planning to!</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Trouble installing ImageMagick on OS X 10.7.2]]></title>
+    <link href="/trouble-installing-imagemagick-on-os-x-1072/index.html"/>
+    <updated>2012-10-08T00:00:00+08:00</updated>
+    <id>/trouble-installing-imagemagick-on-os-x-1072/trouble-installing-imagemagick-on-os-x-1072</id>
+    <content type="html"><![CDATA[<p>I wanted to use the node-imagemagick library but was getting weird error messages coming from the `identify` binary although I had installed ImageMagick through brew (brew install imagemagick).</p><script src='https://gist.github.com/3852226.js?file=bug' /><p>I fixed it by grabbing the latest libfreetype from another brew package and linking it to the old library:</p><script src='https://gist.github.com/3852226.js?file=fix' />]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[YC W12 startups' hosting decisions]]></title>
+    <link href="/yc-w12-startups-hosting-decisions/index.html"/>
+    <updated>2012-08-23T00:00:00+08:00</updated>
+    <id>/yc-w12-startups-hosting-decisions/yc-w12-startups-hosting-decisions</id>
+    <content type="html"><![CDATA[<div>Back in 2011,&nbsp;<a href='https://github.com/jpf'>Jo&euml;l Franusic</a> published a <a href='http://jpf.github.com/domain-profiler/ycombinator.html'>neat visualization</a> of all <a href='http://www.ycombinator.com'>Y Combinator</a> startups' hosting decisions using his neat open source <a href='https://github.com/jpf/domain-profiler'>domain-profiler</a> software. I was curious to know what had changed since then, so instead of profiling all YC startups this time, I only profiled the Winter 2012 batch as retrieved from this <a href='https:docs.google.comspreadsheetccc?key=0AkkhSN3vaY4jdF90b1l1Vnl5NmZjaTBNQWlJYVozMEE#gid=0 '>unofficial YC startups spreadsheet</a>.</div><p /><div>So below are the hosting decisions for Y Combinator's Winter 2012 startups:</div><p /><div><img alt='' src='http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:CCCCCFHHHP9&amp;chl=SoftLayer|DreamHost|CloudFlare|1+and+1|Rackspace|DNS+issue|Linode|Go+Daddy|Media+Temple|Other+%2F+Self+Hosted|Amazon&amp;chtt=Web+Host&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,24' /> <img alt='' src='http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:BBBBBD9&amp;chl=1+and+1|None|Self+Hosted|Mailgun|Other+%2F+Self+Hosted|Go+Daddy|Google&amp;chtt=Email+Host&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,35' /> <img alt='' src='http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:FFFFFLLLQQQ49&amp;chl=Self+Hosted|DreamHost|Rackspace|WebFaction|eNom|Name.com|1+and+1|Media+Temple|Linode|CloudFlare|Other+%2F+Self+Hosted|Go+Daddy|Amazon&amp;chtt=DNS+Host&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,11' /> <img alt='' src='http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:CCFFRX9&amp;chl=Tucows|1+and+1|Gandi+SAS|Name.com|Other+%2F+Self+Hosted|eNom|Go+Daddy&amp;chtt=Registrar&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,21' /> <img alt='' src='http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:Hmu2229&amp;chl=VeriSign|Go+Daddy|Other+%2F+Self+Hosted|GeoTrust|Comodo+Group|None|DigiCert&amp;chtt=SSL+Issuer&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,8' /> <img alt='' src='http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:Um9&amp;chl=None|normal|star&amp;chtt=Certificate+Type&amp;cht=p&amp;chs=400x200&amp;chxr=0,7,21' /></div><p><a href='https://docs.google.com/spreadsheet/ccc?key=0Ara_YbXDNXjrdEFnM3h3RlZZZFdfQmFCdFZEWFVpQmc'>Raw data</a>:</p><p><iframe frameborder='0' height='300' src='https://docs.google.com/spreadsheet/pub?key=0Ara_YbXDNXjrdEFnM3h3RlZZZFdfQmFCdFZEWFVpQmc&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true' width='500' /></p><p>Credits to <a href='https://github.com/jpf'>jpf</a> for the awesome <a href='https://github.com/jpf/domain-profiler'>domain profiling software</a>.</p><p><a href='http://news.ycombinator.com/item?id=4429438'>Discussion on Hacker News.</a></p><p>You should follow me on Twitter <a href='http://www.youtube.com/watch?v=dQw4w9WgXcQ'>here</a>.</p><p><strong>UPDATE</strong>: Amazon hosting may include Heroku or other services using Amazon as infrastructure. According to the certificate type column in the raw data, at least 6 domains are using Heroku.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First "Startup Tuesday" in Shenzhen a success!]]></title>
+    <link href="/first-startup-tuesdays-in-shenzhen-a-success/index.html"/>
+    <updated>2011-08-10T00:00:00+08:00</updated>
+    <id>/first-startup-tuesdays-in-shenzhen-a-success/first-startup-tuesdays-in-shenzhen-a-success</id>
+    <content type="html"><![CDATA[<p>Only a few weeks ago, there seemed to be absolutely no interest for tech startups in Shenzhen, China (or at least, among the English speaking community). As a startup guy, I was pretty upset by the seemingly&nbsp;nonexistent&nbsp;community. Of course, there was Hong Kong nearby with a <a href='http://www.hksua.com.hk/'>vibrant</a> <a href='http://boot.hk'>community</a> but I wanted something in Shenzhen.&nbsp;I decided I'd prove myself wrong by creating a "<a href='http://www.shenzhenstuff.com/group/startups'>Startups and technology SZ</a>" group on a popular expat social network called <a href='http://ShenzhenStuff.com'>ShenzhenStuff.com</a>.&nbsp;</p><p>It turned I was wrong about the lack of interest! The group grew to 32 members within only a few days. Within the same time frame, <a href='http://blog.michaelmichelini.com/'>Michael Michelini</a>, an American expat, and his associates were officially launching a <a href='http://www.szteam.com'>coworking space</a> aimed at web workers and freelancers. Talk about timing! Michael from&nbsp;<a href='http://www.szteam.com'>SZTeam</a>&nbsp;offered to host and run a first "Startup Tuesday" meeting which turned out to be a huge success.</p><p>Michael wrote a nice <a href='http://szteam.com/387'>outline of the event</a>&nbsp;and published <a href='http://szteam.com/wp-content/uploads/2011/08/Shenzhen-Team-Startups-Tuesday.pdf'>his slides</a>. The ~50 (I suck at guesstimates) attendees came from all kinds of backgrounds (technical, business, finance, curious people, etc.) and the crowd was about half foreigners, half Chinese.&nbsp;</p><p /><div><img alt='' src='http://blog.michaelmichelini.com/wp-content/uploads/2011/08/hugely-successful-shenzhen-startup-meeting-tuesday.jpg' /></div><p /><div>For the upcoming events, many suggestions were made: invite speakers to talk about a specific topic, co-founder "speed dating", startup weekends, pitch nights, etc. I'm particularly interested in co-founder speed dating as I'm <a href='mailto:olalonde@gmail.com'>looking for a co-founder</a> :)</div><p /><div>This first meeting was a huge success and Michael deserves all the credit. I would also&nbsp;recommend <a href='http://www.szteam.com'>SZTeam</a> to freelancers or anyone who is working on a startup. The people are friendly, there is a nice conference room, free coffee and the pricing is pretty cheap: hot desk for 500 RMB/month (80 USD/month) and fixed desk for 1500 RMB/month (235 USD/month).</div><p /><div>
+<div>From now on, we will try to gather the community around the <a href='http://groups.google.com/group/shenzhen-startup/subscribe'>Shenzhen Startup</a> mailing list and the <a href='http://www.shenzhenstuff.com/group/startups'>Startups and technology SZ</a> group. <a href='http://www.szteam.com'>SZTeam</a> will continue to host <a href='http://szteam.com/location'>Startup Tuesday</a>&nbsp;every Tuesday 7pm.</div>
+</div><p /><div>I think we are on the right path to build a vibrant startup community in Shenzhen!</div>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Adding Google's +1 (plus one) button to your Posterous]]></title>
+    <link href="/adding-googles-1-plus-one-button-to-your-post/index.html"/>
+    <updated>2011-06-01T00:00:00+08:00</updated>
+    <id>/adding-googles-1-plus-one-button-to-your-post/adding-googles-1-plus-one-button-to-your-post</id>
+    <content type="html"><![CDATA[<p>As well all know, Javascript isn&rsquo;t allowed in Posterous themes. Luckily, iframes are and that&rsquo;s what we&rsquo;ll use to go around the no Javascript limitation.</p><p><img alt='posterous screenshot' src='http://i.imgur.com/DnUlw.png' /></p><p>Simply go to your Posterous dashboard, click &quot;Settings&quot; on the top right, then click the &quot;Edit Theme&quot; button and select the &quot;Advanced tab&quot;. Now, all you have to do is paste one of the following snippets where you want the button to show up and click the &quot;Save, I&rsquo;m done!&quot; button.</p><ul>
+<li>Standard button:</li>
+</ul><p><script src='https://gist.github.com/1003860.js' /></p><ul>
+<li>Tall button:</li>
+</ul><p><script src='https://gist.github.com/1003872.js' /></p><p>That&rsquo;s all you have to do to integrate Google +1 to your Posterous.</p><p>If you want to host the script yourself, the <a href='https://github.com/olalonde/google-plusone-posterous'>source code</a> is available on Github:</p><div class='CodeRay'>
+  <div class='code'><pre>git clone https://olalonde@github.com/olalonde/google-plusone-posterous.git</pre></div>
+</div>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to write your own native Node.js extension]]></title>
+    <link href="/how-to-write-your-own-native-nodejs-extension/index.html"/>
+    <updated>2011-05-12T00:00:00+08:00</updated>
+    <id>/how-to-write-your-own-native-nodejs-extension/how-to-write-your-own-native-nodejs-extension</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2><p><em>This is a follow up to <a href='http://syskall.com/how-to-roll-out-your-own-javascript-api-with'>How to roll out your own Javascript API with V8</a>. You should still be able to follow if you haven&rsquo;t read it.</em></p><p>We will now port the <a href='https://github.com/olalonde/node-notify'>code we have written for V8</a> to <a href='http://nodejs.org/'>Node.js</a> and package it for <a href='http://npmjs.org/'>npm</a>.</p><p><img alt='node-notify screenshot' src='http://i.imgur.com/n7ZIw.png' /></p><p>The full source code of this tutorial is available <a href='https://github.com/olalonde/node-notify'>from github</a>:</p><div class='CodeRay'>
+  <div class='code'><pre>git clone git://github.com/olalonde/node-notify.git</pre></div>
+</div><p>You can also install it through <code>npm</code>:</p><div class='CodeRay'>
+  <div class='code'><pre>npm install notify</pre></div>
+</div><p>The code was tested on Ubuntu 10.10 64-bit and Node.js v0.5.0-pre.</p><h2>Getting started</h2><p>First let’s create a node-notify folder and with the following directory structure.</p><div class='CodeRay'>
+  <div class='code'><pre>.
+|-- build/                   # This is where our extension is built. 
+|-- demo/
+|   `-- demo.js              # This is a demo Node.js script to test our extension.
+|-- src/
+|   `-- node_gtknotify.cpp   # This is the where we do the mapping from C++ to Javascript.
+`-- wscript                  # This is our build configuration used by node-waf</pre></div>
+</div><p><em>This fine looking tree was generated with the <code>tree</code> utility.</em></p><p>Now let&rsquo;s create our test script <code>demo.js</code> and decide upfront what our extension&rsquo;s API should look like:</p><div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// This loads our extension on the notify variable. </span>
+<span class='comment'>// It will only load a constructor function, notify.notification().</span>
+<span class='keyword'>var</span> notify = require(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>../build/default/gtknotify.node</span><span class='delimiter'>&quot;</span></span>); <span class='comment'>// path to our extension</span>
+
+<span class='keyword'>var</span> notification = <span class='keyword'>new</span> notify.notification();
+notification.title = <span class='string'><span class='delimiter'>&quot;</span><span class='content'>Notification title</span><span class='delimiter'>&quot;</span></span>;
+notification.icon = <span class='string'><span class='delimiter'>&quot;</span><span class='content'>emblem-default</span><span class='delimiter'>&quot;</span></span>; <span class='comment'>// see /usr/share/icons/gnome/16x16</span>
+notification.send(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>Notification message</span><span class='delimiter'>&quot;</span></span>);</pre></div>
+</div><h2>Writing our Node.js extension</h2><h3>The Init method</h3><p>In order to create a Node.js extension, we need to write a C++ class that extends <a href='https://github.com/joyent/node/blob/master/src/node_object_wrap.h'>node::ObjectWrap</a>. ObjectWrap implements some utility methods that lets us easily interface with Javascript.</p><p>Let&rsquo;s write the skeletton for our class:</p><div class='CodeRay'>
+  <div class='code'><pre><span class='preprocessor'>#include</span> <span class='include'>&lt;v8.h&gt;</span> <span class='comment'>// v8 is the Javascript engine used by Node</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;node.h&gt;</span>
+<span class='comment'>// We will need the following libraries for our GTK+ notification </span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;string&gt;</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;gtkmm.h&gt;</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;libnotifymm.h&gt;</span>
+
+<span class='directive'>using</span> <span class='keyword'>namespace</span> v8;
+
+<span class='keyword'>class</span> <span class='class'>Gtknotify</span> : node::ObjectWrap {
+  <span class='directive'>private</span>:
+  <span class='directive'>public</span>:
+    Gtknotify() {}
+    ~Gtknotify() {}
+    <span class='directive'>static</span> <span class='directive'>void</span> Init(Handle&lt;Object&gt; target) {
+      <span class='comment'>// This is what Node will call when we load the extension through require(), see boilerplate code below.</span>
+    }
+};
+
+<span class='comment'>/*
+ * WARNING: Boilerplate code ahead.
+ * 
+ * See https://www.cloudkick.com/blog/2010/aug/23/writing-nodejs-native-extensions/ &amp; http://www.freebsd.org/cgi/man.cgi?query=dlsym
+ *  
+ * Thats it for actual interfacing with v8, finally we need to let Node.js know how to dynamically load our code. 
+ * Because a Node.js extension can be loaded at runtime from a shared object, we need a symbol that the dlsym function can find, 
+ * so we do the following:  
+ */</span>
+
+v8::Persistent&lt;FunctionTemplate&gt; Gtknotify::persistent_function_template;
+<span class='directive'>extern</span> <span class='string'><span class='delimiter'>&quot;</span><span class='content'>C</span><span class='delimiter'>&quot;</span></span> { <span class='comment'>// Cause of name mangling in C++, we use extern C here</span>
+  <span class='directive'>static</span> <span class='directive'>void</span> init(Handle&lt;Object&gt; target) {
+    Gtknotify::Init(target);
+  }
+  <span class='comment'>// @see http://github.com/ry/node/blob/v0.2.0/src/node.h#L101</span>
+  NODE_MODULE(gtknotify, init);
+}</pre></div>
+</div><p>Now, we&rsquo;ll have to we have to write the following code in our Init() method:</p><ol>
+<li><p>Declare our constructor function and bind it to our target variable. <code>var n = require("notification");</code> will bind notification() to n: <code>n.notification()</code>.</p>
+
+<div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// Wrap our C++ New() method so that it's accessible from Javascript</span>
+ <span class='comment'>// This will be called by the new operator in Javascript, for example: new notification();</span>
+ v8::Local&lt;FunctionTemplate&gt; local_function_template = v8::FunctionTemplate::New(New);
+
+ <span class='comment'>// Make it persistent and assign it to persistent_function_template which is a static attribute of our class.</span>
+ Gtknotify::persistent_function_template = v8::Persistent&lt;FunctionTemplate&gt;::New(local_function_template);
+
+ <span class='comment'>// Each JavaScript object keeps a reference to the C++ object for which it is a wrapper with an internal field.</span>
+ Gtknotify::persistent_function_template-&gt;InstanceTemplate()-&gt;SetInternalFieldCount(<span class='integer'>1</span>); <span class='comment'>// 1 since a constructor function only references 1 object</span>
+ <span class='comment'>// Set a &quot;class&quot; name for objects created with our constructor</span>
+ Gtknotify::persistent_function_template-&gt;SetClassName(v8::String::NewSymbol(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>Notification</span><span class='delimiter'>&quot;</span></span>));
+
+ <span class='comment'>// Set the &quot;notification&quot; property of our target variable and assign it to our constructor function</span>
+ target-&gt;Set(String::NewSymbol(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>notification</span><span class='delimiter'>&quot;</span></span>), Gtknotify::persistent_function_template-&gt;GetFunction());</pre></div>
+</div>
+</li>
+<li><p>Declare our attributes: <code>n.title</code> and <code>n.icon</code>.</p>
+
+<div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// Set property accessors</span>
+ <span class='comment'>// SetAccessor arguments: Javascript property name, C++ method that will act as the getter, C++ method that will act as the setter</span>
+ Gtknotify::persistent_function_template-&gt;InstanceTemplate()-&gt;SetAccessor(String::New(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>title</span><span class='delimiter'>&quot;</span></span>), GetTitle, SetTitle);
+ Gtknotify::persistent_function_template-&gt;InstanceTemplate()-&gt;SetAccessor(String::New(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>icon</span><span class='delimiter'>&quot;</span></span>), GetIcon, SetIcon);
+ <span class='comment'>// For instance, n.title = &quot;foo&quot; will now call SetTitle(&quot;foo&quot;), n.title will now call GetTitle()</span></pre></div>
+</div>
+</li>
+<li><p>Declare our prototype method: <code>n.send()</code></p>
+
+<div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// This is a Node macro to help bind C++ methods to Javascript methods (see https://github.com/joyent/node/blob/v0.2.0/src/node.h#L34)</span>
+ <span class='comment'>// Arguments: our constructor function, Javascript method name, C++ method name</span>
+ NODE_SET_PROTOTYPE_METHOD(Gtknotify::persistent_function_template, <span class='string'><span class='delimiter'>&quot;</span><span class='content'>send</span><span class='delimiter'>&quot;</span></span>, Send);</pre></div>
+</div>
+</li>
+</ol><p>Our Init() method should now look like this:</p><div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// Our constructor</span>
+    <span class='directive'>static</span> v8::Persistent&lt;FunctionTemplate&gt; persistent_function_template;
+
+    <span class='directive'>static</span> <span class='directive'>void</span> Init(Handle&lt;Object&gt; target) {
+      v8::HandleScope scope; <span class='comment'>// used by v8 for garbage collection</span>
+
+      <span class='comment'>// Our constructor</span>
+      v8::Local&lt;FunctionTemplate&gt; local_function_template = v8::FunctionTemplate::New(New);
+      Gtknotify::persistent_function_template = v8::Persistent&lt;FunctionTemplate&gt;::New(local_function_template);
+      Gtknotify::persistent_function_template-&gt;InstanceTemplate()-&gt;SetInternalFieldCount(<span class='integer'>1</span>); <span class='comment'>// 1 since this is a constructor function</span>
+      Gtknotify::persistent_function_template-&gt;SetClassName(v8::String::NewSymbol(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>Notification</span><span class='delimiter'>&quot;</span></span>));
+
+      <span class='comment'>// Our getters and setters</span>
+      Gtknotify::persistent_function_template-&gt;InstanceTemplate()-&gt;SetAccessor(String::New(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>title</span><span class='delimiter'>&quot;</span></span>), GetTitle, SetTitle);
+      Gtknotify::persistent_function_template-&gt;InstanceTemplate()-&gt;SetAccessor(String::New(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>icon</span><span class='delimiter'>&quot;</span></span>), GetIcon, SetIcon);
+
+      <span class='comment'>// Our methods</span>
+      NODE_SET_PROTOTYPE_METHOD(Gtknotify::persistent_function_template, <span class='string'><span class='delimiter'>&quot;</span><span class='content'>send</span><span class='delimiter'>&quot;</span></span>, Send);
+
+      <span class='comment'>// Binding our constructor function to the target variable</span>
+      target-&gt;Set(String::NewSymbol(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>notification</span><span class='delimiter'>&quot;</span></span>), Gtknotify::persistent_function_template-&gt;GetFunction());
+    }</pre></div>
+</div><p>All that is left to do is to write the C++ methods that we used in our Init method: <code>New</code>, <code>GetTitle</code>, <code>SetTitle</code>, <code>GetIcon</code>, <code>SetIcon</code>, <code>Send</code></p><h3>Our constructor method: New()</h3><p>The New() method creates an instance of our class (a Gtknotify object), sets some default values to our properties and returns a Javascript handle to this object. This is the expected behavior when calling a constructor function with the new operator in Javascript.</p><div class='CodeRay'>
+  <div class='code'><pre>std::<span class='predefined-type'>string</span> title;
+std::<span class='predefined-type'>string</span> icon; 
+
+<span class='comment'>// new notification()</span>
+<span class='directive'>static</span> Handle&lt;Value&gt; New(<span class='directive'>const</span> Arguments&amp; args) {
+  HandleScope scope;
+  Gtknotify* gtknotify_instance = <span class='keyword'>new</span> Gtknotify();
+  <span class='comment'>// Set some default values</span>
+  gtknotify_instance-&gt;title = <span class='string'><span class='delimiter'>&quot;</span><span class='content'>Node.js</span><span class='delimiter'>&quot;</span></span>;
+  gtknotify_instance-&gt;icon = <span class='string'><span class='delimiter'>&quot;</span><span class='content'>terminal</span><span class='delimiter'>&quot;</span></span>;
+
+  <span class='comment'>// Wrap our C++ object as a Javascript object</span>
+  gtknotify_instance-&gt;Wrap(args.This());
+
+  <span class='keyword'>return</span> args.This();
+}</pre></div>
+</div><h3>Our getters and setters: GetTitle(), SetTitle(), GetIcon(), SetIcon()</h3><p>The following is pretty much boilerplate code. It boils down to back and forth conversion between C++ values to Javascript (V8) values.</p><div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// this.title</span>
+<span class='directive'>static</span> v8::Handle&lt;Value&gt; GetTitle(v8::Local&lt;v8::String&gt; property, <span class='directive'>const</span> v8::AccessorInfo&amp; info) {
+  <span class='comment'>// Extract the C++ request object from the JavaScript wrapper.</span>
+  Gtknotify* gtknotify_instance = node::ObjectWrap::Unwrap&lt;Gtknotify&gt;(info.Holder());
+  <span class='keyword'>return</span> v8::String::New(gtknotify_instance-&gt;title.c_str());
+}
+<span class='comment'>// this.title=</span>
+<span class='directive'>static</span> <span class='directive'>void</span> SetTitle(Local&lt;String&gt; property, Local&lt;Value&gt; value, <span class='directive'>const</span> AccessorInfo&amp; info) {
+  Gtknotify* gtknotify_instance = node::ObjectWrap::Unwrap&lt;Gtknotify&gt;(info.Holder());
+  v8::String::Utf8Value v8str(value);
+  gtknotify_instance-&gt;title = *v8str;
+}
+<span class='comment'>// this.icon</span>
+<span class='directive'>static</span> v8::Handle&lt;Value&gt; GetIcon(v8::Local&lt;v8::String&gt; property, <span class='directive'>const</span> v8::AccessorInfo&amp; info) {
+  <span class='comment'>// Extract the C++ request object from the JavaScript wrapper.</span>
+  Gtknotify* gtknotify_instance = node::ObjectWrap::Unwrap&lt;Gtknotify&gt;(info.Holder());
+  <span class='keyword'>return</span> v8::String::New(gtknotify_instance-&gt;icon.c_str());
+}
+<span class='comment'>// this.icon=</span>
+<span class='directive'>static</span> <span class='directive'>void</span> SetIcon(Local&lt;String&gt; property, Local&lt;Value&gt; value, <span class='directive'>const</span> AccessorInfo&amp; info) {
+  Gtknotify* gtknotify_instance = node::ObjectWrap::Unwrap&lt;Gtknotify&gt;(info.Holder());
+  v8::String::Utf8Value v8str(value);
+  gtknotify_instance-&gt;icon = *v8str;
+}</pre></div>
+</div><h3>Our prototype method: Send()</h3><p>First we have to extract the C++ object <code>this</code> references. We then build our notification using the object&rsquo;s properties (title, icon) and finally display it.</p><div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// this.send()</span>
+<span class='directive'>static</span> v8::Handle&lt;Value&gt; Send(<span class='directive'>const</span> Arguments&amp; args) {
+  v8::HandleScope scope;
+  <span class='comment'>// Extract C++ object reference from &quot;this&quot;</span>
+  Gtknotify* gtknotify_instance = node::ObjectWrap::Unwrap&lt;Gtknotify&gt;(args.This());
+
+  <span class='comment'>// Convert first argument to V8 String</span>
+  v8::String::Utf8Value v8str(args[<span class='integer'>0</span>]);
+
+  <span class='comment'>// For more info on the Notify library: http://library.gnome.org/devel/libnotify/0.7/NotifyNotification.html </span>
+  Notify::init(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>Basic</span><span class='delimiter'>&quot;</span></span>);
+  <span class='comment'>// Arguments: title, content, icon</span>
+  Notify::Notification n(gtknotify_instance-&gt;title.c_str(), *v8str, gtknotify_instance-&gt;icon.c_str()); <span class='comment'>// *v8str points to the C string it wraps</span>
+  <span class='comment'>// Display the notification</span>
+  n.show();
+  <span class='comment'>// Return value</span>
+  <span class='keyword'>return</span> v8::Boolean::New(<span class='predefined-constant'>true</span>);
+}</pre></div>
+</div><h2>Compiling our extension</h2><p><code>node-waf</code> is the build tool used to compile Node extensions which is basically a wrapper for <a href='http://code.google.com/p/waf/'>waf</a>. The build process can be configured with a file called <code>wscript</code> in our top directory:</p><div class='CodeRay'>
+  <div class='code'><pre><span class='keyword'>def</span> <span class='function'>set_options</span>(opt):
+  opt.tool_options(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>compiler_cxx</span><span class='delimiter'>&quot;</span></span>)
+
+<span class='keyword'>def</span> <span class='function'>configure</span>(conf):
+  conf.check_tool(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>compiler_cxx</span><span class='delimiter'>&quot;</span></span>)
+  conf.check_tool(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>node_addon</span><span class='delimiter'>&quot;</span></span>)
+  <span class='comment'># This will tell the compiler to link our extension with the gtkmm and libnotifymm libraries.</span>
+  conf.check_cfg(package=<span class='string'><span class='delimiter'>'</span><span class='content'>gtkmm-2.4</span><span class='delimiter'>'</span></span>, args=<span class='string'><span class='delimiter'>'</span><span class='content'>--cflags --libs</span><span class='delimiter'>'</span></span>, uselib_store=<span class='string'><span class='delimiter'>'</span><span class='content'>LIBGTKMM</span><span class='delimiter'>'</span></span>)
+  conf.check_cfg(package=<span class='string'><span class='delimiter'>'</span><span class='content'>libnotifymm-1.0</span><span class='delimiter'>'</span></span>, args=<span class='string'><span class='delimiter'>'</span><span class='content'>--cflags --libs</span><span class='delimiter'>'</span></span>, uselib_store=<span class='string'><span class='delimiter'>'</span><span class='content'>LIBNOTIFYMM</span><span class='delimiter'>'</span></span>)
+
+<span class='keyword'>def</span> <span class='function'>build</span>(bld):
+  obj = bld.new_task_gen(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>cxx</span><span class='delimiter'>&quot;</span></span>, <span class='string'><span class='delimiter'>&quot;</span><span class='content'>shlib</span><span class='delimiter'>&quot;</span></span>, <span class='string'><span class='delimiter'>&quot;</span><span class='content'>node_addon</span><span class='delimiter'>&quot;</span></span>) 
+  obj.cxxflags = [<span class='string'><span class='delimiter'>&quot;</span><span class='content'>-g</span><span class='delimiter'>&quot;</span></span>, <span class='string'><span class='delimiter'>&quot;</span><span class='content'>-D_FILE_OFFSET_BITS=64</span><span class='delimiter'>&quot;</span></span>, <span class='string'><span class='delimiter'>&quot;</span><span class='content'>-D_LARGEFILE_SOURCE</span><span class='delimiter'>&quot;</span></span>, <span class='string'><span class='delimiter'>&quot;</span><span class='content'>-Wall</span><span class='delimiter'>&quot;</span></span>]
+  <span class='comment'># This is the name of our extension.</span>
+  obj.target = <span class='string'><span class='delimiter'>&quot;</span><span class='content'>gtknotify</span><span class='delimiter'>&quot;</span></span>
+  obj.source = <span class='string'><span class='delimiter'>&quot;</span><span class='content'>src/node_gtknotify.cpp</span><span class='delimiter'>&quot;</span></span>
+  obj.uselib = [<span class='string'><span class='delimiter'>'</span><span class='content'>LIBGTKMM</span><span class='delimiter'>'</span></span>, <span class='string'><span class='delimiter'>'</span><span class='content'>LIBNOTIFYMM</span><span class='delimiter'>'</span></span>]</pre></div>
+</div><p>We&rsquo;re now ready to build! In the top directory, run the following command:</p><div class='CodeRay'>
+  <div class='code'><pre>node-waf configure &amp;&amp; node-waf build</pre></div>
+</div><p>If everything goes right, we should now have our compiled extension in <code>./build/default/gtknotify.node</code>. Let&rsquo;s try it!</p><div class='CodeRay'>
+  <div class='code'><pre>$ node
+&gt; var notif = require('./build/default/gtknotify.node');
+&gt; n = new notif.notification();
+{ icon: 'terminal', title: 'Node.js' }
+&gt; n.send(&quot;Hello World!&quot;);
+true</pre></div>
+</div><p>The previous code should display a notification in the top right corner of your screen!</p><h2>Packaging for npm</h2><p>That&rsquo;s pretty cool, but how about sharing your hard work with the Node community? That&rsquo;s primarily what the Node Package Manager is used for: making it easy to import extensions/modules and distribute them.</p><p>Packaging an extension for npm is very straightforward. All you have to do is create a <code>package.json</code> file in your top directory which contains some info about your extension:</p><div class='CodeRay'>
+  <div class='code'><pre>{
+  <span class='comment'>// Name of your extension (do not include node or js in the name, this is implicit). </span>
+  <span class='comment'>// This is the name that will be used to import the extension through require().</span>
+
+  <span class='key'><span class='delimiter'>&quot;</span><span class='content'>name</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>notify</span><span class='delimiter'>&quot;</span></span>,
+
+  <span class='comment'>// Version should be http://semver.org/ compliant</span>
+
+  <span class='key'><span class='delimiter'>&quot;</span><span class='content'>version</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>v0.1.0</span><span class='delimiter'>&quot;</span></span>
+
+  <span class='comment'>// These scripts will be run when calling npm install and npm uninstall.</span>
+
+  , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>scripts</span><span class='delimiter'>&quot;</span></span> : {
+      <span class='key'><span class='delimiter'>&quot;</span><span class='content'>preinstall</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>node-waf configure &amp;&amp; node-waf build</span><span class='delimiter'>&quot;</span></span>
+      , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>preuninstall</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>rm -rf build/*</span><span class='delimiter'>&quot;</span></span>
+    }
+
+  <span class='comment'>// This is the relative path to our built extension.</span>
+
+  , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>main</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>build/default/gtknotify.node</span><span class='delimiter'>&quot;</span></span>
+
+  <span class='comment'>// The following fields are optional:</span>
+
+  , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>description</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>Description of the extension....</span><span class='delimiter'>&quot;</span></span>
+  , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>homepage</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>https://github.com/olalonde/node-notify</span><span class='delimiter'>&quot;</span></span>
+  , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>author</span><span class='delimiter'>&quot;</span></span> : { 
+      <span class='key'><span class='delimiter'>&quot;</span><span class='content'>name</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>Olivier Lalonde</span><span class='delimiter'>&quot;</span></span>
+      , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>email</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>olalonde@gmail.com</span><span class='delimiter'>&quot;</span></span>
+      , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>url</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>http://www.syskall.com/</span><span class='delimiter'>&quot;</span></span>
+    } 
+  , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>repository</span><span class='delimiter'>&quot;</span></span> : { 
+      <span class='key'><span class='delimiter'>&quot;</span><span class='content'>type</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>git</span><span class='delimiter'>&quot;</span></span>
+      , <span class='key'><span class='delimiter'>&quot;</span><span class='content'>url</span><span class='delimiter'>&quot;</span></span> : <span class='string'><span class='delimiter'>&quot;</span><span class='content'>https://github.com/olalonde/node-notify.git</span><span class='delimiter'>&quot;</span></span>
+    }
+}</pre></div>
+</div><p><em>For more details on the package.json format, documentation is available through <code>npm help json</code>. Note that most fields are optional.</em></p><p>You can now install your new npm package by running <code>npm install</code> in your top directory. If everything goes right, you should be able to load your extension with a simple <code>var notify = require('your-package-name');</code>. Another useful command is <code>npm link</code> which creates a symlink to your development directory so that any change to your code is reflected instantly &ndash; no need to install/uninstall perpetually.</p><p>Assuming you wrote a cool extension, you might want to publish it online in the central npm repository. In order to do that, you first need to create an account:</p><div class='CodeRay'>
+  <div class='code'><pre>$ npm adduser</pre></div>
+</div><p>Next, go back to the root of your package code and run:</p><div class='CodeRay'>
+  <div class='code'><pre>$ npm publish</pre></div>
+</div><p>That&rsquo;s it, your package is now available for anyone to install through the <code>npm install your-package-name</code> command.</p><h2>Conclusion</h2><p>Writing a native Node extension can be cumbersome and verbose at times but it is well worth the hard earned bragging rights!</p><p>Thanks for reading. Let me know in the comments if you run into any problem, I’ll be glad to help.</p><p><em>If you liked this, maybe you&rsquo;d also like what I <a href='http://twitter.com/o_lalonde'>tweet on Twitter</a>! Might even want to <a href='mailto:olalonde@gmail.com'>hire me</a>?</em></p><h2>References</h2><p><a href='http://syskall.com/how-to-roll-out-your-own-javascript-api-with'>How to roll out your own Javascript API with V8</a></p><p><a href='https://www.cloudkick.com/blog/2010/aug/23/writing-nodejs-native-extensions/'>Writing Node.js Native Extensions</a></p><p><a href='http://code.google.com/apis/v8/embed.html'>V8 JavaScript Engine Embedder&rsquo;s Guid</a>
+Part 1 (V8 extension) available here: <a href='http://syskall.com/how-to-roll-out-your-own-javascript-api-with'>http://syskall.com/how-to-roll-out-your-own-javascript-api-with</a></p><p><a href='http://howtonode.org/introduction-to-npm'>Introduction to npm</a></p><p><a href='http://nodejs.org/'>Node.js</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Resizing a VDI in VirtualBox 3 with one command]]></title>
+    <link href="/resizing-a-vdi-in-virtualbox-3-in-one-command/index.html"/>
+    <updated>2011-03-10T00:00:00+08:00</updated>
+    <id>/resizing-a-vdi-in-virtualbox-3-in-one-command/resizing-a-vdi-in-virtualbox-3-in-one-command</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a quick way to expand a (VDI) Virtual Disk Image in VirtualBox 3.</p><ol>
+<li>Create a new VDI with the new size of your choice. (File / Virtual
+Media Manager / New&hellip;)</li>
+<li><p>Run this command:</p>
+
+<div class='CodeRay'>
+  <div class='code'><pre>$ VBoxManage clonehd --existing old.vdi new.vdi</pre></div>
+</div>
+
+
+<p> This may take a few minutes.</p></li>
+<li><p>Simply replace the attached old.vdi with the new.vdi in your virtual machine&rsquo;s storage settings.</p></li>
+<li>You will need to extend your partition from your guest OS. This can be done under Windows 7 from the control panel (Create and format hard disk partitions) and with GParted in Ubuntu and compatible Linux distributions.</li>
+</ol>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Minimalist shell in C (for educational purposes only!)]]></title>
+    <link href="/minimalist-shell-in-c-for-educational-purpose/index.html"/>
+    <updated>2011-03-10T00:00:00+08:00</updated>
+    <id>/minimalist-shell-in-c-for-educational-purpose/minimalist-shell-in-c-for-educational-purpose</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2><p>I was kind of bored tonight so I decided to write a very minimalist
+shell in C. Here&rsquo;s how it looks:</p><div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>/*
+ * DISCLAIMER: THIS CODE IS FOR EDUCATIONAL PURPOSES ONLY. USE AT YOUR OWN RISKS.
+ *
+ * This code shows the basic workings of a shell.
+ *
+ * Append &quot;/path/to/dashell&quot; to /etc/shells, to make it a valid shell:
+ * sudo echo &quot;/path/to/dashell&quot; &gt;&gt; /etc/shells
+ *
+ * Change your &quot;username&quot;'s shell. &quot;username&quot; should have execute permission for the shell:
+ * chsh --shell /path/to/dashell username
+ *
+ */</span>
+
+<span class='preprocessor'>#include</span> <span class='include'>&lt;unistd.h&gt;</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;string.h&gt;</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;stddef.h&gt;</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;stdlib.h&gt;</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;stdio.h&gt;</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;ctype.h&gt;</span>
+<span class='preprocessor'>#include</span> <span class='include'>&lt;sys/signal.h&gt;</span>
+
+<span class='preprocessor'>#define</span> STDIN <span class='integer'>0</span>
+<span class='preprocessor'>#define</span> STDOUT <span class='integer'>1</span>
+<span class='preprocessor'>#define</span> STDERR <span class='integer'>2</span>
+
+<span class='preprocessor'>#define</span> BUFFER_SIZE <span class='integer'>1024</span>
+
+<span class='directive'>void</span> parse_arguments(<span class='predefined-type'>char</span> buffer[], <span class='predefined-type'>int</span> *args_count, <span class='predefined-type'>char</span> *args[]) {
+  <span class='predefined-type'>char</span> *delimiters = <span class='string'><span class='delimiter'>&quot;</span><span class='content'> </span><span class='char'>\r</span><span class='char'>\n</span><span class='delimiter'>&quot;</span></span>;
+  <span class='predefined-type'>char</span> *token;
+  *args_count = <span class='integer'>0</span>;
+  <span class='comment'>// &quot;abc def ghi&quot; =&gt; {&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;}</span>
+  <span class='keyword'>while</span>(token = strsep(&amp;buffer, delimiters)) {
+    args[*args_count] = token;
+    (*args_count)++;
+  }
+}
+
+<span class='predefined-type'>int</span> main(<span class='predefined-type'>int</span> argc, <span class='directive'>const</span> <span class='predefined-type'>char</span>* argv[]) {
+  <span class='comment'>// The weird characters are used to format the text's appearance.</span>
+  <span class='comment'>// See http://en.wikipedia.org/wiki/ANSI_escape_code</span>
+  <span class='predefined-type'>char</span> prompt[] = <span class='string'><span class='delimiter'>&quot;</span><span class='char'>\033</span><span class='content'>[1mdashell</span><span class='char'>\033</span><span class='content'>[2m&gt;</span><span class='char'>\033</span><span class='content'>[0m </span><span class='delimiter'>&quot;</span></span>;
+  <span class='predefined-type'>char</span> exec_error[] = <span class='string'><span class='delimiter'>&quot;</span><span class='content'>Cannot execute program %s.</span><span class='char'>\n</span><span class='delimiter'>&quot;</span></span>;
+  <span class='predefined-type'>char</span> buffer[BUFFER_SIZE + <span class='integer'>1</span>];
+
+  <span class='predefined-type'>int</span> args_count;
+  <span class='predefined-type'>char</span> *args[BUFFER_SIZE];
+
+  <span class='predefined-type'>int</span> n;
+  <span class='keyword'>while</span>(<span class='integer'>1</span>) {
+    write(STDOUT, prompt, strlen(prompt) + <span class='integer'>1</span>);
+    n = read(STDIN, buffer, BUFFER_SIZE); <span class='comment'>// Read from STDIN (keyboard input)</span>
+    buffer[n] = <span class='char'>'\0'</span>; <span class='comment'>// Null character to indicate string end</span>
+
+    <span class='comment'>// &quot;abc def ghi&quot; =&gt; {&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;}</span>
+    parse_arguments(buffer, &amp;args_count, args);
+
+    <span class='comment'>// No arguments</span>
+    <span class='keyword'>if</span>(args_count == <span class='integer'>0</span> || strcmp(args[<span class='integer'>0</span>], <span class='string'><span class='delimiter'>&quot;</span><span class='delimiter'>&quot;</span></span>) == <span class='integer'>0</span>) <span class='keyword'>continue</span>;
+
+    <span class='comment'>// Argument = exit</span>
+    <span class='keyword'>if</span>(strcmp(args[<span class='integer'>0</span>], <span class='string'><span class='delimiter'>&quot;</span><span class='content'>exit</span><span class='delimiter'>&quot;</span></span>) == <span class='integer'>0</span>) exit(<span class='integer'>0</span>);
+
+    pid_t child_pid = fork(); <span class='comment'>// Duplicate process</span>
+    <span class='keyword'>if</span>(child_pid == <span class='integer'>0</span>) {
+      <span class='comment'>// Child</span>
+      <span class='keyword'>if</span>(execvp(args[<span class='integer'>0</span>], args) &lt; <span class='integer'>0</span>) { <span class='comment'>// Replace executable code by command passed</span>
+        fprintf(stderr, exec_error, args[<span class='integer'>0</span>]);
+      }
+    }
+    <span class='keyword'>else</span> {
+      <span class='comment'>// Parent</span>
+      <span class='comment'>// Wait for child to finish</span>
+      wait();
+    }
+  }
+}</pre></div>
+</div><p>The full source code is freely <a href='https://github.com/olalonde/dashell'>available at
+Github</a>:</p><p><code>git clone git://github.com/olalonde/dashell.git</code></p><p>Note that I never code in C so it might not be perfect&hellip; I&rsquo;m looking at you <code>parse_arguments()</code> ;)</p><h2>Install &amp; have fun</h2><p>The optional steps will let you use the shell as a login shell for a given user.</p><ol>
+<li><p><code>make</code></p></li>
+<li><p>(optional) Append &ldquo;/path/to/dashell&rdquo; to /etc/shells, to make it a
+valid shell:</p>
+
+<div class='CodeRay'>
+  <div class='code'><pre>sudo echo &quot;/path/to/dashell&quot; &gt;&gt; /etc/shells</pre></div>
+</div>
+</li>
+<li><p>(optional) Change &ldquo;username&rdquo;&rsquo;s shell. &ldquo;username&rdquo; should have
+execute permission for the shell:</p>
+
+<div class='CodeRay'>
+  <div class='code'><pre>chsh --shell /path/to/dashell username</pre></div>
+</div>
+</li>
+</ol><p>Now, you can launch the shell and start having fun with it and be
+reminded how great bash really is!</p><div class='CodeRay'>
+  <div class='code'><pre>./dashell
+dashell&gt; ls -al
+dashell&gt; ./launchme 1 2 3
+....
+dashell&gt; exit</pre></div>
+</div><p>Feel free to ask questions!</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to roll out your own Javascript API with V8]]></title>
+    <link href="/how-to-roll-out-your-own-javascript-api-with/index.html"/>
+    <updated>2011-02-26T00:00:00+08:00</updated>
+    <id>/how-to-roll-out-your-own-javascript-api-with/how-to-roll-out-your-own-javascript-api-with</id>
+    <content type="html"><![CDATA[<p><em>Update: I wrote a new tutorial on porting our V8 code as a Node.js extension: <a href='http://syskall.com/how-to-write-your-own-native-nodejs-extension'>How to write your own native Node.js extension</a>.</em></p><h2>Introduction</h2><p>This tutorial will teach you how to:</p><ol>
+<li>Compile the V8 Javascript engine</li>
+<li>Bind a Javascript function to your own C++ function</li>
+</ol><p>For the sake of demonstration and to impress your co-workers, we will bind a Javascript function &ldquo;alert()“ that will display desktop notifications through the GTK library. Here’s what the end result looks like:</p><p><img alt='jsnotify screenshot' src='http://posterous.com/getfile/files.posterous.com/olalonde/RiXGvyU85iXwA2KcuikQnfi8WMMVf5XfkloWrz9RtzFdiiZn3gGBAJejdnyJ/jsnotify.png' /></p><p>You can get the full source code of this tutorial <a href='https://github.com/olalonde/jsnotify'>from github</a>:</p><div class='CodeRay'>
+  <div class='code'><pre>git clone git://github.com/olalonde/jsnotify.git</pre></div>
+</div><p>This tutorial was tested on Ubuntu 10.04 and 10.10 64-bit but should work fine on any Linux distribution. The notification part requires the GTK+ library.</p><h2>Compiling Google’s V8 Javascript engine</h2><p>First, let’s make sure we have all the <a href='http://code.google.com/apis/v8/build.html'>required tools and dependencies</a> to compile.</p><div class='CodeRay'>
+  <div class='code'><pre>sudo apt-get install build-essential scons subversion</pre></div>
+</div><ul>
+<li>The build-essential package is a meta package that installs all the necessary tools and libraries to compile C++ programs.</li>
+<li>SCons is a build tool which attempts to replace the classic “make” and is used by the V8 project.</li>
+<li>Subversion is needed to checkout the source code of V8.</li>
+</ul><p>Now, let’s grab V8’s source from the <a href='http://code.google.com/p/v8/wiki/Source?tm=4'>official repository</a>:</p><div class='CodeRay'>
+  <div class='code'><pre>svn checkout http://v8.googlecode.com/svn/trunk/ v8</pre></div>
+</div><p>We can now move into the V8 directory and try to compile!</p><div class='CodeRay'>
+  <div class='code'><pre>cd v8;
+scons arch=x64;</pre></div>
+</div><p>The “arch=x64” option specifies that we want to build a 64-bit version of V8 (the default value would be 32-bit otherwise).</p><p>If V8 compiled fine, you should now have a libv8.a file in your v8/ directory. As you probably guessed, libv8.a is the library that our C++ program will use to execute Javascript code.</p><p>So, if everything compiled fine, just skip to the next section. Otherwise, keep on reading.</p><p>When you get errors as a result of compiling third party code, it is usually due to the fact that the compiler can’t find required libraries (/usr/lib) and/or their associated header files (/usr/lib/include). The latter are usually available through packages conventionally named <em>libname</em>-dev . In order to find out which package installs a given file, there is a neat utility called <code>apt-file</code>.</p><div class='CodeRay'>
+  <div class='code'><pre>sudo apt-get install apt-file;
+apt-file search missing-header-file.h;</pre></div>
+</div><p>The <code>apt-file search</code> command lists the package(s) that install a given file (<em>missing-header-file.h</em> in this case). If there are more than one package listed, we have to take a semi-educated guess on which package we should install based on its name (let me know in the comments if you know of a better trick!). We then simply install the package with the usual <code>apt-get install package-name</code> command.</p><p>Hint: If you are on Ubuntu 10.04, you might need to install the following packages:</p><div class='CodeRay'>
+  <div class='code'><pre>sudo apt-get install libc6-dev-i368 lib32stdc++6</pre></div>
+</div><p>Now that we’ve installed all the missing files, the compilation should work. Let&rsquo;s move on to the next section.</p><p>If you are still stuck with compiling V8, <a href='http://www.travisswicegood.com/2009/07/11/compiling-node-js-olibc6-dev-i368n-ubuntu-9-04/'>this tutorial</a> might help.</p><h2>Building our own Javascript API</h2><p>Now that we have successfully compiled the V8 library, we will build our own C++ project that will be “Javascript scriptable”. This means that our program will be able to run Javascript code which in turn will be able to call our custom C++ functions.</p><p><em>Note:</em> You can also get the full source code of this tutorial from my <a>jsnotify github repository</a>): <code>git clone git://github.com/olalonde/jsnotify.git</code></p><p>First let’s create our file structure.</p><div class='CodeRay'>
+  <div class='code'><pre>jsnotify/
+  |-- deps/  # third party code
+  |   `-- v8  # move your v8 folder here
+  `-- src/ # our code goes here
+      `-- jsnotify.cpp</pre></div>
+</div><p>Now let’s copy the sample code available at <code>deps/v8/samples/shell.cc</code> and paste it into jsnotify.cpp. The sample code given by V8 let’s you execute a Javascript file or start an interactive Javascript shell. It also binds some useful Javascript functions such as print() which will output text to the terminal.</p><p>Let’s try to compile this!</p><div class='CodeRay'>
+  <div class='code'><pre>g++ src/jsnotify.cpp;</pre></div>
+</div><p>Of course, this gives us a bunch of errors since we haven’t specified where the V8 header and library files are. Let’s try again!</p><div class='CodeRay'>
+  <div class='code'><pre>g++ src/jsnotify.cpp -Ideps/v8/include -Ldeps/v8/ -lv8</pre></div>
+</div><p>Oops, still some errors. Looks like we also have to link the pthread library.</p><div class='CodeRay'>
+  <div class='code'><pre>g++ src/jsnotify.cpp -Ideps/v8/include -Ldeps/v8/ -lv8 -lpthread</pre></div>
+</div><p>This finally compiles! Now that we have our mini Javascript shell, let’s play a bit with it.</p><div class='CodeRay'>
+  <div class='code'><pre>$ ./a.out 
+V8 version 3.1.5
+&gt; var foo = “Hello World”;
+&gt; print(foo);
+Hello World</pre></div>
+</div><p>Now, all we have to do is to create our custom alert() function in C++.</p><div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// INSERT THIS BEFORE int RunMain(int argc, char* argv[]) {</span>
+<span class='comment'>// We need those two libraries for the GTK+ notification </span>
+<span class='preprocessor'>#include</span> 
+<span class='preprocessor'>#include</span> 
+v8::Handle Alert(<span class='directive'>const</span> v8::Arguments&amp; args);
+
+<span class='comment'>// INSERT THIS AT END OF FILE   </span>
+<span class='comment'>// The callback that is invoked by v8 whenever the JavaScript 'alert'</span>
+<span class='comment'>// function is called.  Displays a GTK+ notification.</span>
+v8::Handle Alert(<span class='directive'>const</span> v8::Arguments&amp; args) {
+  v8::String::Utf8Value str(args[<span class='integer'>0</span>]); <span class='comment'>// Convert first argument to V8 String</span>
+  <span class='directive'>const</span> <span class='predefined-type'>char</span>* cstr = ToCString(str); <span class='comment'>// Convert V8 String to C string</span>
+
+  Notify::init(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>Basic</span><span class='delimiter'>&quot;</span></span>);
+  <span class='comment'>// Arguments: title, content, icon</span>
+  Notify::Notification n(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>Alert</span><span class='delimiter'>&quot;</span></span>, cstr, <span class='string'><span class='delimiter'>&quot;</span><span class='content'>terminal</span><span class='delimiter'>&quot;</span></span>);
+  <span class='comment'>// Display notification</span>
+  n.show();
+
+  <span class='keyword'>return</span> v8::Undefined();
+}</pre></div>
+</div><p>Now that we have our Alert C++ function, we need to tell V8 to bind it to the Javascript alert() function. This is done by adding the following code in the RunMain function:</p><div class='CodeRay'>
+  <div class='code'><pre><span class='comment'>// INSERT AFTER v8::Handle global = v8::ObjectTemplate::New();</span>
+<span class='comment'>// Bind the global 'alert' function to the C++ Alert callback.</span>
+global-&gt;Set(v8::String::New(<span class='string'><span class='delimiter'>&quot;</span><span class='content'>alert</span><span class='delimiter'>&quot;</span></span>), v8::FunctionTemplate::New(Alert));</pre></div>
+</div><p>Now, in order to compile, the compiler needs to know where to find the two header files we introduced. This is done using the pkg-config utility:</p><div class='CodeRay'>
+  <div class='code'><pre>g++ src/jsnotify.cpp -Ideps/v8/include -Ldeps/v8/ -lv8 -lpthread pkg-config --cflags --libs gtkmm-2.4 libnotifymm-1.0</pre></div>
+</div><p>We can now try our new alert function.</p><div class='CodeRay'>
+  <div class='code'><pre>$./a.out 
+V8 version 3.1.5
+&gt; alert(“wow, it works!”);</pre></div>
+</div><p>You should see a nice notification in the top right of your screen! Note that you can also put you Javascript code in a file and pass the file name as an argument <code>./a.out filename.js</code>.</p><h2>Conclusion</h2><p>It&rsquo;s quite easy to make a C++ program &ldquo;Javascriptable&rdquo; with V8 and the proper setup. If you&rsquo;d like to practice your newfound skills, I suggest you try to add a title argument to the alert function. You might also want to follow me on Posterous in order to be informed when I post the follow up to this tutorial on how to extend <a href='http://nodejs.org/'>Node.js</a> with our alert function.</p><p>That’s all for today, thanks for reading! Let me know in the comments if you run into any problem, I’ll be glad to help.</p><p><em>If you liked this, maybe you&rsquo;d also like what I <a href='http://twitter.com/o_lalonde'>tweet on Twitter</a>!</em></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The benefit of hindsight]]></title>
+    <link href="/twttr-and-the-benefit-of-hindsight/index.html"/>
+    <updated>2011-02-14T00:00:00+08:00</updated>
+    <id>/twttr-and-the-benefit-of-hindsight/twttr-and-the-benefit-of-hindsight</id>
+    <content type="html"><![CDATA[<p>I recently stumbled upon a quite interesting piece of history buried in TechCrunch's archives. It's <a href='http://techcrunch.com/2006/07/15/is-twttr-interesting/'>a July 2006 article written by Michael Arrington</a>&nbsp;which introduces a "sort of &ldquo;group send&rdquo; SMS application" as he described it at the time. For those who haven't guessed yet, the "application" he is referring to is now known as <a href='http://www.twitter.com'>Twitter</a>, a&nbsp;190 million users strong&nbsp;social network and company currently&nbsp;<a href='http://blogs.reuters.com/felix-salmon/2011/02/10/understanding-twitters-valuation/'>valued at around $10 billion</a>. Yet,&nbsp;at the time,&nbsp;very few people believed the startup had any chance of success and even fewer could have predicted it would grow to become a billion dollar company.&nbsp;</p><p /><div><a href='http://techcrunch.com/2006/07/15/is-twttr-interesting/'>[[posterous-content:FqanXt0fw2aLYxahbBdF]]</a></div><p /><div>Here are some gems from the article and comments. It would be superfluous to comment them as I believe they speak for themselves. If you find yourself laughing at this (as I did), take a moment to realize just how wonderful the <a href='http://en.wikipedia.org/wiki/Hindsight_bias'>benefit of hindsight</a> is.&nbsp;</div><p /><div>All comments date from 2006. I didn't include the names of the&nbsp;commenters (but they <a href='http://techcrunch.com/2006/07/15/is-twttr-interesting/#disqus_thread'>aren't really hard to find</a>).</div><p /><blockquote class='gmail_quote' style='margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0.8ex; border-left-width: 1px; border-left-color: #cccccc; border-left-style: solid; padding-left: 1ex;'>There is also a privacy issue with Twttr. Every user has a&nbsp;public page&nbsp;that shows all of their messages. Messages from that person&rsquo;s&nbsp;extended network&nbsp;are also public. I imagine most users are not going to want to have all of their Twttr messages published on a public website.&nbsp;</blockquote><blockquote class='gmail_quote' style='margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0.8ex; border-left-width: 1px; border-left-color: #cccccc; border-left-style: solid; padding-left: 1ex;'>
+<p>I do not understand the utility of adding the SMS messages to a public webpage or making messages from my network public. I would have to pass on that type of offering. The ability to make messages private should be added asap.&nbsp;</p>
+</blockquote><blockquote class='gmail_quote' style='margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0.8ex; border-left-width: 1px; border-left-color: #cccccc; border-left-style: solid; padding-left: 1ex;'>Odeo was a failure from the get go. No revenue model. I asked their VC - CRV - what the revenue model was a year ago and he said "to sell to someone bigger." Okay, that was a web 1.0 answer, and now we get Twttr - an even dumber idea with no revenue model, but a 2.0 concept.</blockquote><p /><blockquote class='gmail_quote' style='margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0.8ex; border-left-width: 1px; border-left-color: #cccccc; border-left-style: solid; padding-left: 1ex;'>I think this is the dumbest thing ever! Who would want all their personal text messages on a public website for anyone to read and track?&nbsp;</blockquote><p /><blockquote class='gmail_quote' style='margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0.8ex; border-left-width: 1px; border-left-color: #cccccc; border-left-style: solid; padding-left: 1ex;'>Not innovative and not focused. Twttr sounds like a disaster in the making...</blockquote><p /><blockquote class='gmail_quote' style='margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0.8ex; border-left-width: 1px; border-left-color: #cccccc; border-left-style: solid; padding-left: 1ex;'>i do not want to be woken up at 4 a.m. because my friend got drunk and decided to text Twttr with "asdl im at barasdf sooo drunksalkfjs"...i find it interesting such an annoying feature is supposedly causing viral growth...i'm done developing social software if the key to success is to be intrusive&nbsp;</blockquote><p /><div>Finally, a last blog comment that caught my attention on an other&nbsp;<a href='http://many.corante.com/archives/2006/07/16/twttr.php'>old Twitter article</a>:</div><p /><blockquote class='gmail_quote' style='margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0.8ex; border-left-width: 1px; border-left-color: #cccccc; border-left-style: solid; padding-left: 1ex;'>It's kinda wierd, John Resig and I had been thinking about building this exact system, though it never really got past the, "Wouldn't it be cool if" stage. Meh, I'm just glad it exists now. It was a personal itch I wanted to scratch and I'm not going to complain&nbsp;at all&nbsp;if someone else scratches it. Plus the Odeo guys made it much prettier than I would have. -&nbsp;Bob Aman</blockquote><p /><div>I'd be curious to know if the John Resign being referred to is the same guy who went on to build <a href='http://jquery.com/'>jQuery</a>. Did <a href='http://en.wikipedia.org/wiki/John_Resig'>John Resig</a> really almost build a Twitter before Twitter?</div>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MultiVac, the line tracking robot]]></title>
+    <link href="/multivac-the-line-tracking-robot/index.html"/>
+    <updated>2010-11-09T00:00:00+08:00</updated>
+    <id>/multivac-the-line-tracking-robot/multivac-the-line-tracking-robot</id>
+    <content type="html"><![CDATA[<p>Here's a line tracking robot I built with friends at university. I thought I would post it here before it sinks into oblivion. It was built using a 16bit&nbsp;micro-controller (<a href='http://www.atmel.com/dyn/products/product_card.asp?PN=ATmega16'>ATmega16</a>), a PCB, a small motor and some sensors. The programming was done in C/C++. Source code and hardware (if you can pick it up - Montreal) available <a href='http://twitter.com/olivierll'>upon request</a>.</p><p>
+<object height='385' width='480'>
+<param name='movie' value='http://www.youtube.com/v/bndYfanDBS8?fs=1&amp;hl=en_US' />
+<param name='allowFullScreen' value='true' />
+<param name='allowscriptaccess' value='always' /><embed height='385' src='http://www.youtube.com/v/bndYfanDBS8?fs=1&amp;hl=en_US' type='application/x-shockwave-flash' width='480' />
+</object>
+</p><p>Any ideas of how I could turn it into something useful? I also got a proximity sensor if that can be of any use.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HN Crunch: Greasemonkey script for Hacker News]]></title>
+    <link href="/hn-crunch-greasemonkey-script-for-hacker-news/index.html"/>
+    <updated>2010-09-25T00:00:00+08:00</updated>
+    <id>/hn-crunch-greasemonkey-script-for-hacker-news/hn-crunch-greasemonkey-script-for-hacker-news</id>
+    <content type="html"><![CDATA[<div><a href='http://dev.syskall.com/hn/hncrunch.user.js' target='_blank'>Try HN Crunch</a></div><p /><p>I've just written HN Crunch, a little <a href='https://addons.mozilla.org/en-US/firefox/addon/748/'>Greasemonkey</a> script for <a href='http://news.ycombinator.com'>Hacker News</a> which adds a profile picture next to the username of HN members who have their own <a href='http://www.crunchbase.com/' target='_blank'>CrunchBase</a> profile<a href='http://www.crunchbase.com' target='_blank' />. The script is is open source.</p><p /><div>Screenshot:</div><div>[[posterous-content:kckxuJuPdw9auihyixTy]]</div><p /><div>Right now, it doesn't have many HN users in it so please help me complete the list in the comments below or in the <a href='http://news.ycombinator.com/item?id=1727700'>HN thread</a> by writing the username / CrunchBase URL pair. To try it in action, I suggest you head over to&nbsp;<a href='http://news.ycombinator.com/threads?id=pg'>pg's thread list</a>.</div><p /><div><strong>Updated list:</strong></div><div>
+<ul>
+<li>pg: paul-graham</li>
+<li>spolsky: joel-spolsky-2</li>
+<li>a4agarwal: sachin-agarwal</li>
+<li>techcrunch: michael-arrington</li>
+<li>epi0Bauqu: gabriel-weinberg</li>
+<li>AndrewWarner: andrew-warner</li>
+<li>swombat: daniel-tenner</li>
+<li>dhh:&nbsp;david-heinemeier-hansson</li>
+<li>daniel_levine: daniel-levine</li>
+<li>bkrausz: brian-krausz</li>
+<li>'mceachen: matthew-mceachen</li>
+<li>rgrieselhuber: ray-grieselhuber</li>
+<li>rdamico: ryan-damico</li>
+<li>jon_dahl: jon-dahl</li>
+<li>answerly: joe-fahrner</li>
+<li>jlm382: jessica-mah</li>
+<li>brianchesky: brian-chesky</li>
+<li>billclerico: bill-clerico</li>
+<li>dhouston: drew-houston</li>
+<li>danielha: daniel-ha</li>
+<li>rantfoil: garry-tan</li>
+<li>petesmithy: pete-smith</li>
+<li>justin: justin-kan</li>
+<li>gduffy: greg-duffy</li>
+<li>spencerfry: spencer-fry</li>
+<li>thinkcomp: aaron-greenspan</li>
+<li>jack7890: jack-groetzinger'</li>
+</ul>
+<div><a href='http://dev.syskall.com/hn/hncrunch.user.js' target='_blank'>Try HN Crunch</a></div>
+</div>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why we should eradicate "agnosticism" from the dictionary!]]></title>
+    <link href="/why-we-should-eradicate-agnosticism-from-the/index.html"/>
+    <updated>2010-02-24T00:00:00+08:00</updated>
+    <id>/why-we-should-eradicate-agnosticism-from-the/why-we-should-eradicate-agnosticism-from-the</id>
+    <content type="html"><![CDATA[<p><em>This is a follow-up to a very <a href='http://news.ycombinator.com/item?id=1148229'>interesting thread</a> on HN.</em><p /><a href='http://en.wikipedia.org/wiki/Agnosticism'>From Wikipedia</a>: <em>Agnosticism is the view that the truth value of certain claims&mdash;especially claims about the existence of any deity, but also other religious and metaphysical claims&mdash;is unknown or unknowable. ...</em><p />Before I start, let me illustrate my poin<span style='color: #000000;'>t. Assume the following statements are true</span><span class='comment'><span style='color: #000000;'>:</span></span></p><ul>
+<li>We currently live in the Matrix.</li>
+<li>There is absolutely no interaction between our universe and the Matrix.</li>
+<li>There is no way to escape the Matrix.</li>
+<li>The laws of our universe remain unchanged.</li>
+<li>There is no imaginable experiment that could even subtly hint the existence of the Matrix.</li>
+</ul><p>Given those assumptions, you can't prove or disprove the existence of the Matrix, be it through a thought experiment or a physical experiment. <p /> <strong>That makes you a Matrix agnostic.</strong> In fact, the amount of things we have to be agnostic about is only limited by our collective imagination: it could be that our universe is an "atom" inside a much larger universe, it could be that life is an illusion induced by some sort of dream, etc. <p /> As expected, there are tons of naive counter-arguments to this assertion. Let me quote philwelch, as he <a href='http://news.ycombinator.com/item?id=1148910'>said it</a> better than I ever could:</p><blockquote class='gmail_quote' style='margin: 0pt 0pt 0pt 0.8ex; border-left: 1px solid #cccccc; padding-left: 1ex;'><span class='comment'>
+</span><p><span style='color: #000000;'>The standard answer is that all of our naive beliefs about the world would be false. You are not actually sitting on a couch, your simulated body-projection is simulated to be sitting on a simulated couch. The very fact we can't tell whether or not we're in the matrix undermines all our knowledge.</span></p>
+<p><span style='color: #000000;'>The more insightful answer is that even if we're in the matrix, everything about the <em>physical</em> world is still true, there is just a metaphysical fact we are unaware of--namely, that the universe happens to be a simulation. You're still sitting on a couch, and the couch is still made of atoms, and the atoms are still made of subatomic particles and so forth, but it turns out all the subatomic particles are just data structures in the matrix and we didn't know that before. Nothing is undermined.</span></p>
+</blockquote><p><br />Let me expand this reasoning a little further:</p><ul>
+<li>Is there a point in knowing if the Matrix does indeed exist ? </li>
+<li>Will it change anything about our knowledge of the physical universe ?</li>
+<li>Will it change the way we live our lives ?&nbsp;</li>
+</ul><p><strong>Answer: No.</strong><p />Any metaphysical statement that can't be evidenced, even subtly, through physical experiments is simply <strong>meaningless</strong>. On a side note, it is important to <span style='color: #000000;'>n</span><span class='comment'><span style='color: #000000;'>ote that the fundamental laws of our universe, which could also be classified as metaphysical statements since they <em>describe the physical</em> - the precise definition of <em>metaphysical</em>, <em>can</em> be determined through experiments and that's what makes them <strong>meaningful</strong>.</span></span><p />In other words, agnosticism is simply a word that means "can't know the unknowable", which is quite redundant. I'm pretty sure everyone can agree, theists and atheists included, that it is impossible to know the unknowable. You either <strong>believe</strong> there is a God because you think there is evidence for it - be it through the Bible, the Torah, prophets, miracles, martyrs or this inner connection with God that some call faith -&nbsp; <strong>or you don't</strong> if you believe there is no evidence for God. Following that line of thought, agnosticism, as in believing that God is unknowable, equates to atheism, as in believing there is no evidence for God.<p /> In conclusion, I suggest that we <strong>eradicate this meaningless word from the dictionary!</strong><p />I'm looking forward to answer your thoughts and counter-arguments in the comments!<p />PS: This rant was intentionally extremist as I wanted to make my point as clear as possible. I'm actually a very nuanced person and I have nothing against agnostics. Perhaps the definition of agnosticism should be changed to: "Person who believes there is some evidence for God, but not enough to take a position."</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project Idea: TL;DR browser add-on]]></title>
+    <link href="/project-idea-tldr-browser-add-on/index.html"/>
+    <updated>2010-02-13T00:00:00+08:00</updated>
+    <id>/project-idea-tldr-browser-add-on/project-idea-tldr-browser-add-on</id>
+    <content type="html"><![CDATA[<p>This is a follow-up to a question I <a href='http://answers.onstartups.com/questions/7837/ask-onstartups-review-my-firefox-add-on-idea'>asked on Answers.OnStartups.com</a>. Here's how it goes:</p><div class='post-text'>
+<p>I often find myself reading long blog posts and articles only to find out that I already knew most of what was discussed. Other times, I find out that the topic wasn't really relevant to my interest. Indeed, headlines are often misleading.</p>
+<p>That's what lead me to the following idea: a browser add-on that would overlay short and concise <a href='http://en.wiktionary.org/wiki/tl;dr'>TL;DR</a> (Too Long; Didn't Read) summaries over web pages. The system would be community driven and moderated: anyone could add their own summary of the content and the best TL;DR messages would be up voted by the community. Additionally, as suggested by <a href='http://blog.asmartbear.com/'>Jason</a>, authors could be allowed to write their own official summary.</p>
+<p>My bet is that this system could be valuable to people faced with too much information and too little time. It could be successful in the same way Twitter's 140 characters limit contributed to its success: reducing information overload and increasing signal-to-noise ratio.</p>
+As anticipated, there is already a <a href='http://answers.onstartups.com/questions/7837/ask-onstartups-review-my-firefox-add-on-idea/7840#7840'>good deal</a> of browser add-ons for annotating web pages, but none of them explicitly promote the usage that I am describing. I will be working on this little add-on in my free time and hope it'll eventually gain enough traction to really become useful. I'm open to constructive criticism and suggestions: just leave your thoughts in the comments !<br />
+<p><em>TL;DR: Community-driven Firefox add-on that overlays short summaries next to long texts.</em></p>
+</div>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Who am I and what you can expect to find here]]></title>
+    <link href="/who-am-i-and-what-you-can-expect-to-find-here/index.html"/>
+    <updated>2010-02-07T00:00:00+08:00</updated>
+    <id>/who-am-i-and-what-you-can-expect-to-find-here/who-am-i-and-what-you-can-expect-to-find-here</id>
+    <content type="html"><![CDATA[<p>Hi! I'm Olivier Lalonde, a Software Engineering student at <a href='http://www.polymtl.ca'>&Eacute;cole Polytechnique</a>, Montreal. I've been programming professionally for many years, both as a freelancer and as a full time employee. I've also worked on many small projects of my own, some of which were successful and some others not. Sadly, the most successful so far was an invoicing manager I built during summer when I was 15, which brought me close to 10K$ in revenues, which was a large some at the time. I've also co-founded Wozad, a behavioral advertising network that we decided to dead pool following Google's announcement to get in the behavioral marketing game. My current language of choice is PHP although I've recently started using Ruby which I enjoy so far.</p><p>I am an entrepreneur at heart and programmer by profession. Don't get me wrong: I do enjoy programming and solving complex problems very much but consider programming as a tool as opposed to an end in itself.</p><p>My interests include: web development and open standards, startups, user experience and innovation. This what I will write about on this blog most of the time.</p><p>My current projects are:<br /><a href='http://www.vozlabs.com'>Voz Labs</a>: my web development shop. <br /><a href='http://www.irosetta.com'>iRosetta</a>: a StackExchange powered Q&amp;A site for language. <br /><a href='http://www.getdorm.com'>dORM</a>: an ORM for PHP.</p><p>You can also find me here: <br /><a href='http://news.ycombinator.com/user?id=olalonde'>olalonde @ Hacker News </a><br /><a href='http://answers.onstartups.com/users/1030/oli'>olalonde @ Answers.OnStartups.com </a><br /><a href='http://www.twitter.com/o_lalonde'>o_lalonde @ Twitter </a></p><p>E-mail: <a href='mailto:olalonde@gmail.com'>olalonde@gmail.com</a></p><p>I'm a casual blogger and English isn't my native language. I write this blog first for myself in order to help my limited memory, put some order in my thoughts and practice my written English skills. Don't expect professional journalism from this blog !</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project Idea: AJAX without writing a single line of Javascript]]></title>
+    <link href="/project-idea-ajax-without-writing-a-single-li/index.html"/>
+    <updated>2010-02-07T00:00:00+08:00</updated>
+    <id>/project-idea-ajax-without-writing-a-single-li/project-idea-ajax-without-writing-a-single-li</id>
+    <content type="html"><![CDATA[<p>I had this idea of a Javascript library for rapidly implementing / prototyping AJAX on a web page. Here is how it would work:<br /><ol><li>User clicks a link on a page.</li><li>Javascript requests a server side script through an AJAX request and passes the HREF attribute of the link as a parameter <i>target_url</i>. </li> <li>The server script DIFFs the target page with the current page and returns a JSON string containing every modifications of the DOM. The format could be as such:</li></ol><blockquote class='gmail_quote' style='margin: 0pt 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;'> [<br />    {<br />        &quot;action&quot; : &quot;delete&quot;,<br />        &quot;path&quot; : &quot;/p[1]&quot;<br />    },<br />    {<br />        &quot;action&quot; : &quot;modify&quot;,<br />        &quot;path&quot; : &quot;/ul[1]/li[1]&quot;,<br />        &quot;node&quot; : {<br />            &quot;innerHTML&quot; : &quot;modified 1st line&quot;,<br />            &quot;attributes&quot; : {<br />                &quot;class&quot; : &quot;testClass&quot;<br />            }<br />        }<br />    },<br />    {<br />        &quot;action&quot; : &quot;insert&quot;,<br />        &quot;parentPath&quot; : &quot;/ul[1]&quot;,<br />        &quot;siblingPath&quot; : &quot;/li[3]&quot;, <br />        &quot;node&quot; : {<br />            &quot;tagName&quot; : &quot;li&quot;,<br />            &quot;innerHTML&quot; : &quot;should insert after 2nd item&quot;,<br />            &quot;attributes&quot; : []<br />        }<br />    }<br /> ]<br /></blockquote><br /> This would delete the first paragraph, modify the 1st list item in the 1st unordered list and insert a new list item before the 3rd list item in the first unordered list.<p />A use case of this library could be for a blog with a &#34;Show comments&#34; link. Instead of the browser reloading the entire page with blog comments enabled when clicking the link, the request would be sent asynchronously to the server script which would return the appropriate DOM modifications to display the comments. Of course, this particular example could easily be implemented with trivial Javascript, but my point was to show how it would work in &#34;real life&#34;.<p /><b>Limitations of this technique:</b><br /><ul><li>innerHTML isn&#39;t (yet) a standard</li><li>Blindly manipulating the DOM might interfere with other Javascript code already present on the page</li> <li>The entire process would have to be faster than actually loading the target page<br /></li></ul><b>Benefits of this technique:</b><br /><ul><li>It could be used to unobtrusively implement AJAX without having to write a single line of Javascript, resulting in a productivity increase.</li> <li>It could possibly be used as a browser add-on to enable faster page rendering. (This idea came from my frustration of having to wait for the whole DOM to be re-rendered by web browsers when clicking links within a site. Often times, a big part of the DOM structure remains the same and yet, your browser has to render everything once again.)</li></ul><b>In a nutshell:</b><br /><ul><li>This technique should be used for productivity boosts and on pages that share a similar layout.<br /></li></ul>I had a hard time putting this idea into words and I hope I made myself clear. I would appreciate some feedback from fellow developers!<p /> PS: So far, I&#39;ve done most of the Javascript implementation. If anyone is willing to help for the server script, let me know!</p>]]></content>
+  </entry>
+  
+</feed>

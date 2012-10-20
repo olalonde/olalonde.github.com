@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Project Idea: AJAX without writing a single line of Javascript - </title>
+  <meta name="author" content="">
+
+  
+  <meta name="description" content="I had this idea of a Javascript library for rapidly implementing / prototyping AJAX on a web page. Here is how it would work:User clicks a link on ...">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="/project-idea-ajax-without-writing-a-single-li/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="" rel="alternate" title="" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/"></a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <p>I had this idea of a Javascript library for rapidly implementing / prototyping AJAX on a web page. Here is how it would work:<br /><ol><li>User clicks a link on a page.</li><li>Javascript requests a server side script through an AJAX request and passes the HREF attribute of the link as a parameter <i>target_url</i>. </li> <li>The server script DIFFs the target page with the current page and returns a JSON string containing every modifications of the DOM. The format could be as such:</li></ol><blockquote class='gmail_quote' style='margin: 0pt 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;'> [<br />    {<br />        &quot;action&quot; : &quot;delete&quot;,<br />        &quot;path&quot; : &quot;/p[1]&quot;<br />    },<br />    {<br />        &quot;action&quot; : &quot;modify&quot;,<br />        &quot;path&quot; : &quot;/ul[1]/li[1]&quot;,<br />        &quot;node&quot; : {<br />            &quot;innerHTML&quot; : &quot;modified 1st line&quot;,<br />            &quot;attributes&quot; : {<br />                &quot;class&quot; : &quot;testClass&quot;<br />            }<br />        }<br />    },<br />    {<br />        &quot;action&quot; : &quot;insert&quot;,<br />        &quot;parentPath&quot; : &quot;/ul[1]&quot;,<br />        &quot;siblingPath&quot; : &quot;/li[3]&quot;, <br />        &quot;node&quot; : {<br />            &quot;tagName&quot; : &quot;li&quot;,<br />            &quot;innerHTML&quot; : &quot;should insert after 2nd item&quot;,<br />            &quot;attributes&quot; : []<br />        }<br />    }<br /> ]<br /></blockquote><br /> This would delete the first paragraph, modify the 1st list item in the 1st unordered list and insert a new list item before the 3rd list item in the first unordered list.<p />A use case of this library could be for a blog with a &#34;Show comments&#34; link. Instead of the browser reloading the entire page with blog comments enabled when clicking the link, the request would be sent asynchronously to the server script which would return the appropriate DOM modifications to display the comments. Of course, this particular example could easily be implemented with trivial Javascript, but my point was to show how it would work in &#34;real life&#34;.<p /><b>Limitations of this technique:</b><br /><ul><li>innerHTML isn&#39;t (yet) a standard</li><li>Blindly manipulating the DOM might interfere with other Javascript code already present on the page</li> <li>The entire process would have to be faster than actually loading the target page<br /></li></ul><b>Benefits of this technique:</b><br /><ul><li>It could be used to unobtrusively implement AJAX without having to write a single line of Javascript, resulting in a productivity increase.</li> <li>It could possibly be used as a browser add-on to enable faster page rendering. (This idea came from my frustration of having to wait for the whole DOM to be re-rendered by web browsers when clicking links within a site. Often times, a big part of the DOM structure remains the same and yet, your browser has to render everything once again.)</li></ul><b>In a nutshell:</b><br /><ul><li>This technique should be used for productivity boosts and on pages that share a similar layout.<br /></li></ul>I had a hard time putting this idea into words and I hope I made myself clear. I would appreciate some feedback from fellow developers!<p /> PS: So far, I&#39;ve done most of the Javascript implementation. If anyone is willing to help for the server script, let me know!</p>
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 -  -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
