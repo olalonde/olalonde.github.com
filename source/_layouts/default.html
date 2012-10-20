@@ -1,6 +1,10 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 {% include head.html %}
 <body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if page.sidebar == false %} class="no-sidebar" {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class="collapse-sidebar sidebar-footer" {% endif %}>
+<div style="background: #F2F2F2
+url('/images/noise.png');text-align:center">Need help from a full-stack
+<strong>Node.js</strong> engineer? <a href="mailto:olalonde@gmail.com">Hire me now at
+60$/hour</a>.</div>
   <header role="banner">{% include header.html %}</header>
   <nav role="navigation">{% include navigation.html %}</nav>
   <div id="main">

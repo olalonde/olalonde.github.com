@@ -14,5 +14,11 @@ body > header {
     font-size: 1em;
     color: $subtitle-color;
     font-weight: normal;
+    a {
+      color: $subtitle-link-color;
+      &:visited {
+        color: $subtitle-link-color;
+      }
+    }
   }
 }

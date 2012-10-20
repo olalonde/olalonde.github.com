@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://olalonde.github.com
-title: Oli's blog
-subtitle: Thoughts on entrepreneurship and technology.
+title: Olivier Lalonde's blog
+subtitle: Hey. I'm a friendly <a href="http://github.com/olalonde/">hacker</a>, <a href="http://news.ycombinator.com/user?id=olalonde">HN addict</a> and startup guy from Montreal. I tweet as <a href="http://twitter.com/o_lalonde">@o_lalonde</a>.
 author: Olivier Lalonde
 simple_search: http://google.com/search
 description: Hey. I'm a friendly hacker, HN addict and startup guy from Montreal. I tweet as @o_lalonde.
@@ -90,7 +90,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: syskall
-disqus_show_comment_count: true
+disqus_show_comment_count: false
 
 # Google Analytics
 google_analytics_tracking_id: UA-4054156-1
