@@ -1,5 +1,6 @@
 ---
 permalink: /how-to-write-your-own-native-nodejs-extension/index.html
+sharing_link: /how-to-write-your-own-native-nodejs-extension
 layout: post
 title: How to write your own native Node.js extension
 published: true

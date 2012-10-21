@@ -1,5 +1,6 @@
 ---
 permalink: /some-crazy-and-not-so-crazy-startup-and-proje/index.html
+sharing_link: /some-crazy-and-not-so-crazy-startup-and-proje
 layout: post
 title: 17 crazy and not so crazy startup and project ideas
 published: true

@@ -1,5 +1,6 @@
 ---
 permalink: /minimalist-shell-in-c-for-educational-purpose/index.html
+sharing_link: /minimalist-shell-in-c-for-educational-purpose
 layout: post
 title: Minimalist shell in C (for educational purposes only!)
 published: true

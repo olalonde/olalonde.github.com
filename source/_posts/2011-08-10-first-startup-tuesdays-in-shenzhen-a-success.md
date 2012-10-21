@@ -1,5 +1,6 @@
 ---
 permalink: /first-startup-tuesdays-in-shenzhen-a-success/index.html
+sharing_link: /first-startup-tuesdays-in-shenzhen-a-success
 layout: post
 title: First "Startup Tuesday" in Shenzhen a success!
 published: true

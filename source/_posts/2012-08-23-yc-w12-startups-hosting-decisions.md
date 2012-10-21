@@ -1,5 +1,6 @@
 ---
 permalink: /yc-w12-startups-hosting-decisions/index.html
+sharing_link: /yc-w12-startups-hosting-decisions
 layout: post
 title: YC W12 startups' hosting decisions
 published: true

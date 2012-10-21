@@ -1,5 +1,6 @@
 ---
 permalink: /how-to-roll-out-your-own-javascript-api-with/index.html
+sharing_link: /how-to-roll-out-your-own-javascript-api-with
 layout: post
 title: How to roll out your own Javascript API with V8
 published: true

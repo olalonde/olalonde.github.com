@@ -1,6 +1,7 @@
 ---
 permalink: /multivac-the-line-tracking-robot/index.html
 layout: post
+sharing_link: /multivac-the-line-tracking-robot
 title: MultiVac, the line tracking robot
 published: true
 comments: true
