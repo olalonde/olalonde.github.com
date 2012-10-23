@@ -14,12 +14,13 @@ The [root user](http://en.wikipedia.org/wiki/Root_user) on Linux and Unix operat
 Indeed, if you are running your server as root and it gets hacked
 through a vulnerability in your code, the attacker will have total control
 over your machine. This means the attacker could potentially wipe out
-your whole disk or worse instead of having limited permissions as
-regular users do. 
+your whole disk or worse. On the other hand, if your server runs with
+the permissions of a regular user, the attacker will be limited
+by those permissions. 
 
 The problem most Node.js developers will face is that in order to open
 ports below 1024 (i.e. port 80), one has to possess superuser
-permissions.  There are a few solutions around that problem, one being the use of `iptables` to redirect port 80 to a higher port such as port 3000, but today I will focus on a solution that can be done entirely within your code.
+permissions.  There are a few solutions around that problem, one being the use of `iptables` to redirect port 80 to a higher port such as port 3000 and another one being the use of a proxy such as `nginx` that will redirect requests to your server. However, today I will focus on a solution that can be done entirely within your code.
 
 We still start our server with root permissions using sudo but once we
 have opened our port(s), we will revert back our server's permission to that of
