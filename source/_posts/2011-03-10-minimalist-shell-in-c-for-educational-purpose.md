@@ -8,132 +8,127 @@ comments: true
 categories:
 - c/c++
 ---
-<h2>Introduction</h2>
 
-<p>I was kind of bored tonight so I decided to write a very minimalist
-shell in C. Here&rsquo;s how it looks:</p>
+## Introduction ##
 
-<div class="CodeRay">
-  <div class="code"><pre><span class="comment">/*
+I was kind of bored tonight so I decided to write a very minimalist
+shell in C. Here's how it looks:
+
+```c
+/*
  * DISCLAIMER: THIS CODE IS FOR EDUCATIONAL PURPOSES ONLY. USE AT YOUR OWN RISKS.
  *
  * This code shows the basic workings of a shell.
  *
- * Append &quot;/path/to/dashell&quot; to /etc/shells, to make it a valid shell:
- * sudo echo &quot;/path/to/dashell&quot; &gt;&gt; /etc/shells
+ * Append "/path/to/dashell" to /etc/shells, to make it a valid shell:
+ * sudo echo "/path/to/dashell" >> /etc/shells
  *
- * Change your &quot;username&quot;'s shell. &quot;username&quot; should have execute permission for the shell:
+ * Change your "username"'s shell. "username" should have execute permission for the shell:
  * chsh --shell /path/to/dashell username
  *
- */</span>
+ */
 
-<span class="preprocessor">#include</span> <span class="include">&lt;unistd.h&gt;</span>
-<span class="preprocessor">#include</span> <span class="include">&lt;string.h&gt;</span>
-<span class="preprocessor">#include</span> <span class="include">&lt;stddef.h&gt;</span>
-<span class="preprocessor">#include</span> <span class="include">&lt;stdlib.h&gt;</span>
-<span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#include</span> <span class="include">&lt;ctype.h&gt;</span>
-<span class="preprocessor">#include</span> <span class="include">&lt;sys/signal.h&gt;</span>
+#include <unistd.h>
+#include <string.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <sys/signal.h>
 
-<span class="preprocessor">#define</span> STDIN <span class="integer">0</span>
-<span class="preprocessor">#define</span> STDOUT <span class="integer">1</span>
-<span class="preprocessor">#define</span> STDERR <span class="integer">2</span>
+#define STDIN 0
+#define STDOUT 1
+#define STDERR 2
 
-<span class="preprocessor">#define</span> BUFFER_SIZE <span class="integer">1024</span>
+#define BUFFER_SIZE 1024
 
-<span class="directive">void</span> parse_arguments(<span class="predefined-type">char</span> buffer[], <span class="predefined-type">int</span> *args_count, <span class="predefined-type">char</span> *args[]) {
-  <span class="predefined-type">char</span> *delimiters = <span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="char">\r</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>;
-  <span class="predefined-type">char</span> *token;
-  *args_count = <span class="integer">0</span>;
-  <span class="comment">// &quot;abc def ghi&quot; =&gt; {&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;}</span>
-  <span class="keyword">while</span>(token = strsep(&amp;buffer, delimiters)) {
+void parse_arguments(char buffer[], int *args_count, char *args[]) {
+  char *delimiters = " \r\n";
+  char *token;
+  *args_count = 0;
+  // "abc def ghi" => {"abc", "def", "ghi"}
+  while(token = strsep(&buffer, delimiters)) {
     args[*args_count] = token;
     (*args_count)++;
   }
 }
 
-<span class="predefined-type">int</span> main(<span class="predefined-type">int</span> argc, <span class="directive">const</span> <span class="predefined-type">char</span>* argv[]) {
-  <span class="comment">// The weird characters are used to format the text's appearance.</span>
-  <span class="comment">// See http://en.wikipedia.org/wiki/ANSI_escape_code</span>
-  <span class="predefined-type">char</span> prompt[] = <span class="string"><span class="delimiter">&quot;</span><span class="char">\033</span><span class="content">[1mdashell</span><span class="char">\033</span><span class="content">[2m&gt;</span><span class="char">\033</span><span class="content">[0m </span><span class="delimiter">&quot;</span></span>;
-  <span class="predefined-type">char</span> exec_error[] = <span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot execute program %s.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>;
-  <span class="predefined-type">char</span> buffer[BUFFER_SIZE + <span class="integer">1</span>];
+int main(int argc, const char* argv[]) {
+  // The weird characters are used to format the text's appearance.
+  // See http://en.wikipedia.org/wiki/ANSI_escape_code
+  char prompt[] = "\033[1mdashell\033[2m>\033[0m ";
+  char exec_error[] = "Cannot execute program %s.\n";
+  char buffer[BUFFER_SIZE + 1];
 
-  <span class="predefined-type">int</span> args_count;
-  <span class="predefined-type">char</span> *args[BUFFER_SIZE];
+  int args_count;
+  char *args[BUFFER_SIZE];
 
-  <span class="predefined-type">int</span> n;
-  <span class="keyword">while</span>(<span class="integer">1</span>) {
-    write(STDOUT, prompt, strlen(prompt) + <span class="integer">1</span>);
-    n = read(STDIN, buffer, BUFFER_SIZE); <span class="comment">// Read from STDIN (keyboard input)</span>
-    buffer[n] = <span class="char">'\0'</span>; <span class="comment">// Null character to indicate string end</span>
+  int n;
+  while(1) {
+    write(STDOUT, prompt, strlen(prompt) + 1);
+    n = read(STDIN, buffer, BUFFER_SIZE); // Read from STDIN (keyboard input)
+    buffer[n] = '\0'; // Null character to indicate string end
 
-    <span class="comment">// &quot;abc def ghi&quot; =&gt; {&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;}</span>
-    parse_arguments(buffer, &amp;args_count, args);
+    // "abc def ghi" => {"abc", "def", "ghi"}
+    parse_arguments(buffer, &args_count, args);
 
-    <span class="comment">// No arguments</span>
-    <span class="keyword">if</span>(args_count == <span class="integer">0</span> || strcmp(args[<span class="integer">0</span>], <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>) == <span class="integer">0</span>) <span class="keyword">continue</span>;
+    // No arguments
+    if(args_count == 0 || strcmp(args[0], "") == 0) continue;
 
-    <span class="comment">// Argument = exit</span>
-    <span class="keyword">if</span>(strcmp(args[<span class="integer">0</span>], <span class="string"><span class="delimiter">&quot;</span><span class="content">exit</span><span class="delimiter">&quot;</span></span>) == <span class="integer">0</span>) exit(<span class="integer">0</span>);
+    // Argument = exit
+    if(strcmp(args[0], "exit") == 0) exit(0);
 
-    pid_t child_pid = fork(); <span class="comment">// Duplicate process</span>
-    <span class="keyword">if</span>(child_pid == <span class="integer">0</span>) {
-      <span class="comment">// Child</span>
-      <span class="keyword">if</span>(execvp(args[<span class="integer">0</span>], args) &lt; <span class="integer">0</span>) { <span class="comment">// Replace executable code by command passed</span>
-        fprintf(stderr, exec_error, args[<span class="integer">0</span>]);
+    pid_t child_pid = fork(); // Duplicate process
+    if(child_pid == 0) {
+      // Child
+      if(execvp(args[0], args) < 0) { // Replace executable code by command passed
+        fprintf(stderr, exec_error, args[0]);
       }
     }
-    <span class="keyword">else</span> {
-      <span class="comment">// Parent</span>
-      <span class="comment">// Wait for child to finish</span>
+    else {
+      // Parent
+      // Wait for child to finish
       wait();
     }
   }
-}</pre></div>
-</div>
+}
+```
 
+The full source code is freely [available at Github](https://github.com/olalonde/dashell):
 
-<p>The full source code is freely <a href="https://github.com/olalonde/dashell">available at
-Github</a>:</p>
+    git clone git://github.com/olalonde/dashell.git
 
-<p><code>git clone git://github.com/olalonde/dashell.git</code></p>
+Note that I never code in C so it might not be perfect... I'm looking at you `parse_arguments()` ;)
 
-<p>Note that I never code in C so it might not be perfect&hellip; I&rsquo;m looking at you <code>parse_arguments()</code> ;)</p>
+## Install & have fun ##
 
-<h2>Install &amp; have fun</h2>
+The optional steps will let you use the shell as a login shell for a given user.
 
-<p>The optional steps will let you use the shell as a login shell for a given user.</p>
+1. `make`
 
-<ol>
-<li><p><code>make</code></p></li>
-<li><p>(optional) Append &ldquo;/path/to/dashell&rdquo; to /etc/shells, to make it a
-valid shell:</p>
+2. (optional) Append "/path/to/dashell" to /etc/shells, to make it a
+valid shell:
 
-<div class="CodeRay">
-  <div class="code"><pre>sudo echo &quot;/path/to/dashell&quot; &gt;&gt; /etc/shells</pre></div>
-</div>
-</li>
-<li><p>(optional) Change &ldquo;username&rdquo;&rsquo;s shell. &ldquo;username&rdquo; should have
-execute permission for the shell:</p>
+```bash
+sudo echo "/path/to/dashell" >> /etc/shells
+```
 
-<div class="CodeRay">
-  <div class="code"><pre>chsh --shell /path/to/dashell username</pre></div>
-</div>
-</li>
-</ol>
+3. (optional) Change "username"'s shell. "username" should have
+execute permission for the shell:
 
+```bash
+chsh --shell /path/to/dashell username
+```
 
-<p>Now, you can launch the shell and start having fun with it and be
-reminded how great bash really is!</p>
+Now, you can launch the shell and start having fun with it and be
+reminded how great bash really is!
 
-<div class="CodeRay">
-  <div class="code"><pre>./dashell
-dashell&gt; ls -al
-dashell&gt; ./launchme 1 2 3
+```bash
+./dashell
+dashell> ls -al
+dashell> ./launchme 1 2 3
 ....
-dashell&gt; exit</pre></div>
-</div>
+dashell> exit
+```
 
-
-<p>Feel free to ask questions!</p>
+Feel free to ask questions!
