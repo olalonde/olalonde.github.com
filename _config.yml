@@ -59,7 +59,7 @@ default_asides: [custom/asides/about.html, custom/asides/sites.html, asides/rece
 
 # Github repositories
 github_user: olalonde
-github_repo_count: 0
+github_repo_count: 5
 github_show_profile_link: true
 github_skip_forks: true
 
