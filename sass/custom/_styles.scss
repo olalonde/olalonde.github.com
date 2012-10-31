@@ -1,6 +1,29 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
+
+html {
+  background-image:url('../images/stressed_linen.png');
+}
+
+body > header {
+  background: none;
+  padding: 55px;
+}
+
+body > header img {
+  float: left;
+  margin: 0px 55px 0 0;
+  @include box-shadow(0px 0px 5px 0px lighten(#000, 0.2));
+}
+
+#topflash {
+  @include border-radius(3px);
+  background: darken(#FFF, 0.2) url('/images/noise.png');
+  @include box-shadow(3px 3px 2px #000);
+  text-align:center;
+}
+
 .external_site {
   width: 16px;
   height: 16px;

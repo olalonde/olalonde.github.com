@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tips and tricks before learning a new technology"
+title: "Tips and tricks when learning a new technology"
 date: 2012-10-27 18:33
 comments: true
 published: true
