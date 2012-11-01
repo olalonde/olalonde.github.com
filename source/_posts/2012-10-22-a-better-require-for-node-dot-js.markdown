@@ -8,6 +8,10 @@ categories:
   - javascript 
 ---
 
+**UPDATE:** [better-require](https://github.com/olalonde/better-require)
+now supports `json`, `yaml`, `csv`, `xml`, `ini` as well as
+`coffeescript`, `clojurescrip`, `typescript`, `dart` and `six`.
+
 While reading the Node.js API documentation today, I stumbled upon an [interesting feature](http://nodejs.org/api/all.html#all_require_extensions). This feature let's you add handlers for arbitrary file extensions that `require()`  will call when requiring a file of that extension. Internally, it looks for the extension in `require.extensions` and if the extension is found, the handler is called instead of the default require routine. 
 
 I thought that was pretty cool so I couldn't resist the urge of wrapping a bunch of file parsers into a standalone NPM module that would make it easy to support for multiple file formats through `require()`.
