@@ -38,6 +38,42 @@ Before that, you will of course need to install the module through NPM:
 npm install follow-redirects
 ```
 
-More usage info is available at the Github repository: [https://github.com/olalonde/follow-redirects/](https://github.com/olalonde/follow-redirects/)
+Here are some usage examples:
+
+```javascript
+var http = require('follow-redirects').http;
+var https = require('follow-redirects').https;
+
+/* 
+ * http and https are just like Node.js' http and https modules except 
+ * that they follow redirects seamlessly. 
+ */
+
+http.get('http://bit.ly/900913', function (res) {
+  res.on('data', function (chunk) {
+    console.log(chunk);
+  });
+}).on('error', function (err) {
+  console.error(err);
+});
+
+/*
+ * You can optionnally pass the maxRedirect option which defaults to 5
+ */
+
+https.request({
+  host: 'bitly.com',
+  path: '/UHfDGO',
+  maxRedirects: 3
+}, function (res) {
+  res.on('data', function (chunk) {
+    console.log(chunk);
+  });
+}).on('error', function (err) {
+  console.error(err);
+});
+```
+
+More info is available at the Github repository: [https://github.com/olalonde/follow-redirects/](https://github.com/olalonde/follow-redirects/)
 
 
