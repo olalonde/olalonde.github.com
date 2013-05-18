@@ -13,6 +13,9 @@ categories:
 
 **UPDATE:** There is now a Node.js addon for loading and calling dynamic libraries using pure JavaScript: [node-ffi](https://github.com/rbranson/node-ffi). Also, `node-waf` is no longer being used to compile Node.js extensions.
 
+*TRANSLATIONS*: This post was translated to Chinese:
+[http://www.oschina.net/translate/how-to-write-your-own-native-nodejs-extension](http://www.oschina.net/translate/how-to-write-your-own-native-nodejs-extension)
+
 ##Introduction##
 
 *This is a follow up to [How to roll out your own Javascript API with V8](http://syskall.com/how-to-roll-out-your-own-javascript-api-with). You should still be able to follow if you haven't read it.*
