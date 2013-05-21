@@ -9,14 +9,14 @@ categories:
 
 This week I added the following snippet to my .vimrc (.vimrc.after if you are using Janus):
 
-```viml
-map <C-K> :bnext<CR>
-map <C-J> :bprev<CR>
+```vim
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
 ```
 
-It maps `CTRL-k` and `CTRL-j` to next and previous buffer and `CTRL-l` and `CTRL-h` to next and previous tabs. 
+It maps `CTRL-j` and `CTRL-k` to next and previous buffer and `CTRL-l` and `CTRL-h` to next and previous tabs. 
 
 It is by far the biggest productivity boost I have gotten out of my
 `.vimrc` file. 
