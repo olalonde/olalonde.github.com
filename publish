@@ -1,0 +1,2 @@
+#!/bin/bash
+rake gen_deploy && git add . && git commit -m "deploy" && git push
