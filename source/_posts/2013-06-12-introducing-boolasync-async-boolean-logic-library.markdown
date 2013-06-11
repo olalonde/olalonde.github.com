@@ -24,7 +24,7 @@ if (is_user() && (is_admin() || is_super_admin()) {
 }
 ```
 
-Note: this is a fictional example for purposes of demonstration.
+Note: this is a fictional example for demonstration purposes.
 
 However, here is the catch: your functions are asynchronous which means
 that they take a callback argument which in turns takes an error and
