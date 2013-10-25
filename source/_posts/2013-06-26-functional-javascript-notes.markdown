@@ -2,6 +2,7 @@
 layout: post
 title: "Functional Javascript notes"
 date: 2013-06-26 11:12
+published: false
 comments: true
 categories: 
 ---

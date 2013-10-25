@@ -3,6 +3,7 @@ layout: post
 title: "Developer experience"
 date: 2013-06-17 20:31
 comments: true
+published: false
 categories: 
   - software engineering
   - open source
