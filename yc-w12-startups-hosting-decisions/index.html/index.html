@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>YC W12 startups' hosting decisions - Olivier Lalonde's blog</title>
+  <meta name="author" content="Olivier Lalonde">
+
+  
+  <meta name="description" content="Back in 2011,&nbsp;Jo&euml;l Franusic published a neat visualization of all Y Combinator startups&#8217; hosting decisions using his neat open source &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://syskall.com/yc-w12-startups-hosting-decisions/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Olivier Lalonde's blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12888988-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+
+  <header role="banner"><hgroup>
+    <img src="http://www.gravatar.com/avatar/998aa9f83c1955ae4ed2ee1ef2b830f1.png">
+    <h1> 
+      
+      <a href="/">Olivier Lalonde's blog</a>
+    
+    </h1>
+
+  
+    <h2>Hey. I'm a friendly <a href="http://github.com/olalonde/">hacker</a> and startup guy. I tweet as <a href="http://twitter.com/o_lalonde">@o_lalonde</a>.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:syskall.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">All posts</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/yc-w12-startups-hosting-decisions" 
+  data-via="o_lalonde" 
+  data-text="YC W12 startups' hosting decisions"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/yc-w12-startups-hosting-decisions"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/yc-w12-startups-hosting-decisions" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title">YC W12 Startups' Hosting Decisions</h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-23T00:00:00+08:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div>Back in 2011,&nbsp;<a href="https://github.com/jpf">Jo&euml;l Franusic</a> published a <a href="http://jpf.github.com/domain-profiler/ycombinator.html">neat visualization</a> of all <a href="http://www.ycombinator.com">Y Combinator</a> startups&#8217; hosting decisions using his neat open source <a href="https://github.com/jpf/domain-profiler">domain-profiler</a> software. I was curious to know what had changed since then, so instead of profiling all YC startups this time, I only profiled the Winter 2012 batch as retrieved from this <a href="https:docs.google.comspreadsheetccc?key=0AkkhSN3vaY4jdF90b1l1Vnl5NmZjaTBNQWlJYVozMEE#gid=0 ">unofficial YC startups spreadsheet</a>.</div>
+
+
+<p />
+<div>So below are the hosting decisions for Y Combinator&#8217;s Winter 2012 startups:</div>
+<p />
+<div><img src="http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:CCCCCFHHHP9&amp;chl=SoftLayer|DreamHost|CloudFlare|1+and+1|Rackspace|DNS+issue|Linode|Go+Daddy|Media+Temple|Other+%2F+Self+Hosted|Amazon&amp;chtt=Web+Host&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,24" alt="" /> <img src="http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:BBBBBD9&amp;chl=1+and+1|None|Self+Hosted|Mailgun|Other+%2F+Self+Hosted|Go+Daddy|Google&amp;chtt=Email+Host&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,35" alt="" /> <img src="http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:FFFFFLLLQQQ49&amp;chl=Self+Hosted|DreamHost|Rackspace|WebFaction|eNom|Name.com|1+and+1|Media+Temple|Linode|CloudFlare|Other+%2F+Self+Hosted|Go+Daddy|Amazon&amp;chtt=DNS+Host&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,11" alt="" /> <img src="http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:CCFFRX9&amp;chl=Tucows|1+and+1|Gandi+SAS|Name.com|Other+%2F+Self+Hosted|eNom|Go+Daddy&amp;chtt=Registrar&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,21" alt="" /> <img src="http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:Hmu2229&amp;chl=VeriSign|Go+Daddy|Other+%2F+Self+Hosted|GeoTrust|Comodo+Group|None|DigiCert&amp;chtt=SSL+Issuer&amp;cht=p&amp;chs=400x200&amp;chxr=0,1,8" alt="" /> <img src="http://chart.apis.google.com/chart?chco=CFF09E,A8DBA8,79BD9A,3B8686,0B486B&amp;chd=s:Um9&amp;chl=None|normal|star&amp;chtt=Certificate+Type&amp;cht=p&amp;chs=400x200&amp;chxr=0,7,21" alt="" /></div>
+<p><a href="https://docs.google.com/spreadsheet/ccc?key=0Ara_YbXDNXjrdEFnM3h3RlZZZFdfQmFCdFZEWFVpQmc">Raw data</a>:</p>
+<p><iframe src="https://docs.google.com/spreadsheet/pub?key=0Ara_YbXDNXjrdEFnM3h3RlZZZFdfQmFCdFZEWFVpQmc&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true" frameborder="0" height="300" width="500"></iframe></p>
+<p>Credits to <a href="https://github.com/jpf">jpf</a> for the awesome <a href="https://github.com/jpf/domain-profiler">domain profiling software</a>.</p>
+<p><a href="http://news.ycombinator.com/item?id=4429438">Discussion on Hacker News.</a></p>
+<p>You should follow me on Twitter <a href="http://www.youtube.com/watch?v=dQw4w9WgXcQ">here</a>.</p>
+<p><strong>UPDATE</strong>: Amazon hosting may include Heroku or other services using Amazon as infrastructure. According to the certificate type column in the raw data, at least 6 domains are using Heroku.</p>
+
+</div>
+
+
+  <div class="alert">Want to get notified about more articles like this? 
+    <a href="http://twitter.com/o_lalonde">Follow @o_lalonde on Twitter.</a>
+  </div>
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Olivier Lalonde</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-23T00:00:00+08:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/hacker-news/'>hacker-news</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" 
+    data-url="http://syskall.com/yc-w12-startups-hosting-decisions" data-via="o_lalonde" 
+    data-counturl="http://syskall.com/yc-w12-startups-hosting-decisions" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450"
+      data-href="http://syskall.com/yc-w12-startups-hosting-decisions" 
+      data-show-faces="true" data-></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/first-startup-tuesdays-in-shenzhen-a-success/index.html" title="Previous Post: First "Startup Tuesday" in Shenzhen a success!">&laquo; First "Startup Tuesday" in Shenzhen a success!</a>
+      
+      
+        <a class="basic-alignment right" href="/trouble-installing-imagemagick-on-os-x-1072/index.html" title="Next Post: Trouble installing ImageMagick on OS X 10.7.2">Trouble installing ImageMagick on OS X 10.7.2 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <p>
+  This blog was featured on <a href="http://coding.smashingmagazine.com/2011/09/16/useful-node-js-tools-tutorials-and-resources/">Smashing Magazine</a>, <a href="http://javascriptweekly.com/archive/26.html">Javascript Weekly</a>, <a href="http://dailyjs.com/2011/05/18/node-roundup/">DailyJS</a> &amp; <a href="http://www.fastcompany.com/3000410/silicon-valleys-world-asia-edition">Fast Company</a>.
+  </p>
+  <p><a style="background-color:yellow; font-weight: bold;" href="mailto:olalonde@gmail.com">Get in touch!</a></p>
+</section>
+<section itemscope>
+  <h1>About me</h1>
+  <p>I build cool stuff with Node.js.</p>
+  <ul>
+    <li>Email: <a href="mailto:olalonde@gmail.com" rel="me">olalonde@gmail.com</a></li>
+    <li>Twitter: <a href="http://twitter.com/o_lalonde" rel="me">@o_lalonde</a></li>
+    <li>LinkedIn: <a href="http://www.linkedin.com/in/olivierlalonde" rel="me">@olivierlalonde</a></li>
+    <li>Github: <a href="http://github.com/olalonde" rel="me">@olalonde</a></li>
+    <li>Google+: <a href="https://plus.google.com/108481435543473632495?rel=author">Olivier Lalonde</a></li>
+  </ul> 
+</section>
+<section> <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/introducing-boolasync-async-boolean-logic-library/">Introducing Boolasync - a library for async boolean logic</a>
+      </li>
+    
+      <li class="post">
+        <a href="/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/">Executing multiple shell commands cleanly in Node.js with async</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-biggest-vim-productivity-boost/">My biggest Vim productivity boost</a>
+      </li>
+    
+      <li class="post">
+        <a href="/connectr-programmatically-manipulating-the-connect-stack/">Connectr: Programmatically manipulating the Connect stack</a>
+      </li>
+    
+      <li class="post">
+        <a href="/pagination-with-handlebars/">Pagination with Handlebars</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/olalonde">@olalonde</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'olalonde',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("o_lalonde", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/o_lalonde" class="twitter-follow-button" data-show-count="false">Follow @o_lalonde</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Olivier Lalonde -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'syskall';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://syskall.com/yc-w12-startups-hosting-decisions/index.html';
+        var disqus_url = 'http://syskall.com/yc-w12-startups-hosting-decisions/index.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

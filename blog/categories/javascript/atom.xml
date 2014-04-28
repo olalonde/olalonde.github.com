@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javascript | Olivier Lalonde's blog]]></title>
+  <link href="http://syskall.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://syskall.com/"/>
+  <updated>2014-04-29T03:18:43+08:00</updated>
+  <id>http://syskall.com/</id>
+  <author>
+    <name><![CDATA[Olivier Lalonde]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing Boolasync - a library for async boolean logic]]></title>
+    <link href="http://syskall.com/introducing-boolasync-async-boolean-logic-library/"/>
+    <updated>2013-06-12T00:23:00+08:00</updated>
+    <id>http://syskall.com/introducing-boolasync-async-boolean-logic-library</id>
+    <content type="html"><![CDATA[<ul>
+<li>Github: <a href="https://github.com/olalonde/boolasync">olalonde/boolasync</a></li>
+<li>NPM: <code>npm install boolasync</code></li>
+<li>License: MIT</li>
+</ul>
+
+
+<p>Who would have thoughts things would have gone that far? Yes, I have
+created a Javascript library for handling boolean logic that involves asynchronous
+callbacks.</p>
+
+<p>Let's say you have a web app that has an authorization layer like so:</p>
+
+<p><code>javascript
+if (is_user() &amp;&amp; (is_admin() || is_super_admin()) {
+  console.log('Authorize!');
+}
+</code></p>
+
+<p>Note: this is a fictional example for demonstration purposes.</p>
+
+<p>However, here is the catch: your functions are asynchronous which means
+that they take a callback argument which in turns takes an error and
+result argument. <code>function callback(err, res) {}</code></p>
+
+<p>How do you rewrite the above code elegantly?</p>
+
+<p>You could use the nice <code>async</code> library.</p>
+
+<p>```javascript
+async.parallel([
+  is_user,
+  is_admin,
+  is_super_admin
+], function (err, results) {
+  if (results[0] &amp;&amp; (results[1] || results[2])) {</p>
+
+<pre><code>console.log('Authorize!');
+</code></pre>
+
+<p>  }
+});
+```</p>
+
+<p>There are two problems however:</p>
+
+<ol>
+<li><p>The code is not very expressive.</p></li>
+<li><p>We have to wait for all functions to finish.</p>
+
+<p> In the example above, if <code>is_user</code> returns <code>false</code>, we would already know that the user is not
+ authorized. <code>false &amp;&amp; ...</code> is always false no matter what the <code>...</code>
+ represents. In computer science, this is called lazy evaluation.</p></li>
+</ol>
+
+
+<p>Here is how you would rewrite the above with boolasync:</p>
+
+<p>```javascript
+is_user.and(is_admin.or(is_super_admin)).eval(function (err, authorized) {
+  if (authorized) {</p>
+
+<pre><code>console.log('Authorize!');
+</code></pre>
+
+<p>  }
+});
+```</p>
+
+<p>Notice how terse and expressive the code is compared to the async
+example. In bonus, boolasync won't wait for an async call to terminate if it already knows the result
+of an expression.</p>
+
+<p>For more documentation and examples, visit the Github page: <a href="https://github.com/olalonde/boolasync">https://github.com/olalonde/boolasync</a></p>
+
+<p>Cheers!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Connectr: Programmatically manipulating the Connect stack]]></title>
+    <link href="http://syskall.com/connectr-programmatically-manipulating-the-connect-stack/"/>
+    <updated>2013-05-18T12:36:00+08:00</updated>
+    <id>http://syskall.com/connectr-programmatically-manipulating-the-connect-stack</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/olalonde/connectr">Connectr</a> is a Node.js module I wrote that aims to solve the following problem: how
+to manipulate the <a href="https://github.com/senchalabs/connect">Connect</a> stack after it has been created.</p>
+
+<p>This is a problem I faced while writing a REST framework on top of <a href="http://expressjs.com">Express.js</a>. The framework initialized the middleware stack but there was no easy way to expose the stack to end users of the framework so they could add their own middlewares at arbitrary positions on the stack.</p>
+
+<h1>Install</h1>
+
+<pre><code>npm install connectr
+</code></pre>
+
+<h1>Usage</h1>
+
+<p>```javascript
+var connectr = require('connectr')(app);</p>
+
+<p>// Add labeled middleware
+connectr.use(middleware).as(label);</p>
+
+<p>// Insert before middleware
+connectr.before(label).use(middleware).as(label);</p>
+
+<p>// Insert after middleware
+connectr.after(label).use(middleware);</p>
+
+<p>// Remove middleware
+connectr.remove(label);</p>
+
+<p>// the .as, .before and .after calls are optional
+```</p>
+
+<h1>Simple Example</h1>
+
+<p>```javascript
+var connect = require('connect'),
+var app = connect();
+var connectr = require('connectr')(app);</p>
+
+<p>connectr.use(connect.cookieParser).as('cookieParser');</p>
+
+<p>/<em> ... </em>/</p>
+
+<p>connectr.before('cookieParser').use(function (req, res, next) {
+  console.log('Before cookie parser...');
+  next();
+}).as('log before cookie parser');</p>
+
+<p>```</p>
+
+<p>I am hoping the methods that Connectr provide can eventually be
+supported natively by Connect but until then, Connectr does the job.</p>
+
+<p>If you use Connectr, please <a href="https://github.com/olalonde/connectr/blob/master/README.md">star the project on Github</a> to show your support.</p>
+
+<p>Happy coding!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pagination with Handlebars]]></title>
+    <link href="http://syskall.com/pagination-with-handlebars/"/>
+    <updated>2012-11-17T09:05:00+08:00</updated>
+    <id>http://syskall.com/pagination-with-handlebars</id>
+    <content type="html"><![CDATA[<p>Pagination can be quite tricky with Handlebars since Handlebars does not
+have any built in way to do for/while loops. One solution mix some presentation code
+within your logic layer and passing an array containing all your pages in an array.</p>
+
+<p>For example:</p>
+
+<p>```javascript
+{
+  pagination: [</p>
+
+<pre><code>{ previous: disabled }, 
+{ page: 1, active: true }, 
+{ page: 2 }, 
+{ page: 3 },
+{ page: 4 },
+{ page: 5 }
+</code></pre>
+
+<p>  ]
+}
+```</p>
+
+<p>This solution has several drawbacks: mixing of logic/view code, code
+duplication, difficult to reuse, etc.</p>
+
+<p>The other, cleaner solution, is to write a Handlebars helper, which I
+have already done so you don't have to!</p>
+
+<p><img src="https://github.com/olalonde/handlebars-paginate/raw/master/screenshot.png" alt="screenshot" /></p>
+
+<p>The helper is available for download or forking on Github:</p>
+
+<p><a href="https://github.com/olalonde/handlebars-paginate">https://github.com/olalonde/handlebars-paginate</a></p>
+
+<p>or through NPM:</p>
+
+<p><code>bash
+npm install handlebars-paginate
+</code></p>
+
+<p>To use it, all you have to do is register it as an helper:</p>
+
+<p><code>javascript
+Handlebars.registerHelper('paginate', require('handlebars-paginate'));
+</code></p>
+
+<p>And all you need to pass to your template is an object containing a
+<code>page</code> parameter which is the number of the current page and a
+<code>pageCount</code> parameter which is the total number of pages.</p>
+
+<p>For example:</p>
+
+<p>```javascript
+{
+  pagination: {</p>
+
+<pre><code>page: 3,
+pageCount: 10
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>Handlebars-paginate let's you define three types of blocks in your
+template:</p>
+
+<p><strong>middle</strong>:</p>
+
+<p>This will iterate over all the possible pages. An optional <code>limit</code>
+parameter is available if you'd like to limit how many page links to
+display. <code>limit=7</code> will only display 3 links to the left of the active
+page and 3 pages to its right.</p>
+
+<p>For example:</p>
+
+<p>
+<code>html
+{{#paginate pagination type="middle" limit="7"}}
+  &lt;li {{#if active}}class="active"{{/if}}&gt;&lt;a href="?p={{n}}"&gt;{{n}}&lt;/a&gt;&lt;/li&gt;
+{{/paginate}}
+</code></p>
+
+<p><strong>previous</strong> and <strong>next</strong>:</p>
+
+<p>Finally, previous and next are used to define how you want to display the
+"previous" and "next" buttons.</p>
+
+<p>For example:</p>
+
+<p><code>html
+{{#paginate pagination type="previous"}}
+  &lt;li {{#if disabled}}class="disabled"{{/if}}&gt;&lt;a href="?p={{n}}" &gt;Prev&lt;/a&gt;&lt;/li&gt;
+{{/paginate}}
+</code></p>
+
+<p><code>html
+{{#paginate pagination type="next"}}
+  &lt;li {{#if disabled}}class="disabled"{{/if}}&gt;&lt;a href="?p={{n}}"&gt;Next&lt;/a&gt;&lt;/li&gt;
+{{/paginate}}
+</code>
+</p>
+
+<p>Enjoy and feel free to fork or <a href="https://github.com/olalonde/handlebars-paginate/issues">report issues</a>!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to follow HTTP redirects in Node.js]]></title>
+    <link href="http://syskall.com/how-to-follow-http-redirects-in-node-dot-js/"/>
+    <updated>2012-11-16T06:16:00+08:00</updated>
+    <id>http://syskall.com/how-to-follow-http-redirects-in-node-dot-js</id>
+    <content type="html"><![CDATA[<p>One of the biggest annoyance with Node.js' native HTTP and HTTPS
+clients is that there is no way to automatically follow HTTP redirects.
+Let's say you want to fetch the content of a page that has moved (301
+redirect), you will have to write a lot of <em>boilerplate code</em> to handle
+the redirect(s) by yourself.</p>
+
+<p>Since following redirects is fairly common, I decided to write a
+a drop-in replacement for the native HTTP and HTTPS module that would handle redirection seamlessly.</p>
+
+<p>This module has exactly the same interface has the native HTTP and HTTPS
+module but it will handle redirects automatically. In other words, if
+you want to automatically start following redirects, all you have to do
+is replace</p>
+
+<p><code>javascript
+var http = require('http');
+</code></p>
+
+<p>by</p>
+
+<p><code>javascript
+var http = require('follow-redirects').http
+</code></p>
+
+<p>Before that, you will of course need to install the module through NPM:</p>
+
+<p><code>bash
+npm install follow-redirects
+</code></p>
+
+<p>Here are some usage examples:</p>
+
+<p>```javascript
+var http = require('follow-redirects').http;
+var https = require('follow-redirects').https;</p>
+
+<p>/<em>
+ * http and https are just like Node.js' http and https modules except
+ * that they follow redirects seamlessly.
+ </em>/</p>
+
+<p>http.get('http://bit.ly/900913', function (res) {
+  res.on('data', function (chunk) {</p>
+
+<pre><code>console.log(chunk);
+</code></pre>
+
+<p>  });
+}).on('error', function (err) {
+  console.error(err);
+});</p>
+
+<p>/<em>
+ * You can optionnally pass the maxRedirect option which defaults to 5
+ </em>/</p>
+
+<p>https.request({
+  host: 'bitly.com',
+  path: '/UHfDGO',
+  maxRedirects: 3
+}, function (res) {
+  res.on('data', function (chunk) {</p>
+
+<pre><code>console.log(chunk);
+</code></pre>
+
+<p>  });
+}).on('error', function (err) {
+  console.error(err);
+});
+```</p>
+
+<p>More info is available at the Github repository: <a href="https://github.com/olalonde/follow-redirects/">https://github.com/olalonde/follow-redirects/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using the debugger statement with node-inspector]]></title>
+    <link href="http://syskall.com/using-the-debugger-statement-with-node-inspector/"/>
+    <updated>2012-10-25T15:41:00+08:00</updated>
+    <id>http://syskall.com/using-the-debugger-statement-with-node-inspector</id>
+    <content type="html"><![CDATA[<p>The first thing client-side Javascript developers miss when
+starting out with Node.js is the ability to debug their code through
+a GUI debugger as they are acustomed to when developing for the browser.</p>
+
+<p>Fortunately, it wasn't long before the Node.js community came up with
+GUI debuggers and as of today, the most widespread one is <a href="https://github.com/dannycoates/node-inspector">node-inspector</a>.</p>
+
+<p>In this post, I won't go into the details of using node-inspector but I
+will instead introduce a neat feature that many Node.js developers aren't aware of
+or don't know how to use.</p>
+
+<p>This feature is called the <code>debugger</code> statement. If you have ever caught
+yourself firing up node-inspector and browsing through the huge file
+pane on the left in order to find a file and insert a breakpoint, then
+this post should save you a lot of trouble in the future.</p>
+
+<p>Here's what the <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMA-262 specification</a>
+has to say about the <code>debugger</code> statement:</p>
+
+<blockquote><p>Syntax</p>
+
+<p> DebuggerStatement :</p>
+
+<p>   <code>debugger ;</code></p>
+
+<p>Evaluating the DebuggerStatement  production may allow an implementation to cause a  breakpoint when run
+under a debugger. If a debugger is not present or active this statement has no observable effect.</p></blockquote>
+
+<p>In other words, you can insert breakpoints directly in your code using
+<code>debugger;</code>, fire up your app in debug mode, open your debugging client
+and the breakpoint will be set. Don't forget to remove <code>debugger;</code> from
+your code once you are done debugging!</p>
+
+<p>Here's a quick demonstration.</p>
+
+<ol>
+<li><p>Insert debugger; statement in your code</p>
+
+<p> <img src="http://i.minus.com/ibd1ju4lGR4i1u.png" alt="screen shot" /></p></li>
+<li><p>Fire up node-inspector</p>
+
+<p> <code>bash
+ node-inspector;
+</code></p></li>
+<li><p>Launch your app in debugging mode (don't forget to use the
+<code>--debug-brk</code> flag if your debugger statement is "early" in your code)</p>
+
+<p> <code>bash
+ node --debug server.js
+</code></p></li>
+<li><p>Open the debugging client</p>
+
+<p> <img src="http://i.minus.com/ibqWEpgANEWaeM.png" alt="screenshot" /></p></li>
+</ol>
+
+
+<p>No more hunting for files!</p>
+]]></content>
+  </entry>
+  
+</feed>

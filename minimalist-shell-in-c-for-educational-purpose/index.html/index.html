@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Minimalist shell in C (for educational purposes only!) - Olivier Lalonde's blog</title>
+  <meta name="author" content="Olivier Lalonde">
+
+  
+  <meta name="description" content="Introduction I was kind of bored tonight so I decided to write a very minimalist
+shell in C. Here&#8217;s how it looks: 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://syskall.com/minimalist-shell-in-c-for-educational-purpose/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Olivier Lalonde's blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12888988-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+
+  <header role="banner"><hgroup>
+    <img src="http://www.gravatar.com/avatar/998aa9f83c1955ae4ed2ee1ef2b830f1.png">
+    <h1> 
+      
+      <a href="/">Olivier Lalonde's blog</a>
+    
+    </h1>
+
+  
+    <h2>Hey. I'm a friendly <a href="http://github.com/olalonde/">hacker</a> and startup guy. I tweet as <a href="http://twitter.com/o_lalonde">@o_lalonde</a>.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:syskall.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">All posts</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/minimalist-shell-in-c-for-educational-purpose" 
+  data-via="o_lalonde" 
+  data-text="Minimalist shell in C (for educational purposes only!)"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/minimalist-shell-in-c-for-educational-purpose"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/minimalist-shell-in-c-for-educational-purpose" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title">Minimalist Shell in C (for Educational Purposes Only!)</h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-10T00:00:00+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Introduction</h2>
+
+<p>I was kind of bored tonight so I decided to write a very minimalist
+shell in C. Here&#8217;s how it looks:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/*</span>
+</span><span class='line'><span class="cm"> * DISCLAIMER: THIS CODE IS FOR EDUCATIONAL PURPOSES ONLY. USE AT YOUR OWN RISKS.</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> * This code shows the basic workings of a shell.</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> * Append &quot;/path/to/dashell&quot; to /etc/shells, to make it a valid shell:</span>
+</span><span class='line'><span class="cm"> * sudo echo &quot;/path/to/dashell&quot; &gt;&gt; /etc/shells</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> * Change your &quot;username&quot;&#39;s shell. &quot;username&quot; should have execute permission for the shell:</span>
+</span><span class='line'><span class="cm"> * chsh --shell /path/to/dashell username</span>
+</span><span class='line'><span class="cm"> *</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#include &lt;unistd.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;string.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;stddef.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;stdlib.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;ctype.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;sys/signal.h&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#define STDIN 0</span>
+</span><span class='line'><span class="cp">#define STDOUT 1</span>
+</span><span class='line'><span class="cp">#define STDERR 2</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#define BUFFER_SIZE 1024</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">parse_arguments</span><span class="p">(</span><span class="kt">char</span> <span class="n">buffer</span><span class="p">[],</span> <span class="kt">int</span> <span class="o">*</span><span class="n">args_count</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">args</span><span class="p">[])</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">char</span> <span class="o">*</span><span class="n">delimiters</span> <span class="o">=</span> <span class="s">&quot; </span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">char</span> <span class="o">*</span><span class="n">token</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">*</span><span class="n">args_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">// &quot;abc def ghi&quot; =&gt; {&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;}</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="n">strsep</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="n">delimiters</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">args</span><span class="p">[</span><span class="o">*</span><span class="n">args_count</span><span class="p">]</span> <span class="o">=</span> <span class="n">token</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">(</span><span class="o">*</span><span class="n">args_count</span><span class="p">)</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// The weird characters are used to format the text&#39;s appearance.</span>
+</span><span class='line'>  <span class="c1">// See http://en.wikipedia.org/wiki/ANSI_escape_code</span>
+</span><span class='line'>  <span class="kt">char</span> <span class="n">prompt</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\033</span><span class="s">[1mdashell</span><span class="se">\033</span><span class="s">[2m&gt;</span><span class="se">\033</span><span class="s">[0m &quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">char</span> <span class="n">exec_error</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;Cannot execute program %s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="n">BUFFER_SIZE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">args_count</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">char</span> <span class="o">*</span><span class="n">args</span><span class="p">[</span><span class="n">BUFFER_SIZE</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">write</span><span class="p">(</span><span class="n">STDOUT</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">n</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">STDIN</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">BUFFER_SIZE</span><span class="p">);</span> <span class="c1">// Read from STDIN (keyboard input)</span>
+</span><span class='line'>    <span class="n">buffer</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span> <span class="c1">// Null character to indicate string end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// &quot;abc def ghi&quot; =&gt; {&quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;}</span>
+</span><span class='line'>    <span class="n">parse_arguments</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">args_count</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// No arguments</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">args_count</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Argument = exit</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;exit&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">pid_t</span> <span class="n">child_pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span> <span class="c1">// Duplicate process</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">child_pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// Child</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">execvp</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Replace executable code by command passed</span>
+</span><span class='line'>        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="n">exec_error</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// Parent</span>
+</span><span class='line'>      <span class="c1">// Wait for child to finish</span>
+</span><span class='line'>      <span class="n">wait</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The full source code is freely <a href="https://github.com/olalonde/dashell">available at Github</a>:</p>
+
+<pre><code>git clone git://github.com/olalonde/dashell.git
+</code></pre>
+
+<p>Note that I never code in C so it might not be perfect&#8230; I&#8217;m looking at you <code>parse_arguments()</code> ;)</p>
+
+<h2>Install &amp; have fun</h2>
+
+<p>The optional steps will let you use the shell as a login shell for a given user.</p>
+
+<ol>
+<li><p><code>make</code></p></li>
+<li><p>(optional) Append &#8220;/path/to/dashell&#8221; to /etc/shells, to make it a
+valid shell:</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo <span class="nb">echo</span> <span class="s2">&quot;/path/to/dashell&quot;</span> &gt;&gt; /etc/shells
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>(optional) Change &#8220;username&#8220;&#8216;s shell. &#8220;username&#8221; should have
+execute permission for the shell:</li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>chsh --shell /path/to/dashell username
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, you can launch the shell and start having fun with it and be
+reminded how great bash really is!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>./dashell
+</span><span class='line'>dashell&gt; ls -al
+</span><span class='line'>dashell&gt; ./launchme 1 2 3
+</span><span class='line'>....
+</span><span class='line'>dashell&gt; <span class="nb">exit</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Feel free to ask questions!</p>
+</div>
+
+
+  <div class="alert">Want to get notified about more articles like this? 
+    <a href="http://twitter.com/o_lalonde">Follow @o_lalonde on Twitter.</a>
+  </div>
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Olivier Lalonde</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-10T00:00:00+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/c-c-/'>c/c++</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" 
+    data-url="http://syskall.com/minimalist-shell-in-c-for-educational-purpose" data-via="o_lalonde" 
+    data-counturl="http://syskall.com/minimalist-shell-in-c-for-educational-purpose" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450"
+      data-href="http://syskall.com/minimalist-shell-in-c-for-educational-purpose" 
+      data-show-faces="true" data-></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/how-to-roll-out-your-own-javascript-api-with/index.html" title="Previous Post: How to roll out your own Javascript API with V8">&laquo; How to roll out your own Javascript API with V8</a>
+      
+      
+        <a class="basic-alignment right" href="/resizing-a-vdi-in-virtualbox-3-in-one-command/index.html" title="Next Post: Resizing a VDI in VirtualBox 3 with one command">Resizing a VDI in VirtualBox 3 with one command &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <p>
+  This blog was featured on <a href="http://coding.smashingmagazine.com/2011/09/16/useful-node-js-tools-tutorials-and-resources/">Smashing Magazine</a>, <a href="http://javascriptweekly.com/archive/26.html">Javascript Weekly</a>, <a href="http://dailyjs.com/2011/05/18/node-roundup/">DailyJS</a> &amp; <a href="http://www.fastcompany.com/3000410/silicon-valleys-world-asia-edition">Fast Company</a>.
+  </p>
+  <p><a style="background-color:yellow; font-weight: bold;" href="mailto:olalonde@gmail.com">Get in touch!</a></p>
+</section>
+<section itemscope>
+  <h1>About me</h1>
+  <p>I build cool stuff with Node.js.</p>
+  <ul>
+    <li>Email: <a href="mailto:olalonde@gmail.com" rel="me">olalonde@gmail.com</a></li>
+    <li>Twitter: <a href="http://twitter.com/o_lalonde" rel="me">@o_lalonde</a></li>
+    <li>LinkedIn: <a href="http://www.linkedin.com/in/olivierlalonde" rel="me">@olivierlalonde</a></li>
+    <li>Github: <a href="http://github.com/olalonde" rel="me">@olalonde</a></li>
+    <li>Google+: <a href="https://plus.google.com/108481435543473632495?rel=author">Olivier Lalonde</a></li>
+  </ul> 
+</section>
+<section> <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/introducing-boolasync-async-boolean-logic-library/">Introducing Boolasync - a library for async boolean logic</a>
+      </li>
+    
+      <li class="post">
+        <a href="/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/">Executing multiple shell commands cleanly in Node.js with async</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-biggest-vim-productivity-boost/">My biggest Vim productivity boost</a>
+      </li>
+    
+      <li class="post">
+        <a href="/connectr-programmatically-manipulating-the-connect-stack/">Connectr: Programmatically manipulating the Connect stack</a>
+      </li>
+    
+      <li class="post">
+        <a href="/pagination-with-handlebars/">Pagination with Handlebars</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/olalonde">@olalonde</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'olalonde',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("o_lalonde", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/o_lalonde" class="twitter-follow-button" data-show-count="false">Follow @o_lalonde</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Olivier Lalonde -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'syskall';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://syskall.com/minimalist-shell-in-c-for-educational-purpose/index.html';
+        var disqus_url = 'http://syskall.com/minimalist-shell-in-c-for-educational-purpose/index.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

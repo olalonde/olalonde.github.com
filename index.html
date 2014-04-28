@@ -1,1 +1,1595 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Olivier Lalonde's blog</title>
+  <meta name="author" content="Olivier Lalonde">
+
+  
+  <meta name="description" content="Github: olalonde/boolasync
+NPM: npm install boolasync
+License: MIT Who would have thoughts things would have gone that far? Yes, I have
+created a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://syskall.com/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Olivier Lalonde's blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12888988-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+
+  <header role="banner"><hgroup>
+    <img src="http://www.gravatar.com/avatar/998aa9f83c1955ae4ed2ee1ef2b830f1.png">
+    <h1> 
+      
+      <a href="/">Olivier Lalonde's blog</a>
+    
+    </h1>
+
+  
+    <h2>Hey. I'm a friendly <a href="http://github.com/olalonde/">hacker</a> and startup guy. I tweet as <a href="http://twitter.com/o_lalonde">@o_lalonde</a>.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:syskall.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">All posts</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/introducing-boolasync-async-boolean-logic-library/" 
+  data-via="o_lalonde" 
+  data-text="Introducing Boolasync - a library for async boolean logic"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/introducing-boolasync-async-boolean-logic-library/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/introducing-boolasync-async-boolean-logic-library/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/introducing-boolasync-async-boolean-logic-library/">Introducing Boolasync - a Library for Async Boolean Logic</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-12T00:23:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>Github: <a href="https://github.com/olalonde/boolasync">olalonde/boolasync</a></li>
+<li>NPM: <code>npm install boolasync</code></li>
+<li>License: MIT</li>
+</ul>
+
+
+<p>Who would have thoughts things would have gone that far? Yes, I have
+created a Javascript library for handling boolean logic that involves asynchronous
+callbacks.</p>
+
+<p>Let&#8217;s say you have a web app that has an authorization layer like so:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">is_user</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">is_admin</span><span class="p">()</span> <span class="o">||</span> <span class="nx">is_super_admin</span><span class="p">())</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Authorize!&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: this is a fictional example for demonstration purposes.</p>
+
+<p>However, here is the catch: your functions are asynchronous which means
+that they take a callback argument which in turns takes an error and
+result argument. <code>function callback(err, res) {}</code></p>
+
+<p>How do you rewrite the above code elegantly?</p>
+
+<p>You could use the nice <code>async</code> library.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">async</span><span class="p">.</span><span class="nx">parallel</span><span class="p">([</span>
+</span><span class='line'>  <span class="nx">is_user</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">is_admin</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">is_super_admin</span>
+</span><span class='line'><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">results</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">||</span> <span class="nx">results</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Authorize!&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are two problems however:</p>
+
+<ol>
+<li><p>The code is not very expressive.</p></li>
+<li><p>We have to wait for all functions to finish.</p>
+
+<p> In the example above, if <code>is_user</code> returns <code>false</code>, we would already know that the user is not
+ authorized. <code>false &amp;&amp; ...</code> is always false no matter what the <code>...</code>
+ represents. In computer science, this is called lazy evaluation.</p></li>
+</ol>
+
+
+<p>Here is how you would rewrite the above with boolasync:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">is_user</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">is_admin</span><span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">is_super_admin</span><span class="p">)).</span><span class="nb">eval</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">authorized</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">authorized</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Authorize!&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Notice how terse and expressive the code is compared to the async
+example. In bonus, boolasync won&#8217;t wait for an async call to terminate if it already knows the result
+of an expression.</p>
+
+<p>For more documentation and examples, visit the Github page: <a href="https://github.com/olalonde/boolasync">https://github.com/olalonde/boolasync</a></p>
+
+<p>Cheers!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/" 
+  data-via="o_lalonde" 
+  data-text="Executing multiple shell commands cleanly in Node.js with async"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/">Executing Multiple Shell Commands Cleanly in Node.js With Async</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-27T18:04:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">async</span><span class="p">.</span><span class="nx">parallel</span><span class="p">([</span>
+</span><span class='line'>  <span class="nx">async</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">exec</span><span class="p">,</span> <span class="s1">&#39;git rev-parse HEAD&#39;</span><span class="p">),</span>
+</span><span class='line'>  <span class="nx">async</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">exec</span><span class="p">,</span> <span class="s1">&#39;git symbolic-ref --short HEAD&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">],</span>
+</span><span class='line'><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>First, the <code>async.parallel</code> call executes all functions in the array
+concurrently. If you need the commands to be executed in order, use
+<code>async.series</code> instead. <code>async.apply</code> returns the function passed as a
+first argument with values already applied to its arguments and sets the
+<code>async.parallel</code> callback for us. Finally, the last functions receives
+the results in order when all functions have finished executing. It
+preserves the order of results as you would expect them.</p>
+
+<p>For more info:</p>
+
+<p><a href="https://github.com/caolan/async">https://github.com/caolan/async</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/my-biggest-vim-productivity-boost/" 
+  data-via="o_lalonde" 
+  data-text="My biggest Vim productivity boost"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/my-biggest-vim-productivity-boost/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/my-biggest-vim-productivity-boost/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/my-biggest-vim-productivity-boost/">My Biggest Vim Productivity Boost</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-21T10:50:00+08:00" pubdate data-updated="true">May 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This week I added the following snippet to my .vimrc (.vimrc.after if you are using Janus):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>C<span class="p">-</span>J<span class="p">&gt;</span> :<span class="k">bnext</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</span><span class='line'>map <span class="p">&lt;</span>C<span class="p">-</span>K<span class="p">&gt;</span> :<span class="k">bprev</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</span><span class='line'>map <span class="p">&lt;</span>C<span class="p">-</span>L<span class="p">&gt;</span> :<span class="k">tabn</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</span><span class='line'>map <span class="p">&lt;</span>C<span class="p">-</span>H<span class="p">&gt;</span> :<span class="k">tabp</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It maps <code>CTRL-j</code> and <code>CTRL-k</code> to next and previous buffer and <code>CTRL-l</code> and <code>CTRL-h</code> to next and previous tabs.</p>
+
+<p>It is by far the biggest productivity boost I have gotten out of my
+<code>.vimrc</code> file.</p>
+
+<p>Buffer and tab switching has never been that fast and easy.</p>
+
+<p>Macbook tip: remap your CAPS LOCK key to CTRL.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/connectr-programmatically-manipulating-the-connect-stack/" 
+  data-via="o_lalonde" 
+  data-text="Connectr: Programmatically manipulating the Connect stack"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/connectr-programmatically-manipulating-the-connect-stack/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/connectr-programmatically-manipulating-the-connect-stack/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/connectr-programmatically-manipulating-the-connect-stack/">Connectr: Programmatically Manipulating the Connect Stack</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-18T12:36:00+08:00" pubdate data-updated="true">May 18<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/olalonde/connectr">Connectr</a> is a Node.js module I wrote that aims to solve the following problem: how
+to manipulate the <a href="https://github.com/senchalabs/connect">Connect</a> stack after it has been created.</p>
+
+<p>This is a problem I faced while writing a REST framework on top of <a href="http://expressjs.com">Express.js</a>. The framework initialized the middleware stack but there was no easy way to expose the stack to end users of the framework so they could add their own middlewares at arbitrary positions on the stack.</p>
+
+<h1>Install</h1>
+
+<pre><code>npm install connectr
+</code></pre>
+
+<h1>Usage</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">connectr</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;connectr&#39;</span><span class="p">)(</span><span class="nx">app</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Add labeled middleware</span>
+</span><span class='line'><span class="nx">connectr</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">middleware</span><span class="p">).</span><span class="nx">as</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Insert before middleware</span>
+</span><span class='line'><span class="nx">connectr</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="nx">label</span><span class="p">).</span><span class="nx">use</span><span class="p">(</span><span class="nx">middleware</span><span class="p">).</span><span class="nx">as</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Insert after middleware</span>
+</span><span class='line'><span class="nx">connectr</span><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="nx">label</span><span class="p">).</span><span class="nx">use</span><span class="p">(</span><span class="nx">middleware</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Remove middleware</span>
+</span><span class='line'><span class="nx">connectr</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">label</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// the .as, .before and .after calls are optional</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Simple Example</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">connect</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">),</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">();</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">connectr</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;connectr&#39;</span><span class="p">)(</span><span class="nx">app</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">connectr</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">connect</span><span class="p">.</span><span class="nx">cookieParser</span><span class="p">).</span><span class="nx">as</span><span class="p">(</span><span class="s1">&#39;cookieParser&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/* ... */</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">connectr</span><span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="s1">&#39;cookieParser&#39;</span><span class="p">).</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Before cookie parser...&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">next</span><span class="p">();</span>
+</span><span class='line'><span class="p">}).</span><span class="nx">as</span><span class="p">(</span><span class="s1">&#39;log before cookie parser&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I am hoping the methods that Connectr provide can eventually be
+supported natively by Connect but until then, Connectr does the job.</p>
+
+<p>If you use Connectr, please <a href="https://github.com/olalonde/connectr/blob/master/README.md">star the project on Github</a> to show your support.</p>
+
+<p>Happy coding!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/pagination-with-handlebars/" 
+  data-via="o_lalonde" 
+  data-text="Pagination with Handlebars"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/pagination-with-handlebars/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/pagination-with-handlebars/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/pagination-with-handlebars/">Pagination With Handlebars</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-17T09:05:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Pagination can be quite tricky with Handlebars since Handlebars does not
+have any built in way to do for/while loops. One solution mix some presentation code
+within your logic layer and passing an array containing all your pages in an array.</p>
+
+<p>For example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nx">pagination</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">previous</span><span class="o">:</span> <span class="nx">disabled</span> <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">page</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">true</span> <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">page</span><span class="o">:</span> <span class="mi">2</span> <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span> <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">page</span><span class="o">:</span> <span class="mi">4</span> <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span> <span class="nx">page</span><span class="o">:</span> <span class="mi">5</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This solution has several drawbacks: mixing of logic/view code, code
+duplication, difficult to reuse, etc.</p>
+
+<p>The other, cleaner solution, is to write a Handlebars helper, which I
+have already done so you don&#8217;t have to!</p>
+
+<p><img src="https://github.com/olalonde/handlebars-paginate/raw/master/screenshot.png" alt="screenshot" /></p>
+
+<p>The helper is available for download or forking on Github:</p>
+
+<p><a href="https://github.com/olalonde/handlebars-paginate">https://github.com/olalonde/handlebars-paginate</a></p>
+
+<p>or through NPM:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>npm install handlebars-paginate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To use it, all you have to do is register it as an helper:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Handlebars</span><span class="p">.</span><span class="nx">registerHelper</span><span class="p">(</span><span class="s1">&#39;paginate&#39;</span><span class="p">,</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;handlebars-paginate&#39;</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And all you need to pass to your template is an object containing a
+<code>page</code> parameter which is the number of the current page and a
+<code>pageCount</code> parameter which is the total number of pages.</p>
+
+<p>For example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nx">pagination</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">page</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">pageCount</span><span class="o">:</span> <span class="mi">10</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Handlebars-paginate let&#8217;s you define three types of blocks in your
+template:</p>
+
+<p><strong>middle</strong>:</p>
+
+<p>This will iterate over all the possible pages. An optional <code>limit</code>
+parameter is available if you&#8217;d like to limit how many page links to
+display. <code>limit=7</code> will only display 3 links to the left of the active
+page and 3 pages to its right.</p>
+
+<p>For example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>{{#paginate pagination type=&quot;middle&quot; limit=&quot;7&quot;}}
+</span><span class='line'>  <span class="nt">&lt;li</span> <span class="err">{{#</span><span class="na">if</span> <span class="na">active</span><span class="err">}}</span><span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="err">{{/</span><span class="na">if</span><span class="err">}}</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;?p={{n}}&quot;</span><span class="nt">&gt;</span>{{n}}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class='line'>{{/paginate}}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>previous</strong> and <strong>next</strong>:</p>
+
+<p>Finally, previous and next are used to define how you want to display the
+&#8220;previous&#8221; and &#8220;next&#8221; buttons.</p>
+
+<p>For example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>{{#paginate pagination type=&quot;previous&quot;}}
+</span><span class='line'>  <span class="nt">&lt;li</span> <span class="err">{{#</span><span class="na">if</span> <span class="na">disabled</span><span class="err">}}</span><span class="na">class=</span><span class="s">&quot;disabled&quot;</span><span class="err">{{/</span><span class="na">if</span><span class="err">}}</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;?p={{n}}&quot;</span> <span class="nt">&gt;</span>Prev<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class='line'>{{/paginate}}
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>{{#paginate pagination type=&quot;next&quot;}}
+</span><span class='line'>  <span class="nt">&lt;li</span> <span class="err">{{#</span><span class="na">if</span> <span class="na">disabled</span><span class="err">}}</span><span class="na">class=</span><span class="s">&quot;disabled&quot;</span><span class="err">{{/</span><span class="na">if</span><span class="err">}}</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;?p={{n}}&quot;</span><span class="nt">&gt;</span>Next<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class='line'>{{/paginate}}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Enjoy and feel free to fork or <a href="https://github.com/olalonde/handlebars-paginate/issues">report issues</a>!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/how-to-follow-http-redirects-in-node-dot-js/" 
+  data-via="o_lalonde" 
+  data-text="How to follow HTTP redirects in Node.js"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/how-to-follow-http-redirects-in-node-dot-js/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/how-to-follow-http-redirects-in-node-dot-js/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/how-to-follow-http-redirects-in-node-dot-js/">How to Follow HTTP Redirects in Node.js</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-16T06:16:00+08:00" pubdate data-updated="true">Nov 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One of the biggest annoyance with Node.js&#8217; native HTTP and HTTPS
+clients is that there is no way to automatically follow HTTP redirects.
+Let&#8217;s say you want to fetch the content of a page that has moved (301
+redirect), you will have to write a lot of <em>boilerplate code</em> to handle
+the redirect(s) by yourself.</p>
+
+<p>Since following redirects is fairly common, I decided to write a
+a drop-in replacement for the native HTTP and HTTPS module that would handle redirection seamlessly.</p>
+
+<p>This module has exactly the same interface has the native HTTP and HTTPS
+module but it will handle redirects automatically. In other words, if
+you want to automatically start following redirects, all you have to do
+is replace</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>by</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;follow-redirects&#39;</span><span class="p">).</span><span class="nx">http</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Before that, you will of course need to install the module through NPM:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>npm install follow-redirects
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here are some usage examples:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;follow-redirects&#39;</span><span class="p">).</span><span class="nx">http</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;follow-redirects&#39;</span><span class="p">).</span><span class="nx">https</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/* </span>
+</span><span class='line'><span class="cm"> * http and https are just like Node.js&#39; http and https modules except </span>
+</span><span class='line'><span class="cm"> * that they follow redirects seamlessly. </span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://bit.ly/900913&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chunk</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/*</span>
+</span><span class='line'><span class="cm"> * You can optionnally pass the maxRedirect option which defaults to 5</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">https</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">host</span><span class="o">:</span> <span class="s1">&#39;bitly.com&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/UHfDGO&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">maxRedirects</span><span class="o">:</span> <span class="mi">3</span>
+</span><span class='line'><span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chunk</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>More info is available at the Github repository: <a href="https://github.com/olalonde/follow-redirects/">https://github.com/olalonde/follow-redirects/</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/tips-for-learning-new-technologies/" 
+  data-via="o_lalonde" 
+  data-text="Tips and tricks when learning a new technology"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/tips-for-learning-new-technologies/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/tips-for-learning-new-technologies/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/tips-for-learning-new-technologies/">Tips and Tricks When Learning a New Technology</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-27T18:33:00+08:00" pubdate data-updated="true">Oct 27<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In this post, I&#8217;ll share some tricks I use before diving into a new technology. Technology could mean anything from programming language to an operating system (note that some steps are specifically for programming languages/frameworks).</p>
+
+<p>For the sake of demonstration, I&#8217;ll pretend that I want to learn the Haskell programming language.</p>
+
+<h2>Wikipedia</h2>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" alt="wikipedia logo" /></p>
+
+<p>Get a high level perspective of the technology by reading its Wikipedia page.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Haskell_(programming_language">http://en.wikipedia.org/wiki/Haskell_(programming_language)</a>)</p>
+
+<h2>Hacker News</h2>
+
+<p><img src="http://i.minus.com/iMq59X5KMX2km.png" alt="Hacker news search screenshot" /></p>
+
+<p>Get hands on feedback from people who have previous or current experience with the technology through comments. Find interesting articles about the technology (by popularity or date) through stories.</p>
+
+<p>Stories:
+<a href="http://www.hnsearch.com/search#request/submissions&amp;q=haskell&amp;sortby=points+desc&amp;start=0">http://www.hnsearch.com/search#request/submissions&amp;q=haskell&amp;sortby=points+desc&amp;start=0</a></p>
+
+<p>Comments:
+<a href="http://www.hnsearch.com/search#request/comments&amp;q=haskell&amp;sortby=points+desc&amp;start=0">http://www.hnsearch.com/search#request/comments&amp;q=haskell&amp;sortby=points+desc&amp;start=0</a></p>
+
+<h2>StackOverflow / StackExchange</h2>
+
+<p><img src="http://i.minus.com/irSOFFbrvmnyE.png" alt="stackoverflow logo" /></p>
+
+<p>Find out the highest voted questions relating to the
+technology. It is very likely that you&#8217;ll have those questions
+as well when learning the technology so why not find out the answers right now. There will also usually be a question about the best resources to learn from. This can be a good starting point for your own learning process.</p>
+
+<p><a href="http://stackoverflow.com/search?tab=votes&amp;q=title%3ahaskell">http://stackoverflow.com/search?tab=votes&amp;q=title%3ahaskell</a></p>
+
+<p><a href="http://stackoverflow.com/questions/tagged/haskell?sort=votes&amp;pagesize=15">http://stackoverflow.com/questions/tagged/haskell?sort=votes&amp;pagesize=15</a></p>
+
+<h2>GitHub</h2>
+
+<p><img src="http://i.minus.com/ibtrg1FgG2LGmB.jpg" alt="github logo" /></p>
+
+<p>Find out the most popular open source projects that relate to the technology. This is especially helpful when you start a project with this new technology and aren&#8217;t sure which are the latest and greatest libraries to use. It&#8217;s also a good idea to study the codebase of open source projects to get familiar with common idioms and coding styles.</p>
+
+<p><a href="https://github.com/search?langOverride=&amp;language=Haskell&amp;q=language%3Ahaskell&amp;repo=&amp;start_value=1&amp;type=Repositories">https://github.com/search?langOverride=&amp;language=Haskell&amp;q=language%3Ahaskell&amp;repo=&amp;start_value=1&amp;type=Repositories</a></p>
+
+<h2>IRC</h2>
+
+<p><img src="http://i.minus.com/ibaU7T6UBkmY3g.png" alt="irc screenshot" /></p>
+
+<p>Find out if the technology has an IRC channel. You can usually
+find that out by simply connecting to Freenode and joining
+<code>#technology-name</code> or Googling <code>irc technology-name</code>.</p>
+
+<p><a href="https://www.google.com/?q=haskell%20irc">https://www.google.com/?q=haskell%20irc</a></p>
+
+<h1>Conclusion</h1>
+
+<p>Don&#8217;t forget many people have gone through what you are about to go through. Don&#8217;t repeat the same mistakes they did and leverage every piece of information you can from them!</p>
+
+<p>I&#8217;d love to hear more tips and tricks in the comments below.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/using-the-debugger-statement-with-node-inspector/" 
+  data-via="o_lalonde" 
+  data-text="Using the debugger statement with node-inspector"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/using-the-debugger-statement-with-node-inspector/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/using-the-debugger-statement-with-node-inspector/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/using-the-debugger-statement-with-node-inspector/">Using the Debugger Statement With Node-inspector</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-25T15:41:00+08:00" pubdate data-updated="true">Oct 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The first thing client-side Javascript developers miss when
+starting out with Node.js is the ability to debug their code through
+a GUI debugger as they are acustomed to when developing for the browser.</p>
+
+<p>Fortunately, it wasn&#8217;t long before the Node.js community came up with
+GUI debuggers and as of today, the most widespread one is <a href="https://github.com/dannycoates/node-inspector">node-inspector</a>.</p>
+
+<p>In this post, I won&#8217;t go into the details of using node-inspector but I
+will instead introduce a neat feature that many Node.js developers aren&#8217;t aware of
+or don&#8217;t know how to use.</p>
+
+<p>This feature is called the <code>debugger</code> statement. If you have ever caught
+yourself firing up node-inspector and browsing through the huge file
+pane on the left in order to find a file and insert a breakpoint, then
+this post should save you a lot of trouble in the future.</p>
+
+<p>Here&#8217;s what the <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMA-262 specification</a>
+has to say about the <code>debugger</code> statement:</p>
+
+<blockquote><p>Syntax</p>
+
+<p> DebuggerStatement :</p>
+
+<p>   <code>debugger ;</code></p>
+
+<p>Evaluating the DebuggerStatement  production may allow an implementation to cause a  breakpoint when run
+under a debugger. If a debugger is not present or active this statement has no observable effect.</p></blockquote>
+
+<p>In other words, you can insert breakpoints directly in your code using
+<code>debugger;</code>, fire up your app in debug mode, open your debugging client
+and the breakpoint will be set. Don&#8217;t forget to remove <code>debugger;</code> from
+your code once you are done debugging!</p>
+
+<p>Here&#8217;s a quick demonstration.</p>
+
+<ol>
+<li><p>Insert debugger; statement in your code</p>
+
+<p> <img src="http://i.minus.com/ibd1ju4lGR4i1u.png" alt="screen shot" /></p></li>
+<li><p>Fire up node-inspector</p>
+
+<p> <code>bash
+ node-inspector;
+</code></p></li>
+<li><p>Launch your app in debugging mode (don&#8217;t forget to use the
+<code>--debug-brk</code> flag if your debugger statement is &#8220;early&#8221; in your code)</p>
+
+<p> <code>bash
+ node --debug server.js
+</code></p></li>
+<li><p>Open the debugging client</p>
+
+<p> <img src="http://i.minus.com/ibqWEpgANEWaeM.png" alt="screenshot" /></p></li>
+</ol>
+
+
+<p>No more hunting for files!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/dont-run-node-dot-js-as-root/" 
+  data-via="o_lalonde" 
+  data-text="Don't run Node.js as root!"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/dont-run-node-dot-js-as-root/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/dont-run-node-dot-js-as-root/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/dont-run-node-dot-js-as-root/">Don&#8217;t Run Node.js as Root!</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-24T01:56:00+08:00" pubdate data-updated="true">Oct 24<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The <a href="http://en.wikipedia.org/wiki/Root_user">root user</a> on Linux and Unix operating systems is a special user that has absolutely total power over a machine. It is therefore very important to use the root account only when absolutely necessary and preferrably through the use of a program such as <a href="http://en.wikipedia.org/wiki/Sudo">sudo</a>. From Wikipedia:</p>
+
+<blockquote><p>In operating systems which have the concept of a superuser, it is generally recommended that most application work be done using an ordinary account which does not have the ability to make system-wide changes.</p></blockquote>
+
+<p>Indeed, if you are running your server as root and it gets hacked
+through a vulnerability in your code, the attacker will have total control
+over your machine. This means the attacker could potentially wipe out
+your whole disk or worse. On the other hand, if your server runs with
+the permissions of a regular user, the attacker will be limited
+by those permissions.</p>
+
+<p>The problem most Node.js developers will face is that in order to open
+ports below 1024 (i.e. port 80), one has to possess superuser
+permissions.  There are a few solutions around that problem, one being the use of <code>iptables</code> to redirect port 80 to a higher port such as port 3000 and another one being the use of a proxy such as <code>nginx</code> that will redirect requests to your server. However, today I will focus on a solution that can be done entirely within your code.</p>
+
+<p>We still start our server with root permissions using sudo but once we
+have opened our port(s), we will revert back our server&#8217;s permission to that of
+a regular user using a special trick. That trick is to read the SUDO_UID
+environment variable which sudo passes to any process it launches and
+using Node&#8217;s global <code>process.setuid()</code> function.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{};</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Find out which user used sudo through the environment variable</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">uid</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SUDO_UID</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">// Set our server&#39;s uid to that user</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">uid</span><span class="p">)</span> <span class="nx">process</span><span class="p">.</span><span class="nx">setuid</span><span class="p">(</span><span class="nx">uid</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server\&#39;s UID is now &#39;</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">getuid</span><span class="p">());</span>
+</span><span class='line'>  <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>No excuses for running your server as root anymore!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <style>
+.share-button-vertical {
+  float:right;
+  margin-left: 10px;
+}
+</style>
+
+<div class="share-button-vertical">
+<a href="http://twitter.com/share" class="twitter-share-button"
+  data-url="http://syskall.com/a-better-require-for-node-dot-js/" 
+  data-via="o_lalonde" 
+  data-text="A better require() for Node.js"
+  data-related="o_lalonde"
+  data-counturl="http://syskall.com/a-better-require-for-node-dot-js/"
+  data-count="vertical">Tweet</a>
+</div>
+
+
+
+<div class="share-button-vertical">
+<div class="fb-like" 
+  data-href="http://syskall.com/a-better-require-for-node-dot-js/" 
+  data-send="false" 
+  data-layout="box_count" 
+  data-width="70"
+  data-show-faces="false"></div>
+</div>
+
+
+
+    
+
+    
+      <h1 class="entry-title"><a href="/a-better-require-for-node-dot-js/">A Better Require() for Node.js</a></h1>
+    
+   
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-22T17:20:00+08:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>UPDATE:</strong> <a href="https://github.com/olalonde/better-require">better-require</a>
+now supports <code>json</code>, <code>yaml</code>, <code>csv</code>, <code>xml</code>, <code>ini</code> as well as
+<code>coffeescript</code>, <code>clojurescript</code>, <code>typescript</code>, <code>dart</code> and <code>six</code>.</p>
+
+<p>While reading the Node.js API documentation today, I stumbled upon an <a href="http://nodejs.org/api/all.html#all_require_extensions">interesting feature</a>. This feature let&#8217;s you add handlers for arbitrary file extensions that <code>require()</code>  will call when requiring a file of that extension. Internally, it looks for the extension in <code>require.extensions</code> and if the extension is found, the handler is called instead of the default require routine.</p>
+
+<p>I thought that was pretty cool so I couldn&#8217;t resist the urge of wrapping a bunch of file parsers into a standalone NPM module that would make it easy to support for multiple file formats through <code>require()</code>.</p>
+
+<p>This gave birth to <a href="https://github.com/olalonde/better-require">better-require</a>.</p>
+
+<pre><code>npm install better-require
+</code></pre>
+
+<p>If allows developers to seamlessly require <code>json</code>, <code>yaml</code>, <code>csv</code>, <code>xml</code> and <code>ini</code> files without having to deal with <code>require.extensions</code> or finding the appropriate parsing libraries. It is also easily extensible so feel free to fork and add additional file formats!</p>
+
+<p>Here&#8217;s a usage example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;better-require&#39;</span><span class="p">)(</span><span class="s1">&#39;json yaml xml&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// we can now require .xml, .yaml and .xml files!</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">yaml</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./config.yaml&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">,</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./config.json&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">,</span> <span class="nx">xml</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./config.xml&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">yaml</span><span class="p">);</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xml</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Enjoy!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <p>
+  This blog was featured on <a href="http://coding.smashingmagazine.com/2011/09/16/useful-node-js-tools-tutorials-and-resources/">Smashing Magazine</a>, <a href="http://javascriptweekly.com/archive/26.html">Javascript Weekly</a>, <a href="http://dailyjs.com/2011/05/18/node-roundup/">DailyJS</a> &amp; <a href="http://www.fastcompany.com/3000410/silicon-valleys-world-asia-edition">Fast Company</a>.
+  </p>
+  <p><a style="background-color:yellow; font-weight: bold;" href="mailto:olalonde@gmail.com">Get in touch!</a></p>
+</section>
+<section itemscope>
+  <h1>About me</h1>
+  <p>I build cool stuff with Node.js.</p>
+  <ul>
+    <li>Email: <a href="mailto:olalonde@gmail.com" rel="me">olalonde@gmail.com</a></li>
+    <li>Twitter: <a href="http://twitter.com/o_lalonde" rel="me">@o_lalonde</a></li>
+    <li>LinkedIn: <a href="http://www.linkedin.com/in/olivierlalonde" rel="me">@olivierlalonde</a></li>
+    <li>Github: <a href="http://github.com/olalonde" rel="me">@olalonde</a></li>
+    <li>Google+: <a href="https://plus.google.com/108481435543473632495?rel=author">Olivier Lalonde</a></li>
+  </ul> 
+</section>
+<section> <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/introducing-boolasync-async-boolean-logic-library/">Introducing Boolasync - a library for async boolean logic</a>
+      </li>
+    
+      <li class="post">
+        <a href="/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/">Executing multiple shell commands cleanly in Node.js with async</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-biggest-vim-productivity-boost/">My biggest Vim productivity boost</a>
+      </li>
+    
+      <li class="post">
+        <a href="/connectr-programmatically-manipulating-the-connect-stack/">Connectr: Programmatically manipulating the Connect stack</a>
+      </li>
+    
+      <li class="post">
+        <a href="/pagination-with-handlebars/">Pagination with Handlebars</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/olalonde">@olalonde</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'olalonde',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("o_lalonde", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/o_lalonde" class="twitter-follow-button" data-show-count="false">Follow @o_lalonde</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Olivier Lalonde -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'syskall';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

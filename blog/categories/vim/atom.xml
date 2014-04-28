@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vim | Olivier Lalonde's blog]]></title>
+  <link href="http://syskall.com/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://syskall.com/"/>
+  <updated>2014-04-29T03:18:43+08:00</updated>
+  <id>http://syskall.com/</id>
+  <author>
+    <name><![CDATA[Olivier Lalonde]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My biggest Vim productivity boost]]></title>
+    <link href="http://syskall.com/my-biggest-vim-productivity-boost/"/>
+    <updated>2013-05-21T10:50:00+08:00</updated>
+    <id>http://syskall.com/my-biggest-vim-productivity-boost</id>
+    <content type="html"><![CDATA[<p>This week I added the following snippet to my .vimrc (.vimrc.after if you are using Janus):</p>
+
+<p><code>vim
+map &lt;C-J&gt; :bnext&lt;CR&gt;
+map &lt;C-K&gt; :bprev&lt;CR&gt;
+map &lt;C-L&gt; :tabn&lt;CR&gt;
+map &lt;C-H&gt; :tabp&lt;CR&gt;
+</code></p>
+
+<p>It maps <code>CTRL-j</code> and <code>CTRL-k</code> to next and previous buffer and <code>CTRL-l</code> and <code>CTRL-h</code> to next and previous tabs.</p>
+
+<p>It is by far the biggest productivity boost I have gotten out of my
+<code>.vimrc</code> file.</p>
+
+<p>Buffer and tab switching has never been that fast and easy.</p>
+
+<p>Macbook tip: remap your CAPS LOCK key to CTRL.</p>
+]]></content>
+  </entry>
+  
+</feed>
