@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "2014 Braindump"
+date:   2015-01-14 23:50:13
+categories: personal
+---
+
+I haven't updated this blog in a while so I'll just dump what I have
+been up to lately.
+
+- [Minios](https://github.com/olalonde/minios): a toy OS I am building
+    with the help of [The Little Os Book](littleosbook.github.io)
+
+- [Dotfiles](https://github.com/olalonde/dotfiles): a repository with
+    all my personal dotfiles (tmux, zsh, vim).
+
+- [Lone Hackers](https://lonehackers.com): a small IRC style community
+    for remote hackers and founders.
+
+- [Proof of Solvency](https://github.com/olalonde/proof-of-solvency): a
+    scheme designed to let Bitcoin deposit instutions prove they are
+    solvent.
+
+- [Coinscript](https://github.com/olalonde/coinscript): an experimental
+    language that compiles to Bitcoin script OPCODES.
+
+- [Trustless Gambling Scheme using the Bitcoin
+    Blockchain](https://bitcointalk.org/index.php?topic=893077.0)
+
+- Read [The Practice of Cloud System Administration: Designing and Operating
+    Large Distributed Systems, Volume 2](http://the-cloud-book.com/),
+    [Building Microservices](http://shop.oreilly.com/product/0636920033158.do)
+    and [Principles oof Distributed Computing](http://dcg.ethz.ch/lectures/podc_allstars/)
+
+- Built stuff with Python, Golang, Docker, Fig.sh

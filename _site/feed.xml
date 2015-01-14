@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Olivier Lalonde&#39;s blog</title>
+    <description>I&#39;m a friendly hacker and startup guy living in Hong Kong and Shenzhen. Current interests include Node.js, Go, Bitcoin, distributed systems.
+</description>
+    <link>http://syskall.com/</link>
+    <atom:link href="http://syskall.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 15 Jan 2015 04:16:07 +0800</pubDate>
+    <lastBuildDate>Thu, 15 Jan 2015 04:16:07 +0800</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>2014 Braindump</title>
+        <description>&lt;p&gt;I haven&amp;#39;t updated this blog in a while so I&amp;#39;ll just dump what I have
+been up to lately.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/olalonde/minios&quot;&gt;Minios&lt;/a&gt;: a toy OS I am building
+with the help of &lt;a href=&quot;littleosbook.github.io&quot;&gt;The Little Os Book&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/olalonde/dotfiles&quot;&gt;Dotfiles&lt;/a&gt;: a repository with
+all my personal dotfiles (tmux, zsh, vim).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://lonehackers.com&quot;&gt;Lone Hackers&lt;/a&gt;: a small IRC style community
+for remote hackers and founders.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/olalonde/proof-of-solvency&quot;&gt;Proof of Solvency&lt;/a&gt;: a
+scheme designed to let Bitcoin deposit instutions prove they are
+solvent.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/olalonde/coinscript&quot;&gt;Coinscript&lt;/a&gt;: an experimental
+language that compiles to Bitcoin script OPCODES.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://bitcointalk.org/index.php?topic=893077.0&quot;&gt;Trustless Gambling Scheme using the Bitcoin
+Blockchain&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Read &lt;a href=&quot;http://the-cloud-book.com/&quot;&gt;The Practice of Cloud System Administration: Designing and Operating
+Large Distributed Systems, Volume 2&lt;/a&gt;,
+&lt;a href=&quot;http://shop.oreilly.com/product/0636920033158.do&quot;&gt;Building Microservices&lt;/a&gt;
+and &lt;a href=&quot;http://dcg.ethz.ch/lectures/podc_allstars/&quot;&gt;Principles oof Distributed Computing&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Built stuff with Python, Golang, Docker, Fig.sh&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 15 Jan 2015 07:50:13 +0800</pubDate>
+        <link>http://syskall.com/2014-braindump/</link>
+        <guid isPermaLink="true">http://syskall.com/2014-braindump/</guid>
+        
+        
+        <category>personal</category>
+        
+      </item>
+    
+      <item>
+        <title>Introducing Boolasync - a library for async boolean logic</title>
+        <description>&lt;ul&gt;
+&lt;li&gt;Github: &lt;a href=&quot;https://github.com/olalonde/boolasync&quot;&gt;olalonde/boolasync&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;NPM: &lt;code&gt;npm install boolasync&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;License: MIT&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Who would have thoughts things would have gone that far? Yes, I have
+created a Javascript library for handling boolean logic that involves asynchronous
+callbacks.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s say you have a web app that has an authorization layer like so:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is_super_admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Authorize!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note: this is a fictional example for demonstration purposes.&lt;/p&gt;
+
+&lt;p&gt;However, here is the catch: your functions are asynchronous which means
+that they take a callback argument which in turns takes an error and
+result argument. &lt;code&gt;function callback(err, res) {}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;How do you rewrite the above code elegantly?&lt;/p&gt;
+
+&lt;p&gt;You could use the nice &lt;code&gt;async&lt;/code&gt; library.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;is_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;is_admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;is_super_admin&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Authorize!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There are two problems however: &lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The code is not very expressive.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We have to wait for all functions to finish. &lt;/p&gt;
+
+&lt;p&gt;In the example above, if &lt;code&gt;is_user&lt;/code&gt; returns &lt;code&gt;false&lt;/code&gt;, we would already know that the user is not
+authorized. &lt;code&gt;false &amp;amp;&amp;amp; ...&lt;/code&gt; is always false no matter what the &lt;code&gt;...&lt;/code&gt;
+represents. In computer science, this is called lazy evaluation.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here is how you would rewrite the above with boolasync:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;is_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;or&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_super_admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;authorized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;authorized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Authorize!&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice how terse and expressive the code is compared to the async
+example. In bonus, boolasync won&amp;#39;t wait for an async call to terminate if it already knows the result
+of an expression.&lt;/p&gt;
+
+&lt;p&gt;For more documentation and examples, visit the Github page: &lt;a href=&quot;https://github.com/olalonde/boolasync&quot;&gt;https://github.com/olalonde/boolasync&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Cheers!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Jun 2013 00:23:00 +0800</pubDate>
+        <link>http://syskall.com/introducing-boolasync-async-boolean-logic-library/</link>
+        <guid isPermaLink="true">http://syskall.com/introducing-boolasync-async-boolean-logic-library/</guid>
+        
+        
+        <category>node.js</category>
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>Executing multiple shell commands cleanly in Node.js with async</title>
+        <description>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parallel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git rev-parse HEAD&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git symbolic-ref --short HEAD&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; 
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;First, the &lt;code&gt;async.parallel&lt;/code&gt; call executes all functions in the array
+concurrently. If you need the commands to be executed in order, use
+&lt;code&gt;async.series&lt;/code&gt; instead. &lt;code&gt;async.apply&lt;/code&gt; returns the function passed as a
+first argument with values already applied to its arguments and sets the
+&lt;code&gt;async.parallel&lt;/code&gt; callback for us. Finally, the last functions receives
+the results in order when all functions have finished executing. It
+preserves the order of results as you would expect them.&lt;/p&gt;
+
+&lt;p&gt;For more info: &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/caolan/async&quot;&gt;https://github.com/caolan/async&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 May 2013 18:04:00 +0800</pubDate>
+        <link>http://syskall.com/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/</link>
+        <guid isPermaLink="true">http://syskall.com/executing-multiple-shell-commands-cleanly-in-node-dot-js-with-async/</guid>
+        
+        
+        <category>node.js</category>
+        
+        <category>async</category>
+        
+      </item>
+    
+      <item>
+        <title>My biggest Vim productivity boost</title>
+        <description>&lt;p&gt;This week I added the following snippet to my .vimrc (.vimrc.after if you are using Janus):&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;map &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;J&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&quot;k&quot;&gt;bnext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+map &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;K&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&quot;k&quot;&gt;bprev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+map &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;L&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&quot;k&quot;&gt;tabn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+map &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;H&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&quot;k&quot;&gt;tabp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It maps &lt;code&gt;CTRL-j&lt;/code&gt; and &lt;code&gt;CTRL-k&lt;/code&gt; to next and previous buffer and &lt;code&gt;CTRL-l&lt;/code&gt; and &lt;code&gt;CTRL-h&lt;/code&gt; to next and previous tabs. &lt;/p&gt;
+
+&lt;p&gt;It is by far the biggest productivity boost I have gotten out of my
+&lt;code&gt;.vimrc&lt;/code&gt; file. &lt;/p&gt;
+
+&lt;p&gt;Buffer and tab switching has never been that fast and easy.&lt;/p&gt;
+
+&lt;p&gt;Macbook tip: remap your CAPS LOCK key to CTRL.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 May 2013 10:50:00 +0800</pubDate>
+        <link>http://syskall.com/my-biggest-vim-productivity-boost/</link>
+        <guid isPermaLink="true">http://syskall.com/my-biggest-vim-productivity-boost/</guid>
+        
+        
+        <category>vim</category>
+        
+      </item>
+    
+      <item>
+        <title>Connectr: Programmatically manipulating the Connect stack</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://github.com/olalonde/connectr&quot;&gt;Connectr&lt;/a&gt; is a Node.js module I wrote that aims to solve the following problem: how
+to manipulate the &lt;a href=&quot;https://github.com/senchalabs/connect&quot;&gt;Connect&lt;/a&gt; stack after it has been created.&lt;/p&gt;
+
+&lt;p&gt;This is a problem I faced while writing a REST framework on top of &lt;a href=&quot;http://expressjs.com&quot;&gt;Express.js&lt;/a&gt;. The framework initialized the middleware stack but there was no easy way to expose the stack to end users of the framework so they could add their own middlewares at arbitrary positions on the stack.&lt;/p&gt;
+
+&lt;h1&gt;Install&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;npm install connectr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Usage&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;connectr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;connectr&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Add labeled middleware&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;connectr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Insert before middleware&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;connectr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Insert after middleware&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;connectr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;after&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Remove middleware&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;connectr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// the .as, .before and .after calls are optional&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Simple Example&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;connect&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;connectr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;connectr&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;connectr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookieParser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cookieParser&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;connectr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cookieParser&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Before cookie parser...&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;log before cookie parser&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I am hoping the methods that Connectr provide can eventually be
+supported natively by Connect but until then, Connectr does the job.&lt;/p&gt;
+
+&lt;p&gt;If you use Connectr, please &lt;a href=&quot;https://github.com/olalonde/connectr/blob/master/README.md&quot;&gt;star the project on Github&lt;/a&gt; to show your support.&lt;/p&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 May 2013 12:36:00 +0800</pubDate>
+        <link>http://syskall.com/connectr-programmatically-manipulating-the-connect-stack/</link>
+        <guid isPermaLink="true">http://syskall.com/connectr-programmatically-manipulating-the-connect-stack/</guid>
+        
+        
+        <category>node.js</category>
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>Pagination with Handlebars</title>
+        <description>&lt;p&gt;Pagination can be quite tricky with Handlebars since Handlebars does not
+have any built in way to do for/while loops. One solution mix some presentation code
+within your logic layer and passing an array containing all your pages in an array.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;pagination&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;previous&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;disabled&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;active&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This solution has several drawbacks: mixing of logic/view code, code
+duplication, difficult to reuse, etc. &lt;/p&gt;
+
+&lt;p&gt;The other, cleaner solution, is to write a Handlebars helper, which I
+have already done so you don&amp;#39;t have to!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/olalonde/handlebars-paginate/raw/master/screenshot.png&quot; alt=&quot;screenshot&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The helper is available for download or forking on Github: &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/olalonde/handlebars-paginate&quot;&gt;https://github.com/olalonde/handlebars-paginate&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;or through NPM:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;npm install handlebars-paginate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To use it, all you have to do is register it as an helper:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;Handlebars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerHelper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;paginate&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;handlebars-paginate&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And all you need to pass to your template is an object containing a
+&lt;code&gt;page&lt;/code&gt; parameter which is the number of the current page and a
+&lt;code&gt;pageCount&lt;/code&gt; parameter which is the total number of pages.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;nx&quot;&gt;pagination&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;pageCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Handlebars-paginate let&amp;#39;s you define three types of blocks in your
+template:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;middle&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;This will iterate over all the possible pages. An optional &lt;code&gt;limit&lt;/code&gt;
+parameter is available if you&amp;#39;d like to limit how many page links to
+display. &lt;code&gt;limit=7&lt;/code&gt; will only display 3 links to the left of the active
+page and 3 pages to its right. &lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{{#paginate pagination type=&amp;quot;middle&amp;quot; limit=&amp;quot;7&amp;quot;}}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{{#&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;active&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;active&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{{/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;?p={{n}}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{n}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+{{/paginate}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;previous&lt;/strong&gt; and &lt;strong&gt;next&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;Finally, previous and next are used to define how you want to display the
+&amp;quot;previous&amp;quot; and &amp;quot;next&amp;quot; buttons. &lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{{#paginate pagination type=&amp;quot;previous&amp;quot;}}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{{#&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;disabled&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{{/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;?p={{n}}&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Prev&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+{{/paginate}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;{{#paginate pagination type=&amp;quot;next&amp;quot;}}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{{#&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;disabled&amp;quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{{/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;?p={{n}}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Next&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+{{/paginate}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Enjoy and feel free to fork or &lt;a href=&quot;https://github.com/olalonde/handlebars-paginate/issues&quot;&gt;report issues&lt;/a&gt;!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 17 Nov 2012 09:05:00 +0800</pubDate>
+        <link>http://syskall.com/pagination-with-handlebars/</link>
+        <guid isPermaLink="true">http://syskall.com/pagination-with-handlebars/</guid>
+        
+        
+        <category>javascript</category>
+        
+        <category>node.js</category>
+        
+      </item>
+    
+      <item>
+        <title>How to follow HTTP redirects in Node.js</title>
+        <description>&lt;p&gt;One of the biggest annoyance with Node.js&amp;#39; native HTTP and HTTPS
+clients is that there is no way to automatically follow HTTP redirects.
+Let&amp;#39;s say you want to fetch the content of a page that has moved (301
+redirect), you will have to write a lot of &lt;em&gt;boilerplate code&lt;/em&gt; to handle
+the redirect(s) by yourself.&lt;/p&gt;
+
+&lt;p&gt;Since following redirects is fairly common, I decided to write a
+a drop-in replacement for the native HTTP and HTTPS module that would handle redirection seamlessly.&lt;/p&gt;
+
+&lt;p&gt;This module has exactly the same interface has the native HTTP and HTTPS
+module but it will handle redirects automatically. In other words, if
+you want to automatically start following redirects, all you have to do
+is replace&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;by&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;follow-redirects&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Before that, you will of course need to install the module through NPM:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;npm install follow-redirects
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here are some usage examples:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;follow-redirects&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;follow-redirects&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; * http and https are just like Node.js&amp;#39; http and https modules except &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; * that they follow redirects seamlessly. &lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http://bit.ly/900913&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;error&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; * You can optionnally pass the maxRedirect option which defaults to 5&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bitly.com&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/UHfDGO&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;maxRedirects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chunk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;error&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;More info is available at the Github repository: &lt;a href=&quot;https://github.com/olalonde/follow-redirects/&quot;&gt;https://github.com/olalonde/follow-redirects/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 16 Nov 2012 06:16:00 +0800</pubDate>
+        <link>http://syskall.com/how-to-follow-http-redirects-in-node-dot-js/</link>
+        <guid isPermaLink="true">http://syskall.com/how-to-follow-http-redirects-in-node-dot-js/</guid>
+        
+        
+        <category>node.js</category>
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>Tips and tricks when learning a new technology</title>
+        <description>&lt;p&gt;In this post, I&amp;#39;ll share some tricks I use before diving into a new technology. Technology could mean anything from programming language to an operating system (note that some steps are specifically for programming languages/frameworks).&lt;/p&gt;
+
+&lt;p&gt;For the sake of demonstration, I&amp;#39;ll pretend that I want to learn the Haskell programming language.&lt;/p&gt;
+
+&lt;h2&gt;Wikipedia&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png&quot; alt=&quot;wikipedia logo&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Get a high level perspective of the technology by reading its Wikipedia page.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Haskell_(programming_language)&quot;&gt;http://en.wikipedia.org/wiki/Haskell&lt;em&gt;(programming&lt;/em&gt;language)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Hacker News&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.minus.com/iMq59X5KMX2km.png&quot; alt=&quot;Hacker news search screenshot&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Get hands on feedback from people who have previous or current experience with the technology through comments. Find interesting articles about the technology (by popularity or date) through stories.&lt;/p&gt;
+
+&lt;p&gt;Stories: 
+&lt;a href=&quot;http://www.hnsearch.com/search#request/submissions&amp;amp;q=haskell&amp;amp;sortby=points+desc&amp;amp;start=0&quot;&gt;http://www.hnsearch.com/search#request/submissions&amp;amp;q=haskell&amp;amp;sortby=points+desc&amp;amp;start=0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Comments: 
+&lt;a href=&quot;http://www.hnsearch.com/search#request/comments&amp;amp;q=haskell&amp;amp;sortby=points+desc&amp;amp;start=0&quot;&gt;http://www.hnsearch.com/search#request/comments&amp;amp;q=haskell&amp;amp;sortby=points+desc&amp;amp;start=0&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;StackOverflow / StackExchange&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.minus.com/irSOFFbrvmnyE.png&quot; alt=&quot;stackoverflow logo&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Find out the highest voted questions relating to the
+technology. It is very likely that you&amp;#39;ll have those questions
+as well when learning the technology so why not find out the answers right now. There will also usually be a question about the best resources to learn from. This can be a good starting point for your own learning process.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/search?tab=votes&amp;amp;q=title%3ahaskell&quot;&gt;http://stackoverflow.com/search?tab=votes&amp;amp;q=title%3ahaskell&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/tagged/haskell?sort=votes&amp;amp;pagesize=15&quot;&gt;http://stackoverflow.com/questions/tagged/haskell?sort=votes&amp;amp;pagesize=15&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;GitHub&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.minus.com/ibtrg1FgG2LGmB.jpg&quot; alt=&quot;github logo&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Find out the most popular open source projects that relate to the technology. This is especially helpful when you start a project with this new technology and aren&amp;#39;t sure which are the latest and greatest libraries to use. It&amp;#39;s also a good idea to study the codebase of open source projects to get familiar with common idioms and coding styles.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/search?langOverride=&amp;amp;language=Haskell&amp;amp;q=language%3Ahaskell&amp;amp;repo=&amp;amp;start_value=1&amp;amp;type=Repositories&quot;&gt;https://github.com/search?langOverride=&amp;amp;language=Haskell&amp;amp;q=language%3Ahaskell&amp;amp;repo=&amp;amp;start_value=1&amp;amp;type=Repositories&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;IRC&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.minus.com/ibaU7T6UBkmY3g.png&quot; alt=&quot;irc screenshot&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Find out if the technology has an IRC channel. You can usually
+find that out by simply connecting to Freenode and joining
+&lt;code&gt;#technology-name&lt;/code&gt; or Googling &lt;code&gt;irc technology-name&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.google.com/?q=haskell%20irc&quot;&gt;https://www.google.com/?q=haskell%20irc&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Don&amp;#39;t forget many people have gone through what you are about to go through. Don&amp;#39;t repeat the same mistakes they did and leverage every piece of information you can from them!&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;d love to hear more tips and tricks in the comments below.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Oct 2012 18:33:00 +0800</pubDate>
+        <link>http://syskall.com/tips-for-learning-new-technologies/</link>
+        <guid isPermaLink="true">http://syskall.com/tips-for-learning-new-technologies/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Using the debugger statement with node-inspector</title>
+        <description>&lt;p&gt;The first thing client-side Javascript developers miss when
+starting out with Node.js is the ability to debug their code through
+a GUI debugger as they are acustomed to when developing for the browser.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, it wasn&amp;#39;t long before the Node.js community came up with
+GUI debuggers and as of today, the most widespread one is &lt;a href=&quot;https://github.com/dannycoates/node-inspector&quot;&gt;node-inspector&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;In this post, I won&amp;#39;t go into the details of using node-inspector but I
+will instead introduce a neat feature that many Node.js developers aren&amp;#39;t aware of
+or don&amp;#39;t know how to use.&lt;/p&gt;
+
+&lt;p&gt;This feature is called the &lt;code&gt;debugger&lt;/code&gt; statement. If you have ever caught
+yourself firing up node-inspector and browsing through the huge file
+pane on the left in order to find a file and insert a breakpoint, then
+this post should save you a lot of trouble in the future.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s what the &lt;a href=&quot;http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf&quot;&gt;ECMA-262 specification&lt;/a&gt; 
+has to say about the &lt;code&gt;debugger&lt;/code&gt; statement:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Syntax&lt;/p&gt;
+
+&lt;p&gt;DebuggerStatement :&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;debugger ;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Evaluating the DebuggerStatement  production may allow an implementation to cause a  breakpoint when run 
+under a debugger. If a debugger is not present or active this statement has no observable effect.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In other words, you can insert breakpoints directly in your code using
+&lt;code&gt;debugger;&lt;/code&gt;, fire up your app in debug mode, open your debugging client
+and the breakpoint will be set. Don&amp;#39;t forget to remove &lt;code&gt;debugger;&lt;/code&gt; from
+your code once you are done debugging!&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s a quick demonstration.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Insert debugger; statement in your code&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.minus.com/ibd1ju4lGR4i1u.png&quot; alt=&quot;screen shot&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fire up node-inspector&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;node-inspector&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Launch your app in debugging mode (don&amp;#39;t forget to use the
+&lt;code&gt;--debug-brk&lt;/code&gt; flag if your debugger statement is &amp;quot;early&amp;quot; in your code)&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;node --debug server.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Open the debugging client&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.minus.com/ibqWEpgANEWaeM.png&quot; alt=&quot;screenshot&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No more hunting for files!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Oct 2012 15:41:00 +0800</pubDate>
+        <link>http://syskall.com/using-the-debugger-statement-with-node-inspector/</link>
+        <guid isPermaLink="true">http://syskall.com/using-the-debugger-statement-with-node-inspector/</guid>
+        
+        
+        <category>node.js</category>
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>Don&#39;t run Node.js as root!</title>
+        <description>&lt;p&gt;The &lt;a href=&quot;http://en.wikipedia.org/wiki/Root_user&quot;&gt;root user&lt;/a&gt; on Linux and Unix operating systems is a special user that has absolutely total power over a machine. It is therefore very important to use the root account only when absolutely necessary and preferrably through the use of a program such as &lt;a href=&quot;http://en.wikipedia.org/wiki/Sudo&quot;&gt;sudo&lt;/a&gt;. From Wikipedia:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In operating systems which have the concept of a superuser, it is generally recommended that most application work be done using an ordinary account which does not have the ability to make system-wide changes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Indeed, if you are running your server as root and it gets hacked
+through a vulnerability in your code, the attacker will have total control
+over your machine. This means the attacker could potentially wipe out
+your whole disk or worse. On the other hand, if your server runs with
+the permissions of a regular user, the attacker will be limited
+by those permissions. &lt;/p&gt;
+
+&lt;p&gt;The problem most Node.js developers will face is that in order to open
+ports below 1024 (i.e. port 80), one has to possess superuser
+permissions.  There are a few solutions around that problem, one being the use of &lt;code&gt;iptables&lt;/code&gt; to redirect port 80 to a higher port such as port 3000 and another one being the use of a proxy such as &lt;code&gt;nginx&lt;/code&gt; that will redirect requests to your server. However, today I will focus on a solution that can be done entirely within your code.&lt;/p&gt;
+
+&lt;p&gt;We still start our server with root permissions using sudo but once we
+have opened our port(s), we will revert back our server&amp;#39;s permission to that of
+a regular user using a special trick. That trick is to read the SUDO_UID
+environment variable which sudo passes to any process it launches and
+using Node&amp;#39;s global &lt;code&gt;process.setuid()&lt;/code&gt; function.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Find out which user used sudo through the environment variable&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;parseInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SUDO_UID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Set our server&amp;#39;s uid to that user&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Server\&amp;#39;s UID is now &amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;No excuses for running your server as root anymore!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 24 Oct 2012 01:56:00 +0800</pubDate>
+        <link>http://syskall.com/dont-run-node-dot-js-as-root/</link>
+        <guid isPermaLink="true">http://syskall.com/dont-run-node-dot-js-as-root/</guid>
+        
+        
+        <category>node.js</category>
+        
+      </item>
+    
+  </channel>
+</rss>
