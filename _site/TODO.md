@@ -1,2 +1,0 @@
-- Use this layout: http://pixelcog.com/blog/
-- Upload to github
