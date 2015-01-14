@@ -1,0 +1,27 @@
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  color: #C09853;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  background-color: #FCF8E3;
+  border: 1px solid #FBEED5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#about {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #e8e8e8;
+  margin: 56px 20px 20px 0px;
+  padding: 10px;
+
+  position:fixed;
+  top:0;
+}
+
+.stuck {
+  margin-top: 0;
+  position:fixed;
+  top:0;
+}
