@@ -2,6 +2,7 @@
 layout: post
 title:  "Crazy And Not So Crazy Startup Ideas (2015 edition)"
 date:   2015-01-15 17:00:00
+comments: true
 categories: startup ideas
 ---
 
