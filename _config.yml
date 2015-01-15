@@ -30,3 +30,7 @@ google_analytics_tracking_id: UA-12888988-1
 # Disqus Comments
 disqus_short_name: syskall
 disqus_show_comment_count: false
+
+gems:
+  - jekyll-redirect-from
+
