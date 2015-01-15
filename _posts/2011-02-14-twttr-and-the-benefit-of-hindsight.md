@@ -1,5 +1,5 @@
 ---
-permalink: /twttr-and-the-benefit-of-hindsight/index.html
+permalink: /twttr-and-the-benefit-of-hindsight/index.html/
 sharing_link: /twttr-and-the-benefit-of-hindsight
 layout: post
 title: The benefit of hindsight

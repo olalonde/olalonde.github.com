@@ -1,5 +1,5 @@
 ---
-permalink: /why-we-should-eradicate-agnosticism-from-the/index.html
+permalink: /why-we-should-eradicate-agnosticism-from-the/index.html/
 sharing_link: /why-we-should-eradicate-agnosticism-from-the
 layout: post
 title: Why we should eradicate "agnosticism" from the dictionary!

@@ -1,5 +1,5 @@
 ---
-permalink: /how-to-write-your-own-native-nodejs-extension/index.html
+permalink: /how-to-write-your-own-native-nodejs-extension/index.html/
 sharing_link: /how-to-write-your-own-native-nodejs-extension
 layout: post
 title: How to write your own native Node.js extension
@@ -32,14 +32,14 @@ You can also install it through `npm`:
 
     npm install notify
 
-The code was tested on Ubuntu 10.10 64-bit and Node.js v0.5.0-pre. 
+The code was tested on Ubuntu 10.10 64-bit and Node.js v0.5.0-pre.
 
 ##Getting started##
 
-First let’s create a node-notify folder and with the following directory structure. 
+First let’s create a node-notify folder and with the following directory structure.
 
     .
-    |-- build/                   # This is where our extension is built. 
+    |-- build/                   # This is where our extension is built.
     |-- demo/
     |   `-- demo.js              # This is a demo Node.js script to test our extension.
     |-- src/
@@ -51,14 +51,14 @@ First let’s create a node-notify folder and with the following directory struc
 Now let's create our test script `demo.js` and decide upfront what our extension's API should look like:
 
 ```javascript
-// This loads our extension on the notify variable. 
+// This loads our extension on the notify variable.
 // It will only load a constructor function, notify.notification().
 var notify = require("../build/default/gtknotify.node"); // path to our extension
 
 var notification = new notify.notification();
 notification.title = "Notification title";
 notification.icon = "emblem-default"; // see /usr/share/icons/gnome/16x16
-notification.send("Notification message");    
+notification.send("Notification message");
 ```
 
 ##Writing our Node.js extension##
@@ -66,14 +66,14 @@ notification.send("Notification message");
 
 ###The Init method###
 
-In order to create a Node.js extension, we need to write a C++ class that extends [node::ObjectWrap](https://github.com/joyent/node/blob/master/src/node_object_wrap.h). ObjectWrap implements some utility methods that lets us easily interface with Javascript. 
+In order to create a Node.js extension, we need to write a C++ class that extends [node::ObjectWrap](https://github.com/joyent/node/blob/master/src/node_object_wrap.h). ObjectWrap implements some utility methods that lets us easily interface with Javascript.
 
 Let's write the skeletton for our class:
 
-```cpp 
+```cpp
 #include <v8.h> // v8 is the Javascript engine used by Node
 #include <node.h>
-// We will need the following libraries for our GTK+ notification 
+// We will need the following libraries for our GTK+ notification
 #include <string>
 #include <gtkmm.h>
 #include <libnotifymm.h>
@@ -92,14 +92,14 @@ class Gtknotify : node::ObjectWrap {
 
 /*
  * WARNING: Boilerplate code ahead.
- * 
+ *
  * See https://www.cloudkick.com/blog/2010/aug/23/writing-nodejs-native-extensions/ & http://www.freebsd.org/cgi/man.cgi?query=dlsym
- *  
- * Thats it for actual interfacing with v8, finally we need to let Node.js know how to dynamically load our code. 
- * Because a Node.js extension can be loaded at runtime from a shared object, we need a symbol that the dlsym function can find, 
- * so we do the following:  
+ *
+ * Thats it for actual interfacing with v8, finally we need to let Node.js know how to dynamically load our code.
+ * Because a Node.js extension can be loaded at runtime from a shared object, we need a symbol that the dlsym function can find,
+ * so we do the following:
  */
- 
+
 v8::Persistent<FunctionTemplate> Gtknotify::persistent_function_template;
 extern "C" { // Cause of name mangling in C++, we use extern C here
   static void init(Handle<Object> target) {
@@ -114,7 +114,7 @@ Now, we'll have to we have to write the following code in our Init() method:
 
 1. Declare our constructor function and bind it to our target variable. `var n = require("notification");` will bind notification() to n: `n.notification()`.
 
-```cpp        
+```cpp
 // Wrap our C++ New() method so that it's accessible from Javascript
 // This will be called by the new operator in Javascript, for example: new notification();
 v8::Local<FunctionTemplate> local_function_template = v8::FunctionTemplate::New(New);
@@ -132,8 +132,8 @@ target->Set(String::NewSymbol("notification"), Gtknotify::persistent_function_te
 ```
 
 2. Declare our attributes: `n.title` and `n.icon`.
-  
-```cpp        
+
+```cpp
 // Set property accessors
 // SetAccessor arguments: Javascript property name, C++ method that will act as the getter, C++ method that will act as the setter
 Gtknotify::persistent_function_template->InstanceTemplate()->SetAccessor(String::New("title"), GetTitle, SetTitle);
@@ -141,9 +141,9 @@ Gtknotify::persistent_function_template->InstanceTemplate()->SetAccessor(String:
 // For instance, n.title = "foo" will now call SetTitle("foo"), n.title will now call GetTitle()
 ```
 
-3. Declare our prototype method: `n.send()` 
-    
-```cpp        
+3. Declare our prototype method: `n.send()`
+
+```cpp
 // This is a Node macro to help bind C++ methods to Javascript methods (see https://github.com/joyent/node/blob/v0.2.0/src/node.h#L34)
 // Arguments: our constructor function, Javascript method name, C++ method name
 NODE_SET_PROTOTYPE_METHOD(Gtknotify::persistent_function_template, "send", Send);
@@ -151,40 +151,40 @@ NODE_SET_PROTOTYPE_METHOD(Gtknotify::persistent_function_template, "send", Send)
 
 Our Init() method should now look like this:
 
-```cpp        
+```cpp
 // Our constructor
 static v8::Persistent<FunctionTemplate> persistent_function_template;
 
 static void Init(Handle<Object> target) {
   v8::HandleScope scope; // used by v8 for garbage collection
-  
+
   // Our constructor
   v8::Local<FunctionTemplate> local_function_template = v8::FunctionTemplate::New(New);
   Gtknotify::persistent_function_template = v8::Persistent<FunctionTemplate>::New(local_function_template);
   Gtknotify::persistent_function_template->InstanceTemplate()->SetInternalFieldCount(1); // 1 since this is a constructor function
   Gtknotify::persistent_function_template->SetClassName(v8::String::NewSymbol("Notification"));
-  
+
   // Our getters and setters
   Gtknotify::persistent_function_template->InstanceTemplate()->SetAccessor(String::New("title"), GetTitle, SetTitle);
   Gtknotify::persistent_function_template->InstanceTemplate()->SetAccessor(String::New("icon"), GetIcon, SetIcon);
-  
+
   // Our methods
   NODE_SET_PROTOTYPE_METHOD(Gtknotify::persistent_function_template, "send", Send);
-  
+
   // Binding our constructor function to the target variable
   target->Set(String::NewSymbol("notification"), Gtknotify::persistent_function_template->GetFunction());
 }
 ```
 
-All that is left to do is to write the C++ methods that we used in our Init method: `New`, `GetTitle`, `SetTitle`, `GetIcon`, `SetIcon`, `Send` 
+All that is left to do is to write the C++ methods that we used in our Init method: `New`, `GetTitle`, `SetTitle`, `GetIcon`, `SetIcon`, `Send`
 
 ###Our constructor method: New()###
 
 The New() method creates an instance of our class (a Gtknotify object), sets some default values to our properties and returns a Javascript handle to this object. This is the expected behavior when calling a constructor function with the new operator in Javascript.
 
-```cpp  
+```cpp
 std::string title;
-std::string icon; 
+std::string icon;
 
 // new notification()
 static Handle<Value> New(const Arguments& args) {
@@ -193,10 +193,10 @@ static Handle<Value> New(const Arguments& args) {
   // Set some default values
   gtknotify_instance->title = "Node.js";
   gtknotify_instance->icon = "terminal";
-  
+
   // Wrap our C++ object as a Javascript object
   gtknotify_instance->Wrap(args.This());
-  
+
   return args.This();
 }
 ```
@@ -204,7 +204,7 @@ static Handle<Value> New(const Arguments& args) {
 ###Our getters and setters: GetTitle(), SetTitle(), GetIcon(), SetIcon()####
 
 The following is pretty much boilerplate code. It boils down to back and forth conversion between C++ values to Javascript (V8) values.
-    
+
 ```cpp
 // this.title
 static v8::Handle<Value> GetTitle(v8::Local<v8::String> property, const v8::AccessorInfo& info) {
@@ -242,11 +242,11 @@ static v8::Handle<Value> Send(const Arguments& args) {
   v8::HandleScope scope;
   // Extract C++ object reference from "this"
   Gtknotify* gtknotify_instance = node::ObjectWrap::Unwrap<Gtknotify>(args.This());
-  
+
   // Convert first argument to V8 String
   v8::String::Utf8Value v8str(args[0]);
-  
-  // For more info on the Notify library: http://library.gnome.org/devel/libnotify/0.7/NotifyNotification.html 
+
+  // For more info on the Notify library: http://library.gnome.org/devel/libnotify/0.7/NotifyNotification.html
   Notify::init("Basic");
   // Arguments: title, content, icon
   Notify::Notification n(gtknotify_instance->title.c_str(), *v8str, gtknotify_instance->icon.c_str()); // *v8str points to the C string it wraps
@@ -256,12 +256,12 @@ static v8::Handle<Value> Send(const Arguments& args) {
   return v8::Boolean::New(true);
 }
 ```
- 
+
 ##Compiling our extension##
 
 `node-waf` is the build tool used to compile Node extensions which is basically a wrapper for [waf](http://code.google.com/p/waf/). The build process can be configured with a file called `wscript` in our top directory:
-    
-```python    
+
+```python
 def set_options(opt):
   opt.tool_options("compiler_cxx")
 
@@ -273,7 +273,7 @@ def configure(conf):
   conf.check_cfg(package='libnotifymm-1.0', args='--cflags --libs', uselib_store='LIBNOTIFYMM')
 
 def build(bld):
-  obj = bld.new_task_gen("cxx", "shlib", "node_addon") 
+  obj = bld.new_task_gen("cxx", "shlib", "node_addon")
   obj.cxxflags = ["-g", "-D_FILE_OFFSET_BITS=64", "-D_LARGEFILE_SOURCE", "-Wall"]
   # This is the name of our extension.
   obj.target = "gtknotify"
@@ -287,13 +287,13 @@ We're now ready to build! In the top directory, run the following command:
 
 If everything goes right, we should now have our compiled extension in `./build/default/gtknotify.node`. Let's try it!
 
-```bash 
+```bash
 $ node
 > var notif = require('./build/default/gtknotify.node');
 > n = new notif.notification();
 { icon: 'terminal', title: 'Node.js' }
 > n.send("Hello World!");
-true 
+true
 ```
 
 The previous code should display a notification in the top right corner of your screen!
@@ -304,38 +304,38 @@ That's pretty cool, but how about sharing your hard work with the Node community
 
 Packaging an extension for npm is very straightforward. All you have to do is create a `package.json` file in your top directory which contains some info about your extension:
 
-```javascript    
+```javascript
 {
-  // Name of your extension (do not include node or js in the name, this is implicit). 
+  // Name of your extension (do not include node or js in the name, this is implicit).
   // This is the name that will be used to import the extension through require().
-  
+
   "name" : "notify",
-  
+
   // Version should be http://semver.org/ compliant
-  
+
   "version" : "v0.1.0"
-  
+
   // These scripts will be run when calling npm install and npm uninstall.
-  
+
   , "scripts" : {
       "preinstall" : "node-waf configure && node-waf build"
       , "preuninstall" : "rm -rf build/*"
     }
-  
+
   // This is the relative path to our built extension.
-  
+
   , "main" : "build/default/gtknotify.node"
-  
+
   // The following fields are optional:
-  
+
   , "description" : "Description of the extension...."
   , "homepage" : "https://github.com/olalonde/node-notify"
-  , "author" : { 
+  , "author" : {
       "name" : "Olivier Lalonde"
       , "email" : "olalonde@gmail.com"
       , "url" : "http://www.syskall.com/"
-    } 
-  , "repository" : { 
+    }
+  , "repository" : {
       "type" : "git"
       , "url" : "https://github.com/olalonde/node-notify.git"
     }
@@ -349,7 +349,7 @@ You can now install your new npm package by running `npm install` in your top di
 Assuming you wrote a cool extension, you might want to publish it online in the central npm repository. In order to do that, you first need to create an account:
 
     $ npm adduser
-    
+
 Next, go back to the root of your package code and run:
 
     $ npm publish
@@ -360,7 +360,7 @@ That's it, your package is now available for anyone to install through the `npm 
 
 Writing a native Node extension can be cumbersome and verbose at times but it is well worth the hard earned bragging rights!
 
-Thanks for reading. Let me know in the comments if you run into any problem, I’ll be glad to help. 
+Thanks for reading. Let me know in the comments if you run into any problem, I’ll be glad to help.
 
 *If you liked this, maybe you'd also like what I [tweet on Twitter](http://twitter.com/o_lalonde)! Might even want to [hire me](mailto:olalonde@gmail.com)?*
 

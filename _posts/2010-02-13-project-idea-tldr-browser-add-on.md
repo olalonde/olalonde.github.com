@@ -1,5 +1,5 @@
 ---
-permalink: /project-idea-tldr-browser-add-on/index.html
+permalink: /project-idea-tldr-browser-add-on/index.html/
 sharing_link: /project-idea-tldr-browser-add-on
 layout: post
 title: ! 'Project Idea: TL;DR browser add-on'
