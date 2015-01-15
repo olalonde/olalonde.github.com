@@ -95,8 +95,9 @@ competition in the space. It's not clear how to monetize the service.
 
 <img src="/images/alibaba_logo.png" align="right">
 
-A lot of factories which are listed on Alibaba pour in millions of
-revenues but yet they have dated websites or no website at all.
+A lot of factories which are listed on [Alibaba](http://www.alibaba.com)
+pour in millions of revenues but yet they have [dated
+websites](http://www.bodawutong.com/) or no website at all.
 
 ### Solution
 
