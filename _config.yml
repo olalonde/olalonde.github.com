@@ -16,6 +16,9 @@ permalink: /:title/
 # Build settings
 markdown: redcarpet
 
+redcarpet:
+    extensions: [with_toc_data]
+
 # Twitter share
 twitter_tweet_button: true
 # Facebook Like
