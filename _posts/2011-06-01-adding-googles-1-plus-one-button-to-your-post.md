@@ -1,5 +1,5 @@
 ---
-permalink: /adding-googles-1-plus-one-button-to-your-post/index.html/
+permalink: /adding-googles-1-plus-one-button-to-your-post
 sharing_link: /adding-googles-1-plus-one-button-to-your-post/
 layout: post
 title: Adding Google's +1 (plus one) button to your Posterous

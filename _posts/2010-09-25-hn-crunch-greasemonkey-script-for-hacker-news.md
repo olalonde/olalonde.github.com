@@ -1,5 +1,5 @@
 ---
-permalink: /hn-crunch-greasemonkey-script-for-hacker-news/index.html/
+permalink: /hn-crunch-greasemonkey-script-for-hacker-news
 sharing_link: /hn-crunch-greasemonkey-script-for-hacker-news
 layout: post
 title: ! 'HN Crunch: Greasemonkey script for Hacker News'

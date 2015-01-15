@@ -1,5 +1,5 @@
 ---
-permalink: /project-idea-ajax-without-writing-a-single-li/index.html/
+permalink: /project-idea-ajax-without-writing-a-single-li
 sharing_link: /project-idea-ajax-without-writing-a-single-li
 layout: post
 title: ! 'Project Idea: AJAX without writing a single line of Javascript'

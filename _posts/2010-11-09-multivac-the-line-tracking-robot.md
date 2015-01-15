@@ -1,5 +1,5 @@
 ---
-permalink: /multivac-the-line-tracking-robot/index.html/
+permalink: /multivac-the-line-tracking-robot
 layout: post
 sharing_link: /multivac-the-line-tracking-robot
 title: MultiVac, the line tracking robot

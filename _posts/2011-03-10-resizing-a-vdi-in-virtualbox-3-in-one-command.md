@@ -1,5 +1,5 @@
 ---
-permalink: /resizing-a-vdi-in-virtualbox-3-in-one-command/index.html/
+permalink: /resizing-a-vdi-in-virtualbox-3-in-one-command
 sharing_link: /resizing-a-vdi-in-virtualbox-3-in-one-command
 layout: post
 title: Resizing a VDI in VirtualBox 3 with one command

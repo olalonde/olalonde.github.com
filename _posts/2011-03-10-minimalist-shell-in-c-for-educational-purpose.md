@@ -1,5 +1,5 @@
 ---
-permalink: /minimalist-shell-in-c-for-educational-purpose/index.html/
+permalink: /minimalist-shell-in-c-for-educational-purpose
 sharing_link: /minimalist-shell-in-c-for-educational-purpose
 layout: post
 title: Minimalist shell in C (for educational purposes only!)

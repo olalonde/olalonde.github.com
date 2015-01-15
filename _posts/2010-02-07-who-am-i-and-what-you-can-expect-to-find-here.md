@@ -1,5 +1,5 @@
 ---
-permalink: /who-am-i-and-what-you-can-expect-to-find-here/index.html/
+permalink: /who-am-i-and-what-you-can-expect-to-find-here
 sharing_link: /who-am-i-and-what-you-can-expect-to-find-here
 layout: post
 title: Who am I and what you can expect to find here

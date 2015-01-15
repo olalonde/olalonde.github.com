@@ -1,5 +1,5 @@
 ---
-permalink: /trouble-installing-imagemagick-on-os-x-1072/index.html/
+permalink: /trouble-installing-imagemagick-on-os-x-1072
 sharing_link: /trouble-installing-imagemagick-on-os-x-1072
 layout: post
 title: Trouble installing ImageMagick on OS X 10.7.2

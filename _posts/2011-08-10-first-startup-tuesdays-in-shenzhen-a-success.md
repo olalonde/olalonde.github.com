@@ -1,5 +1,5 @@
 ---
-permalink: /first-startup-tuesdays-in-shenzhen-a-success/index.html/
+permalink: /first-startup-tuesdays-in-shenzhen-a-success
 sharing_link: /first-startup-tuesdays-in-shenzhen-a-success
 layout: post
 title: First "Startup Tuesday" in Shenzhen a success!
