@@ -9,6 +9,9 @@ categories:
 - hacker-news
 - idea
 ---
+<p class="alert"><strong>Update:</strong> I've written a <a
+href="/crazy-and-not-so-crazy-startup-ideas-2015-edition/">2015 edition</a>.</p>
+
 <p>So today I am cleaning up my phone&rsquo;s Memo app so this post will be
 dedicated to dumping all those late night ideas I had when I was very
 tired or had a few too many beers. Note that I had most of those ideas
