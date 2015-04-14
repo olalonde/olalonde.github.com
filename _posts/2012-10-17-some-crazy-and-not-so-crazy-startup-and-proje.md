@@ -87,6 +87,8 @@ visitors that have Javascript disabled.</p>
 
 <h2>6. Startups for front-end developers</h2>
 
+<p><strong>Update:</strong> I think Hoodie is a solution. See <a href="http://hood.ie/">http://hood.ie</a></p>
+
 <p>Build a service that makes it possible to develop a full website
 completely on the client side (probably using Backbone.js or similar),
 interfacing with a list of predefined APIs. This startups' job would
