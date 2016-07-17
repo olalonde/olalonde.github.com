@@ -189,6 +189,8 @@ Possible (unethical) fix: use a bunch of proxies.
 
 # 4. Cold Calling as a Service
 
+**Update**: [UpCall](https://www.upcall.com/) is a service that is solving this problem
+
 <img class="img-rounded" src="/images/coldcall.jpg" align="right">
 
 ### Problem
