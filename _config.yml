@@ -1,9 +1,9 @@
 # Site settings
-title: Olivier Lalonde's blog
+title: Syskall
 email: olalonde@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-   I'm a friendly hacker and startup guy living in Hong Kong and Shenzhen.
-   Current interests include Node.js, Go, Bitcoin, distributed systems.
+   Hi :) I'm Olivier Lalonde, a hacker / startup guy.
+   Current interests include JavaScript, Rust, Bitcoin, blockchain and deep learning.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://syskall.com" # the base hostname & protocol for your site
 twitter_username: o_lalonde
