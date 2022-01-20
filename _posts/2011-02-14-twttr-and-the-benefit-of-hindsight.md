@@ -10,7 +10,7 @@ categories:
 ---
 <p>I recently stumbled upon a quite interesting piece of history buried in TechCrunch's archives. It's <a href="http://techcrunch.com/2006/07/15/is-twttr-interesting/">a July 2006 article written by Michael Arrington</a>&nbsp;which introduces a "sort of &ldquo;group send&rdquo; SMS application" as he described it at the time. For those who haven't guessed yet, the "application" he is referring to is now known as <a href="http://www.twitter.com">Twitter</a>, a&nbsp;190 million users strong&nbsp;social network and company currently&nbsp;<a href="http://blogs.reuters.com/felix-salmon/2011/02/10/understanding-twitters-valuation/">valued at around $10 billion</a>. Yet,&nbsp;at the time,&nbsp;very few people believed the startup had any chance of success and even fewer could have predicted it would grow to become a billion dollar company.&nbsp;</p>
 <p />
-<div><a href="http://techcrunch.com/2006/07/15/is-twttr-interesting/">[[posterous-content:FqanXt0fw2aLYxahbBdF]]</a></div>
+<div><a href="http://techcrunch.com/2006/07/15/is-twttr-interesting/">Is Twttr interesting? (TechCrunch)</a></div>
 <p />
 <div>Here are some gems from the article and comments. It would be superfluous to comment them as I believe they speak for themselves. If you find yourself laughing at this (as I did), take a moment to realize just how wonderful the <a href="http://en.wikipedia.org/wiki/Hindsight_bias">benefit of hindsight</a> is.&nbsp;</div>
 <p />

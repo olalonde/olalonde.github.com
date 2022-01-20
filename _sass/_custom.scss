@@ -1,13 +1,21 @@
-.alert {
+.typo, .alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
-  color: #C09853;
   text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-  background-color: #FCF8E3;
-  border: 1px solid #FBEED5;
+  border: 1px solid;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+.typo {
+  border-color: #e8e8e8;
+  color: #999;
+}
+
+.alert {
+  background-color: #FCF8E3;
+  color: #C09853;
+  border-color: #FBEED5;
 }
 
 #about {
@@ -24,4 +32,8 @@
   margin-top: 0;
   position:fixed;
   top:0;
+}
+
+.headshot {
+  margin: 0px 0px 10px 10px;
 }

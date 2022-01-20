@@ -2,8 +2,9 @@
 title: Syskall
 email: olalonde@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-   Hi :) I'm Olivier Lalonde, a hacker / startup guy.
-   Current interests include JavaScript, Rust, Bitcoin, blockchain and deep learning.
+   Hey, welcome to my blog! My name is Olivier Lalonde and I'm best described as a hackerpreneur. My latest interests include software development
+   (mostly JavaScript and Rust), Bitcoin, cryptocurrency,
+   economics, finance and deep learning.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://syskall.com" # the base hostname & protocol for your site
 twitter_username: o_lalonde
@@ -31,6 +32,7 @@ google_analytics_tracking_id: UA-12888988-1
 disqus_short_name: syskall
 disqus_show_comment_count: false
 
-gems:
+plugins:
+  - jekyll-gist
   - jekyll-redirect-from
 
