@@ -1,14 +1,14 @@
 # Site settings
 title: Syskall
 email: olalonde@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-   Hey, welcome to my blog! My name is Olivier Lalonde and I'm best described as a hackerpreneur. My latest interests include software development
-   (mostly JavaScript and Rust), Bitcoin, cryptocurrency,
-   economics, finance and deep learning.
+description: "Olivier Lalonde's blog." 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://syskall.com" # the base hostname & protocol for your site
+url: "https://syskall.com" # the base hostname & protocol for your site
 twitter_username: o_lalonde
 github_username: olalonde
+
+github:
+  repository_url: "https://github.com/olalonde/olalonde.github.com"
 
 highlighter: pygments
 
